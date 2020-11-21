@@ -1,0 +1,93 @@
+/* text -------------------------------------------------- */
+
+.u-textCenter {
+	text-align: center;
+}
+
+.u-textLeft {
+	text-align: left;
+}
+
+.u-textRight {
+	text-align: right;
+}
+
+.u-textJustify {
+	text-align: justify;
+}
+
+// size _______________________________________________
+
+.u-normal {
+	font-weight: normal;
+}
+
+.u-bold {
+	font-weight: 700;
+}
+
+// size _______________________________________________
+
+.u-newLine {
+	display: inline-block;
+}
+
+// .u-br {
+// 	&.-spOnly {
+// 		display: inline-block;
+// 		@include mq(sm) {
+// 			display: none;
+// 		}
+// 	}
+
+// 	&.-pcOnly {
+// 		display: inline-block;
+// 		@include mq(sm) {
+// 			display: none;
+// 		}
+// 	}
+// }
+
+// size _______________________________________________
+
+// レスポンシブではない、あくまで汎用的な固定フォントサイズ？
+
+.u-text-xxl {
+	font-size: rem(24);
+	line-height: 1.6;
+}
+
+.u-text-xl {
+	font-size: rem(22);
+	line-height: 1.6;
+}
+
+.u-text-l {
+	font-size: rem(18);
+	line-height: 1.6;
+}
+
+.u-text-m {
+	font-size: rem(16);
+	line-height: 1.6;
+}
+
+.u-text-s {
+	font-size: rem(14);
+	line-height: 1.4;
+}
+
+.u-text-xs {
+	font-size: rem(12);
+	line-height: 1.4;
+}
+
+.u-text-xxs {
+	font-size: rem(10);
+	line-height: 1.4;
+}
+
+.u-textS {
+	font-size: 0.8em;
+	opacity: 0.8;
+}

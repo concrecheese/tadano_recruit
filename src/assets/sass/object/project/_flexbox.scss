@@ -1,0 +1,314 @@
+/* flexbox -------------------------------------------------- */
+
+//MEMO
+//「wrap」にしている時の「row-reverse」と「wrap-reverse」は違う動きをする。
+//「row-reverse」・・・ヨコ方向の向きを反対に。右始まり
+//		3 2 1
+//		6 5 4
+//		複数のBOXが横並びになっている時だけ、右始まりになる。タテ方向の順番は同じなので、１列になると普通のwrapと同じに見える。
+//		SPタテ１列、PCヨコ2列のレイアウトで部分的に左右入れ替えをしたい場合はこれを使う。
+//		SPのレイアウトが変わらないのでメディアクエリがいらない。
+
+//「wrap-reverse」・・・タテ方向の向きを反対に。下始まり
+//		4 5 6
+//		1 2 3
+//
+
+//「row-reverse」&「wrap-reverse」・・・右始まり＆下始まり
+//		6 5 4
+//		3 2 1
+
+// flexbox 材料 ________________________________
+
+//align-items
+@mixin align-items($justify) {
+	&Center {
+		align-items: center;
+		justify-content: $justify;
+	}
+	&Stretch {
+		align-items: stretch;
+		justify-content: $justify;
+	}
+	&Start {
+		align-items: flex-start;
+		justify-content: $justify;
+	}
+	&End {
+		align-items: flex-end;
+		justify-content: $justify;
+	}
+	&Base {
+		align-items: baseline;
+		justify-content: $justify;
+	}
+}
+
+//justify・alignのセット
+@mixin justify-align {
+	&.-start {
+		$justify: start;
+		@include align-items(start);
+	}
+
+	&.-end {
+		@include align-items(end);
+	}
+
+	&.-center {
+		@include align-items(center);
+	}
+
+	&.-between {
+		@include align-items(space-between);
+	}
+
+	&.-around {
+		@include align-items(space-around);
+	}
+
+	&.-evenly {
+		@include align-items(space-evenly);
+	}
+
+	&.-stretch {
+		@include align-items(stretch);
+	}
+}
+
+// flexbox 親要素 ___________________________________
+
+.flex {
+	display: flex;
+	flex-flow: row nowrap;
+
+	&.-reverse {
+		flex-flow: row-reverse nowrap;
+	}
+
+	@include justify-align();
+}
+
+.inlineFlex {
+	display: inline-flex;
+	flex-flow: row nowrap;
+
+	&.-reverse {
+		flex-flow: row-reverse nowrap;
+	}
+
+	@include justify-align();
+}
+
+.flexCol {
+	display: flex;
+	flex-flow: column nowrap;
+
+	&.-reverse {
+		flex-flow: column-reverse nowrap;
+	}
+
+	@include justify-align();
+}
+
+.inlineFlexCol {
+	display: inline-flex;
+	flex-flow: column nowrap;
+
+	&.-reverse {
+		flex-flow: column-reverse nowrap;
+	}
+
+	@include justify-align();
+}
+
+.flexWrap {
+	display: flex;
+	flex-flow: row wrap;
+
+	&.-reverse {
+		flex-flow: row-reverse wrap;
+	}
+
+	&.-wrapReverse {
+		flex-flow: row wrap-reverse;
+	}
+
+	&.-reverseReverse {
+		flex-flow: row-reverse wrap-reverse;
+	}
+
+	@include justify-align();
+}
+
+.inlineFlexWrap {
+	display: inline-flex;
+	flex-flow: row wrap;
+
+	&.-reverse {
+		flex-flow: row-reverse wrap;
+	}
+
+	&.-wrapReverse {
+		flex-flow: row wrap-reverse;
+	}
+
+	&.-reverseReverse {
+		flex-flow: row-reverse wrap-reverse;
+	}
+
+	@include justify-align();
+}
+
+.flexColWrap {
+	display: flex;
+	flex-flow: column wrap;
+
+	&.-reverse {
+		flex-flow: column-reverse wrap;
+	}
+
+	&.-wrapReverse {
+		flex-flow: column wrap-reverse;
+	}
+
+	@include justify-align();
+}
+
+.inlineFlexColWrap {
+	display: inline-flex;
+	flex-flow: column wrap;
+
+	&.-reverse {
+		flex-flow: column-reverse wrap;
+	}
+
+	&.-wrapReverse {
+		flex-flow: column wrap-reverse;
+	}
+
+	@include justify-align();
+}
+
+// flexbox 子要素 __________________________________________
+
+.flexAuto {
+	flex: auto;
+}
+
+.flexNone {
+	flex: none;
+}
+
+.order {
+	&M1 {
+		order: -1;
+	}
+}
+
+// ----------
+
+.flexItem {
+	//sp
+	&.-sp100 {
+		width: 100%;
+	}
+
+	//pc
+	&.-pc10 {
+		@include mq() {
+			width: 10%;
+		}
+	}
+	&.-pc20 {
+		@include mq() {
+			width: 20%;
+		}
+	}
+	&.-pc30 {
+		@include mq() {
+			width: 30%;
+		}
+	}
+	&.-pc40 {
+		@include mq() {
+			width: 40%;
+		}
+	}
+	&.-pc50 {
+		@include mq() {
+			width: 50%;
+		}
+	}
+	&.-pc60 {
+		@include mq() {
+			width: 60%;
+		}
+	}
+	&.-pc70 {
+		@include mq() {
+			width: 70%;
+		}
+	}
+	&.-pc80 {
+		@include mq() {
+			width: 80%;
+		}
+	}
+	&.-pc90 {
+		@include mq() {
+			width: 90%;
+		}
+	}
+	&.-pc100 {
+		@include mq() {
+			width: 100%;
+		}
+	}
+}
+
+// flexbox 併用 __________________________________________
+
+.top {
+	margin-bottom: auto;
+}
+
+.right {
+	margin-left: auto;
+}
+
+.bottom {
+	margin-top: auto;
+}
+
+.left {
+	margin-right: auto;
+}
+
+// /* flexbox currenct-project -------------------------------------------------- */
+
+//フレックスアイテムには
+//パディングなどはつけず、できる限りレイアウトのみ
+//メディアクエリをなるべく使わない方向でいきたい。flexbasisの数値をメディアクエリがわりにしたい
+//例：flex: 1 1 rem(400); そのflexItemが幅400pxになった場所を起点に並びが変わる
+
+//2個並び想定
+.flexItem01 {
+	flex: 1 1 rem(400);
+	background-color: rgba($color: #000, $alpha: 0.1);
+}
+
+//3個並び想定
+.flexItem02 {
+	flex: 1 1 rem(200);
+	background-color: rgba($color: #000, $alpha: 0.1);
+}
+
+//3個並び想定
+.flexItem.-w33p {
+	flex: 0 0 80%; //375pxに対し左右に30px
+
+	@include mq() {
+		flex: 1 1 33%;
+	}
+}

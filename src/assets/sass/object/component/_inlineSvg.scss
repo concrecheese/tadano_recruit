@@ -1,0 +1,28 @@
+// icon inline svg --------------------------------------------------
+
+// //logo
+
+// //ロゴはdefs内のシンボル部で色指定。使用するときはひとつのシンボルだけuse
+// .logo-kinomi {
+//   &.-color {
+//     & > .symbol_art {
+//       fill: #c99cca;
+//     }
+
+//     & > .symbol_semiCircle {
+//       fill: #e5fff7;
+//     }
+
+//     & > .symbol_back {
+//       fill: #fff;
+//     }
+
+//     & > .type_japanese {
+//       fill: #666;
+//     }
+
+//     & > .type_english {
+//       fill: #c99cca;
+//     }
+//   }
+// }

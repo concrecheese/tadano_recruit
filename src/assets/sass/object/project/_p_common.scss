@@ -1,0 +1,165 @@
+//プロジェクトレイヤーがレイアウトレイヤー・コンポーネントレイヤーを上書きすることはOK。
+//フレックスボックスなどのl-レイヤーに色々上書きしても良いことのする。
+//サイト内共通パーツ
+
+/* base用 -------------------------------------------------- */
+
+.img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	min-height: rem(150);
+	background-color: rgba($color: blue, $alpha: 0.2);
+
+	img {
+		width: 100%;
+	}
+}
+
+.card01 {
+	width: 100%;
+	height: 100%;
+	background-color: rgba($color: #000, $alpha: 0.05);
+
+	&.-info {
+		padding: 10%;
+	}
+
+	&.-media {
+	}
+}
+
+/* base用 common -------------------------------------------------- */
+
+.bottom_btn {
+	margin-top: rem(32);
+	@include mq() {
+		margin-top: rem(64);
+	}
+}
+
+.markList {
+	// text-indent: 1em;
+	list-style: square;
+	list-style-position: inside; //マーカーを行の内側から始める
+}
+
+/* common -------------------------------------------------- */
+
+.title {
+	@include lineHeightCrop(1.8);
+}
+
+.text {
+	@include lineHeightCrop(1.8);
+
+	&.-color {
+		font-size: 1.2em;
+		color: $cl-key;
+	}
+}
+
+.sliderBox {
+	width: 100%;
+	padding: rem(32);
+}
+
+/* 上層のdllist */
+.dllist.-upper {
+	//上層のset
+	& > .box {
+		display: flex;
+		flex-flow: row wrap;
+
+		.title {
+			flex: 0 0 6em;
+		}
+
+		.text {
+			flex: 1 1 rem(300);
+		}
+	}
+}
+
+/* 下層のdllist */
+.dllist.-under {
+	& > .box {
+		.title {
+		}
+
+		.text {
+			padding-left: 1em;
+		}
+	}
+}
+
+/* section -------------------------------------------------- */
+
+//ollist
+.feature {
+	counter-reset: featureItemCount; //どの要素でリセットするか。[カウンタ名,0に値する数字]
+
+	//li
+	&_item {
+		position: relative;
+		counter-increment: featureItemCount; //カウントする要素 [カウンタ名,１単位]
+
+		//数字の部分 contentでcounterの値を使用,スタイルを設定可能 decimal が初期
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: inline-block;
+			width: 10%;
+			height: 10%;
+			color: $cl-point;
+			content: counter(featureItemCount, decimal-leading-zero);
+		}
+
+		//２の倍数で互い違いに
+		&:nth-of-type(2n) {
+			margin-left: auto;
+		}
+
+		@include mq() {
+			width: 80%;
+		}
+	}
+}
+
+/* section -------------------------------------------------- */
+
+.employeeIntro {
+	position: relative;
+	display: flex;
+	flex-flow: column-reverse nowrap;
+	width: 100%; //ie
+
+	.info {
+		@include mq() {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+	}
+
+	.media {
+	}
+}
+
+/* section -------------------------------------------------- */
+
+.recruitCard {
+	display: flex;
+	flex-flow: column-reverse nowrap;
+	background-color: $cl-whiteBase;
+}
+
+//=========================================================================

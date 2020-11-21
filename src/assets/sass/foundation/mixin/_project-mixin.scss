@@ -1,0 +1,64 @@
+//ma-zinn
+
+//----------------------------------------
+
+//上下padding S
+@mixin space-p-m() {
+	padding-top: rem(64);
+	padding-bottom: rem(64);
+
+	@include mq() {
+		padding-top: rem(96);
+		padding-bottom: rem(96);
+	}
+}
+//上下padding M
+@mixin space-p-m() {
+	padding-top: rem(64);
+	padding-bottom: rem(64);
+
+	@include mq() {
+		padding-top: rem(96);
+		padding-bottom: rem(96);
+	}
+}
+
+//上下padding L
+@mixin space-p-m() {
+	padding-top: rem(64);
+	padding-bottom: rem(64);
+
+	@include mq() {
+		padding-top: rem(96);
+		padding-bottom: rem(96);
+	}
+}
+
+//----------------------------------------
+
+//margin-top S
+@mixin space-mt {
+	margin-top: rem(24);
+
+	@include mq() {
+		margin-top: rem(32);
+	}
+}
+
+//margin-top M
+@mixin space-mt {
+	margin-top: rem(24);
+
+	@include mq() {
+		margin-top: rem(32);
+	}
+}
+
+//margin-top L
+@mixin space-mt {
+	margin-top: rem(24);
+
+	@include mq() {
+		margin-top: rem(32);
+	}
+}

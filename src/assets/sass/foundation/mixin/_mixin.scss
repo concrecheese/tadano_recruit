@@ -1,0 +1,70 @@
+//remの計算。rem(15) 等で記載。
+
+// @mixin fontFamily-yugo() {
+//   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Hiragino Sans', 'Noto Sans CJK JP',
+//     'Original Yu Gothic', 'Yu Gothic', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+//     'Noto Sans Emoji';
+// }
+
+// scrollbar -------------------------------------------------------
+
+@mixin bodyScrollbar() {
+	&::-webkit-scrollbar {
+		width: 14px;
+		height: 14px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background-color: $cl-scrollbar-back;
+	}
+
+	&::-webkit-scrollbar-corner {
+		background-color: $cl-scrollbar-back;
+	}
+
+	//バー
+	&::-webkit-scrollbar-thumb {
+		background-color: $cl-scrollbar-thumb;
+		border: 1px solid $cl-scrollbar-thumbBorder;
+		border-radius: 0;
+
+		//ホバーした時のバー
+		&:hover {
+			background-color: $cl-scrollbar-hover;
+		}
+	}
+}
+
+// グラデーション -------------------------------------------------------
+
+//ボックスの右上・または左上にソウショクテキスト
+@mixin aaa() {
+	position: relative;
+
+	&::before {
+		position: absolute;
+		display: block;
+		// width: 100%;
+		// height: 100%;
+		content: 'SAMPLETEXTSAMPLETEXT';
+		background-color: #0002;
+		transform: rotate(-90deg);
+	}
+	&::after {
+		position: absolute;
+		top: 0;
+		left: 10%;
+		display: block;
+		width: rem(1);
+		height: 10em;
+		content: '';
+		background-color: #000;
+	}
+}
+
+// グラデーション -------------------------------------------------------
+
+//指定色から透明に
+@mixin gld-tr($num: 45, $color: #00b377) {
+	background-image: linear-gradient(#{$num}deg, $color 100%, $color 0%);
+}

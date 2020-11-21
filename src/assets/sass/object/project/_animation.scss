@@ -1,0 +1,104 @@
+// /* animation -------------------------------------------------- */
+
+// //後から演出でjsのスクロール位置で出現するものなど。
+// //動かす要素がはじめから意図的で決まっているものは、要素そのもののセレクタグループ内にjs-クラスと共に書く。（背景イラストなど）
+// //こちらはアニメーション効果を付けたり外したりしやすくするための、アニメーション専用クラスを設ける場合のもの。
+
+// // スクロールアニメーション
+// .p-appear {
+//   &_item {
+//     opacity: 0;
+//     transition: transform 1000ms cubic-bezier(0.73, -1.44, 0.27, 2.46),
+//       opacity 1000ms cubic-bezier(0.73, -1.44, 0.27, 2.46);
+//     transform: translate(0, rem(50));
+
+//     //アクティブ時・js無効
+//     @at-root .js-disabled &,
+//       .js-appear.-active#{&},
+//       .js-appear.-active & {
+//       opacity: 1;
+//       transform: translate(0, 0);
+//     }
+
+//     &.-second {
+//       transition-delay: 100ms;
+//     }
+
+//     &.-third {
+//       transition-delay: 200ms;
+//     }
+
+//     &.-fourth {
+//       transition-delay: 300ms;
+//     }
+
+//     &.-fifth {
+//       transition-delay: 400ms;
+//     }
+
+//     &.-delayPigeon {
+//       transition-delay: 800ms;
+//     }
+
+//     &.-delayTooth {
+//       transition-delay: 1000ms;
+//     }
+//   }
+
+//   &_transparent {
+//     opacity: 0;
+//     transition: opacity 1500ms;
+
+//     @at-root .js-disabled &,
+//       .js-appear.-active#{&},
+//       .js-appear.-active & {
+//       opacity: 1;
+//     }
+
+//     &.-delaySwiper {
+//       transition-delay: 1100ms;
+//     }
+//   }
+
+//   &_slider {
+//     background-clip: content-box;
+//     transform-origin: bottom;
+
+//     .js-appear.-active & {
+//       opacity: 1;
+//       animation: appearSlider 1000ms cubic-bezier(0.4, 0, 0.2, 1) 0s 1 normal
+//         none running;
+//     }
+
+//     // .js-disabled & {
+//     //   //特に何も設定なし
+//     // }
+
+//     @keyframes appearSlider {
+//       0% {
+//         background-color: rgba(255, 166, 128, 1);
+//         border-radius: 0;
+//         transform: scale(0.1, 0.1);
+//       }
+
+//       30% {
+//         background-color: rgba(255, 166, 128, 1);
+//         border-radius: 0;
+//         transform: scale(0.1, 1);
+//       }
+
+//       50% {
+//         background-color: rgba(255, 255, 255, 0.5);
+//       }
+
+//       80% {
+//         background-color: rgba(255, 255, 255, 0);
+//       }
+
+//       100% {
+//         border-radius: rem(1000);
+//         transform: scale(1, 1);
+//       }
+//     }
+//   }
+// }

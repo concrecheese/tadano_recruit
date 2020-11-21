@@ -1,0 +1,155 @@
+// /* decoration -------------------------------------------------- */
+
+// //装飾系 ________________________________________________
+
+// .c-listDecoration {
+// 	& > li {
+// 		position: relative;
+// 	}
+
+// 	& > li:not(:first-of-type)::before {
+// 		position: absolute;
+// 		top: 0;
+// 		left: 50%;
+// 		display: inline-block;
+// 		width: 0.5em; //挿入する要素のデザイン
+// 		height: 0.5em;
+// 		content: '';
+// 		background-color: $cl-key;
+// 		border-radius: rem(3);
+// 		transform: translate(-50%, -50%);
+
+// 		@include mq() {
+// 			top: 50%;
+// 			left: 0;
+// 		}
+// 	}
+// }
+
+// //ドットの線
+// //注意：ie対策
+// //フレックスボックスと同じ要素に付けると擬似要素が追加される関係でフレックスレイアウトにバグが生まれる。（この場合はbetoweenが効かなくなる なので専用レイヤーを作ってそこに書くこと。）
+
+// .c-dotLine {
+// 	position: relative;
+
+// 	&::after,
+// 	&::before {
+// 		position: absolute;
+// 		display: block;
+// 		content: '';
+// 		background-image: radial-gradient(
+// 			currentColor,
+// 			currentColor 13%,
+// 			transparent 14%
+// 		);
+// 		background-position: center center;
+// 		background-size: rem(20) rem(20);
+// 	}
+
+// 	//上・下
+// 	@mixin commonTopBottom {
+// 		left: 50%;
+// 		width: 100%;
+// 		height: rem(20);
+// 		background-repeat: repeat-x;
+// 	}
+
+// 	&.-top::after {
+// 		@include commonTopBottom;
+
+// 		top: 0;
+// 		transform: translate(-50%, -50%);
+// 	}
+
+// 	&.-bottom::after {
+// 		@include commonTopBottom;
+
+// 		bottom: 0;
+// 		transform: translate(-50%, 50%);
+// 	}
+
+// 	//左・右
+// 	@mixin commonLeftRight {
+// 		top: 50%;
+// 		width: rem(20);
+// 		height: 100%;
+// 		background-repeat: repeat-y;
+// 	}
+
+// 	&.-left::after {
+// 		@include commonLeftRight;
+
+// 		left: 0;
+// 		transform: translate(-50%, -50%);
+// 	}
+
+// 	&.-right::after {
+// 		@include commonLeftRight;
+
+// 		right: 0;
+// 		transform: translate(50%, -50%);
+// 	}
+
+// 	//十字 真ん中の点が重なるため不透明にする
+// 	&.-cross {
+// 		@mixin commonBeforeAfter {
+// 			top: 50%;
+// 			left: 50%;
+// 			background-image: radial-gradient(
+// 				currentColor,
+// 				currentColor 13%,
+// 				transparent 14%
+// 			);
+// 			background-position: center center;
+// 			background-size: rem(20) rem(20);
+// 			transform: translate(-50%, -50%);
+// 		}
+
+// 		//row
+// 		&::before {
+// 			@include commonBeforeAfter;
+
+// 			width: 100%;
+// 			height: rem(20);
+// 			background-repeat: repeat-x;
+// 		}
+
+// 		//col
+// 		&::after {
+// 			@include commonBeforeAfter;
+
+// 			width: rem(20);
+// 			height: 100%;
+// 			background-repeat: repeat-y;
+// 		}
+// 	}
+
+// 	//pcのみ表示
+
+// 	&.-pcOnly {
+// 		&::before,
+// 		&::after {
+// 			display: none;
+// 		}
+
+// 		@include mq() {
+// 			&::before,
+// 			&::after {
+// 				display: block;
+// 			}
+// 		}
+// 	}
+// }
+
+// //divを角丸に
+
+// // .c-round {
+// //   overflow: hidden;
+// //   border-radius: 40%;
+
+// //   &.-line {
+// //     border: solid rem(10) #fff;
+// //     border-radius: 40%;
+// //   }
+// // }

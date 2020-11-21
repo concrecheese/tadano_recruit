@@ -1,0 +1,702 @@
+// /* form -------------------------------------------------- */
+
+// //デザイン調整
+
+// .form {
+// 	width: 100%;
+
+// 	dt {
+// 		padding: 0.5em 0;
+// 		margin-top: 1em;
+// 	}
+
+// 	dd {
+// 		// padding: 0.5em;
+// 	}
+
+// 	div {
+// 		padding: 0.5em 0;
+// 		margin-top: 1em;
+// 	}
+
+// 	input,
+// 	textarea {
+// 		width: 100%;
+// 		padding: 0.8em;
+// 		background-color: $g100;
+// 		border: rem(2) solid $g60;
+// 		border-radius: rem(4);
+// 	}
+
+// 	fieldset {
+// 		padding: 0;
+// 		border: none;
+// 	}
+
+// 	//-------------------------------------------------------------------------------------------
+
+// 	//placeholderの文字色指定
+// 	input::placeholder,
+// 	textarea::placeholder {
+// 		color: transparentize($black, 0.7);
+// 	}
+
+// 	//IE (疑似クラスで指定)
+// 	input:-ms-input-placeholder,
+// 	textarea:-ms-input-placeholder {
+// 		color: transparentize($black, 0.7);
+// 	}
+
+// 	//Edge (疑似要素で指定)
+// 	input::-ms-input-placeholder,
+// 	textarea::-ms-input-placeholder {
+// 		color: transparentize($black, 0.7);
+// 	}
+
+// 	//-------------------------------------------------------------------------------------------
+
+// 	//auto complete(chrome)
+// 	input:-webkit-autofill {
+// 		//背景色(background-colorではなくbox-shadow)
+// 		-webkit-box-shadow: 0 0 0 1000px #eee inset;
+
+// 		//文字色(colorではなく-webkit-text-fill-color)
+// 		-webkit-text-fill-color: #333 !important;
+// 	}
+
+// 	//-------------------------------------------------------------------------------------------
+
+// 	//input
+
+// 	input {
+// 		//任意の高さ
+// 		// height: 46px;
+// 		// padding: 1em 1em;
+
+// 		//文字色を親から継承
+// 		color: inherit;
+
+// 		//背景色(任意の色を指定)
+// 		// background-color: #eee;
+
+// 		//inputの枠線を消す
+// 		// border: 1px solid transparent;
+
+// 		//inputのフォーカス時の枠線を消す
+// 		outline: 0;
+// 		transition: border 0.2s ease-out;
+// 	}
+
+// 	//inputにフォーカスが当たっている時
+// 	input:focus {
+// 		// border-bottom: rem(2) solid #e74c3c;
+// 	}
+
+// 	//-------------------------------------------------------------------------------------------
+
+// 	//送信ボタン
+// 	input[type='submit'] {
+// 		padding: 1.2em;
+// 		font-size: 1.2em;
+// 		// font-weight: 700;
+// 		color: $g100;
+// 		background-color: $black;
+// 		border: none;
+// 		transition: 150ms;
+// 	}
+
+// 	//送信ボタンホバーアクション
+// 	input[type='submit']:hover {
+// 		background-color: $cl-key;
+// 		transform: translateY(-0.3em);
+// 	}
+
+// 	//-------------------------------------------------------------------------------------------
+
+// 	// //input[type="search"]
+
+// 	// //サーチキャンセルボタンのデザイン変更
+// 	// input[type='search']::-webkit-search-cancel-button {
+// 	// 	width: 16px;
+// 	// 	height: 16px;
+// 	// 	background-image: url(cancel.svg);
+// 	// 	background-repeat: no-repeat;
+// 	// 	background-size: cover;
+// 	// 	-webkit-appearance: none;
+
+// 	// 	//サーチキャンセルボタンを非表示にする場合
+
+// 	// 	//-webkit-appearance: none;
+// 	// }
+
+// 	// input[type='search']::-webkit-search-decoration {
+// 	// 	display: none;
+// 	// }
+
+// 	// input[type='search']:focus {
+// 	// 	outline-offset: -2px;
+// 	// }
+
+// 	// //パスワードの表示/非表示の切り替えスイッチ表示(IE、Edge)の非表示
+// 	// input[type='password']::-ms-reveal {
+// 	// 	display: none;
+// 	// }
+
+// 	//-------------------------------------------------------------------------------------------
+
+// 	// //input日時系
+
+// 	// //カレンダー表示ボタン アイコン変更
+// 	// input[type='date']::-webkit-calendar-picker-indicator,
+// 	// input[type='datetime-local']::-webkit-calendar-picker-indicator,
+// 	// input[type='month']::-webkit-calendar-picker-indicator,
+// 	// input[type='week']::-webkit-calendar-picker-indicator {
+// 	// 	color: transparent;
+// 	// 	cursor: pointer;
+// 	// 	background: #eee url(calendar.svg) no-repeat center right 0/16px 16px;
+// 	// 	background-size: 16px;
+// 	// }
+
+// 	//-------------------------------------------------------------------------------------------
+
+// 	// //input[type="range"]
+
+// 	// input[type='range'] {
+// 	// 	-webkit-appearance: none;
+
+// 	// 	//height: 46px;
+// 	// }
+
+// 	// //ツールチップ 非表示(ms)
+// 	// input[type='range']::-ms-tooltip {
+// 	// 	display: none;
+// 	// }
+
+// 	// //ツマミ(webkit)
+// 	// input[type='range']::-webkit-slider-thumb {
+// 	// 	width: 20px;
+// 	// 	height: 20px;
+// 	// 	margin-top: -10px;
+// 	// 	cursor: pointer;
+// 	// 	background: #fff;
+
+// 	// 	//iOS safari
+// 	// 	border: none;
+// 	// 	border-radius: 50%;
+// 	// 	box-shadow: 0 0 4px 0 #333;
+// 	// 	-webkit-appearance: none;
+// 	// }
+
+// 	// //ツマミ(mozilla)
+// 	// input[type='range']::-moz-range-thumb {
+// 	// 	width: 20px;
+// 	// 	height: 20px;
+// 	// 	cursor: pointer;
+// 	// 	background-color: #fff;
+// 	// 	border: none;
+// 	// 	border-radius: 50%;
+// 	// 	box-shadow: 0 0 4px 0 #333;
+// 	// }
+
+// 	// //ツマミ(ms)
+// 	// input[type='range']::-ms-thumb {
+// 	// 	width: 20px;
+// 	// 	height: 20px;
+// 	// 	margin: 0 1px;
+// 	// 	cursor: pointer;
+// 	// 	background-color: #fff;
+// 	// 	border: none;
+// 	// 	border-radius: 50%;
+// 	// 	box-shadow: 0 0 4px 0 #333;
+// 	// }
+
+// 	// //ツマミ(ms) chomeツマミ調整の影響を消す
+// 	// @supports (-ms-ime-align: auto) {
+// 	// 	input[type='range']::-webkit-slider-thumb {
+// 	// 		margin-top: 0 !important;
+// 	// 	}
+// 	// }
+
+// 	// //溝(mozilla)
+// 	// input[type='range']::-moz-range-track {
+// 	// 	height: 0;
+// 	// 	border: 1px solid #333;
+// 	// }
+
+// 	// //溝(WebKit)
+// 	// input[type='range']::-webkit-slider-runnable-track {
+// 	// 	width: 100%;
+// 	// 	height: 0;
+// 	// 	margin-top: 0;
+// 	// 	cursor: pointer;
+// 	// 	background: #ccc;
+// 	// 	border: 1px solid #333;
+// 	// }
+
+// 	// //溝(ms)
+// 	// input[type='range']::-ms-track {
+// 	// 	width: 100%;
+// 	// 	height: 12px;
+// 	// 	color: transparent;
+// 	// 	cursor: pointer;
+// 	// 	background: transparent;
+// 	// 	border-color: transparent;
+// 	// 	border-width: 16px 0;
+// 	// }
+
+// 	// //溝の位置調整(ie)
+// 	// @media all and (-ms-high-contrast: none) {
+// 	// 	input[type='range']::-ms-track {
+// 	// 		margin-top: -5px !important;
+// 	// 	}
+// 	// }
+
+// 	// //溝の色(ms)（つまみより左側）
+// 	// input[type='range']::-ms-fill-lower {
+// 	// 	background: #ccc;
+// 	// 	border: 0.2px solid #010101;
+// 	// 	border-radius: 2.6px;
+// 	// 	box-shadow: 1px 1px 1px #000, 0 0 1px #0d0d0d;
+// 	// }
+
+// 	// //溝の色(ms)（つまみより右側）
+// 	// input[type='range']::-ms-fill-upper {
+// 	// 	background: #ccc;
+// 	// 	border: 0.2px solid #010101;
+// 	// 	border-radius: 2.6px;
+// 	// 	box-shadow: 1px 1px 1px #000, 0 0 1px #0d0d0d;
+// 	// }
+
+// 	// //溝の色(ms)（つまみより左側）フォーカス時
+// 	// input[type='range']:focus::-ms-fill-lower {
+// 	// 	background: #999;
+// 	// }
+
+// 	// //溝の色(ms)（つまみより右側）フォーカス時
+// 	// input[type='range']:focus::-ms-fill-upper {
+// 	// 	background: #999;
+// 	// }
+
+// 	//-------------------------------------------------------------------------------------------
+
+// 	// //input type="file"
+// 	// input[type='file'] {
+// 	// 	position: absolute;
+// 	// 	display: initial;
+// 	// 	opacity: 0;
+// 	// }
+
+// 	// input[type='file'] + label {
+// 	// 	display: table;
+// 	// 	padding: 20px 40px;
+// 	// 	margin: 10px auto 0;
+// 	// 	font-weight: bold;
+// 	// 	line-height: 1;
+// 	// 	color: #fff;
+// 	// 	-webkit-user-select: none;
+// 	// 	-moz-user-select: none;
+// 	// 	-ms-user-select: none;
+// 	// 	user-select: none;
+// 	// 	background: #2980b9;
+// 	// 	border-bottom: 4px solid #434343;
+// 	// 	border-radius: 4px;
+// 	// 	transition: background-color 0.2s ease-out, transform 0.2s ease-out,
+// 	// 		border-bottom 0.2s ease-out;
+// 	// }
+
+// 	// input[type='file']:hover + label,
+// 	// input[type='file']:focus + label {
+// 	// 	background: #3498db;
+// 	// }
+
+// 	// input[type='file']:active + label {
+// 	// 	background: #34495e;
+// 	// 	border-bottom: 4px solid transparent;
+// 	// 	transform: translateY(4px);
+// 	// }
+
+// 	//-------------------------------------------------------------------------------------------
+
+// 	//selectbox
+
+// 	select {
+// 		width: 20%;
+// 		padding: 0.8em;
+// 		background-color: $g100;
+// 		border: rem(2) solid $g40;
+// 		border-radius: rem(4);
+// 	}
+
+// 	// select {
+// 	// 	//代わりに任意の画像を指定
+// 	// 	background: #eee url(triangle_down.svg) no-repeat center right 10px/16px 16px;
+// 	// 	background-size: 10px;
+// 	// 	border: none;
+
+// 	// 	//右端の▼を消す
+// 	// 	-webkit-appearance: none;
+// 	// 	-moz-appearance: none;
+// 	// 	appearance: none;
+
+// 	// 	//右端の▼を消す(IE)
+// 	// 	select::-ms-expand {
+// 	// 		display: none;
+// 	// 	}
+
+// 	// 	select:focus {
+// 	// 		background: #eee url(triangle_up.svg) no-repeat center right 10px/16px 16px;
+// 	// 		background-size: 10px;
+// 	// 		border-bottom: 1px solid#e74c3c;
+// 	// 		outline: none;
+// 	// 	}
+
+// 	//-------------------------------------------------------------------------------------------
+
+// 	// //radio
+
+// 	// .radiobuttonMember {
+// 	// 	margin-top: 10px;
+// 	// }
+
+// 	// //デフォルトのinputを隠す
+// 	// input[type='radio'] {
+// 	// 	position: relative;
+// 	// 	display: initial;
+// 	// 	opacity: 0;
+// 	// }
+
+// 	// //ラベルの前の四角形を作る
+// 	// input[type='radio'] + label::before {
+// 	// 	position: absolute;
+// 	// 	width: 16px;
+// 	// 	height: 16px;
+// 	// 	margin-top: 4px;
+// 	// 	content: '';
+// 	// 	border: 2px solid #343434;
+// 	// }
+
+// 	// //ラベルの前の四角形のフォーカス時
+// 	// input[type='radio']:focus + label::before {
+// 	// 	border: 2px solid #e74c3c;
+// 	// }
+
+// 	// //SVGの位置と大きさの指定
+// 	// input[type='radio'] + label > svg {
+// 	// 	position: relative;
+// 	// 	top: 3px;
+// 	// 	left: 3px;
+// 	// 	width: 20px;
+// 	// 	height: 20px;
+// 	// 	margin-right: 5px;
+// 	// }
+
+// 	// //チェックマークの設定(未チェック時)
+// 	// input[type='radio'] + label > svg > path {
+// 	// 	fill: none;
+// 	// 	stroke: #27ae60;
+// 	// 	stroke-dasharray: 130;
+// 	// 	stroke-dashoffset: 100;
+// 	// 	stroke-linecap: round;
+// 	// 	stroke-linejoin: round;
+// 	// 	stroke-opacity: 0;
+// 	// 	stroke-width: 8px;
+// 	// 	transition: stroke-dashoffset 0.2s ease-out;
+// 	// }
+
+// 	// //チェックマークの設定(チェック時)
+// 	// input[type='radio']:checked + label > svg > path {
+// 	// 	stroke-dashoffset: 0;
+// 	// 	stroke-opacity: 1;
+// 	// }
+
+// 	// //ラベルの位置調整
+// 	// input[type='radio'] + label {
+// 	// 	position: relative;
+// 	// 	left: -30px;
+// 	// }
+
+// 	//-------------------------------------------------------------------------------------------
+
+// 	//checkbox
+
+// 	// .checkboxMember {
+// 	// 	margin-top: 10px;
+// 	// }
+
+// 	// input[type='checkbox'] {
+// 	// 	display: inline-block;
+// 	// 	width: rem(50);
+// 	// 	height: rem(50);
+// 	// }
+
+// 	//リセット・透明で選択はできるように
+// 	input[type='checkbox'] {
+// 		display: initial;
+// 		padding-right: rem(72); //横長のサイズを作る
+// 		margin-right: -80px; //8pxがチェックボックスの最小
+// 		// opacity: 0;//opacityを使うとforcus時のデザインができなくなる
+// 		background-color: transparent;
+// 		border: 1px solid transparent;
+// 	}
+
+// 	// //チェックボックス01
+// 	// input[type='checkbox'] {
+// 	// 	display: none;
+// 	// }
+
+// 	//labelに擬似要素でチェックボックスを作る
+// 	.form_check {
+// 		position: relative;
+// 		box-sizing: border-box;
+// 		display: inline-block;
+// 		width: auto;
+// 		padding-right: 2.5em; //チェックボックス分・右
+// 		// padding-left: 2.5em; //チェックボックス分・左
+
+// 		//box
+// 		&::before {
+// 			position: absolute;
+// 			top: 0;
+// 			right: 0;
+// 			bottom: 0;
+// 			left: 0;
+// 			display: block;
+// 			width: 1.6em;
+// 			height: 1.6em;
+// 			margin-top: auto;
+// 			margin-bottom: auto;
+// 			margin-left: auto;
+// 			content: '';
+// 			background-color: $g100;
+// 			border: rem(2) solid $g60;
+// 		}
+
+// 		//checkmark
+// 		&::after {
+// 			position: absolute;
+// 			top: 0;
+// 			right: 0.3em;
+// 			// bottom: 0;
+// 			// left: 0;
+// 			display: block;
+// 			width: 0.8em;
+// 			height: 1.2em; //長い方の辺
+// 			content: '';
+// 			border-right: rem(5) solid $cl-key;
+// 			border-bottom: rem(5) solid $cl-key;
+// 			opacity: 0;
+// 			transform: rotate(45deg);
+
+// 			//checkedのcheckboxの隣り合わせのlabel
+// 			input[type='checkbox']:checked + & {
+// 				opacity: 1;
+// 			}
+// 		}
+// 	}
+
+// 	// .checkbox01 .checkbox01::after {
+// 	// 	position: absolute;
+// 	// 	top: 0;
+// 	// 	right: 0;
+// 	// 	bottom: 0;
+// 	// 	left: 0;
+// 	// 	display: block;
+// 	// 	width: 0.8em;
+// 	// 	height: 1.2em; //長い方の辺
+// 	// 	margin-top: auto;
+// 	// 	margin-right: auto;
+// 	// 	margin-bottom: 0.5em; //微調整
+// 	// 	margin-left: 0.4em; //boxとmarkの差分の1/2
+// 	// 	content: '';
+// 	// 	border-right: rem(5) solid $cl-key;
+// 	// 	border-bottom: rem(5) solid $cl-key;
+// 	// 	opacity: 0;
+// 	// 	transform: rotate(45deg);
+// 	// }
+// 	// input[type='checkbox']:checked + .checkbox01::after {
+// 	// 	opacity: 1;
+// 	// }
+
+// 	// //デフォルトのinputを隠す
+// 	// input[type='checkbox'] {
+// 	// 	position: relative;
+// 	// 	display: initial;
+// 	// 	opacity: 0;
+// 	// }
+
+// 	// //ラベルの前の四角形を作る
+// 	// input[type='checkbox'] + label::before {
+// 	// 	position: absolute;
+// 	// 	width: 16px;
+// 	// 	height: 16px;
+// 	// 	margin-top: 4px;
+// 	// 	content: '';
+// 	// 	border: 2px solid #343434;
+// 	// }
+
+// 	// //ラベルの前の四角形のフォーカス時
+// 	// input[type='checkbox']:focus + label::before {
+// 	// 	border: 2px solid #e74c3c;
+// 	// }
+
+// 	// //SVGの位置と大きさの指定
+// 	// input[type='checkbox'] + label > svg {
+// 	// 	position: relative;
+// 	// 	top: 2px;
+// 	// 	left: 3px;
+// 	// 	width: 20px;
+// 	// 	height: 20px;
+// 	// 	margin-right: 5px;
+// 	// }
+
+// 	// //チェックマークの設定(未チェック時)
+// 	// input[type='checkbox'] + label > svg > path {
+// 	// 	fill: none;
+// 	// 	stroke: #e74c3c;
+// 	// 	stroke-dasharray: 100;
+// 	// 	stroke-dashoffset: 100;
+// 	// 	stroke-linecap: round;
+// 	// 	stroke-linejoin: round;
+// 	// 	stroke-opacity: 0;
+// 	// 	stroke-width: 8px;
+// 	// 	transition: stroke-dashoffset 0.1s ease-out;
+// 	// }
+
+// 	// //チェックマークの設定(チェック時)
+// 	// input[type='checkbox']:checked + label > svg > path {
+// 	// 	stroke-dashoffset: 0;
+// 	// 	stroke-opacity: 1;
+// 	// }
+
+// 	// //ラベルの位置調整
+// 	// input[type='checkbox'] + label {
+// 	// 	position: relative;
+// 	// 	left: -30px;
+// 	// }
+
+// 	//-------------------------------------------------------------------------------------------
+
+// 	// //textarea
+
+// 	// textarea {
+// 	// 	padding: 10px;
+// 	// 	resize: none;
+// 	// 	background-color: #eee;
+// 	// 	border: 1px solid transparent;
+// 	// 	border-radius: 0;
+// 	// 	outline: none;
+// 	// 	transition: border 0.2s ease-out;
+// 	// }
+
+// 	// textarea::-webkit-scrollbar {
+// 	// 	width: 10px;
+// 	// }
+
+// 	// textarea::-webkit-scrollbar-track {
+// 	// 	background-color: #eee;
+// 	// }
+
+// 	// textarea::-webkit-scrollbar-thumb {
+// 	// 	background-color: #ccc;
+// 	// }
+
+// 	// textarea:focus {
+// 	// 	// border-bottom: 1px solid #e74c3c;
+// 	// 	// outline: none;
+// 	// 	// box-shadow: none;
+// 	// }
+
+// 	//-------------------------------------------------------------------------------------------
+
+// 	//button
+
+// 	button {
+// 		display: flex;
+// 		align-items: center;
+// 		justify-content: center;
+// 		border: none;
+// 		transition: 150ms;
+// 	}
+
+// 	button:hover,
+// 	button:focus {
+// 		// color: $g100;
+// 		background-color: $cl-key;
+// 		transform: scale(1.1);
+// 	}
+
+// 	button:active {
+// 		background-color: $cl-key;
+// 		transform: scale(1.1);
+// 		// border-bottom: 4px solid transparent;
+// 		// transform: translateY(4px);
+// 	}
+
+// 	//-------------------------------------------------------------------------------------------
+
+// 	//-------------------------------------------------------------------------------------------
+
+// 	//フローティングラベル
+
+// 	// .floatinglabel {
+// 	// 	position: relative;
+// 	// 	margin-top: 40px;
+// 	// }
+
+// 	// .labeltext {
+// 	// 	position: absolute;
+// 	// 	top: 0;
+// 	// 	left: 16px;
+// 	// 	font-size: 16px;
+// 	// 	color: #7f8c8d;
+// 	// 	transition: all 0.2s ease-out;
+// 	// 	transform-origin: 0 0;
+// 	// }
+
+// 	// .floatinglabel input:focus + span {
+// 	// 	color: #333;
+// 	// 	transform: translateY(-38px) translateX(-16px);
+// 	// }
+
+// 	//-------------------------------------------------------------------------------------------
+
+// 	//状態
+
+// 	//値が空のとき
+// 	input:empty {
+// 	}
+
+// 	//値が合致している 入力内容が正しかった場合
+// 	input:in-range,
+// 	input:valid {
+// 		// background: transparent;
+// 	}
+
+// 	//値が合致していない
+// 	input:invalid,
+// 	input:out-of-range {
+// 	}
+
+// 	//input使用不可の時(disabledが指定されている)
+// 	input:disabled {
+// 		opacity: 0.5;
+// 	}
+
+// 	//読み込み専用の時(readonlyが指定されている)
+// 	input:read-only {
+// 	}
+
+// 	//バリデーション関係 ----------------------------------------
+
+// 	// 必須入力項目が未入力・cl-requiredを指定した場合
+// 	input:cl-required {
+// 		// background: red;
+// 	}
+
+// 	// メールアドレスの入力不備
+// 	input[type='email']:invalid {
+// 		// background: red;
+// 	}
+
+// 	//-------------------------------------------------------------------------------------------
+// }

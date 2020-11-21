@@ -1,0 +1,17 @@
+/* media queries -------------------------------------------------- */
+
+.u-onlyPc {
+	display: none;
+
+	@include mq() {
+		display: block;
+	}
+}
+
+.u-onlySp {
+	display: block;
+
+	@include mq() {
+		display: none;
+	}
+}

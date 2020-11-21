@@ -1,0 +1,19 @@
+/* position -------------------------------------------------- */
+
+//できればどちらも個別のクラスへ?
+
+.u-relative {
+  position: relative;
+}
+
+.u-absolute {
+  position: absolute;
+}
+
+.u-fixed {
+  position: fixed;
+}
+
+.u-sticky {
+  position: sticky;
+}

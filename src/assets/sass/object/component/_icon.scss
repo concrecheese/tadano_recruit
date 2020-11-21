@@ -1,0 +1,289 @@
+/* icon css -------------------------------------------------- */
+
+//aを囲んだdiv（p）にクラスを付ける
+//::after は 矢印
+
+// <p class="c-btn -round -useIcon">
+//     <span>詳しくはこちら</span>
+//     <span class="c-btn_icon"><span class="c-arrow"></span></span>
+// </p>
+
+//アイコン側のvartical-alineのみでテキストと高さを揃えている。
+//テキスト側は何もしない。baselineのまま運用できる。
+//アイコンとテキストの大きさが著しく違う場合・きっちり真ん中にしたい場合は別途親要素にフレックスボックスかける。
+
+.c-icon {
+	display: inline-block;
+	width: 1.1em;
+	height: 1.1em;
+	// vertical-align: -0.2em;
+	vertical-align: middle;
+	fill: currentColor;
+
+	// &.-min {
+	// 	width: 0.8em; //スライスにより左右の余白を削る
+	// }
+}
+
+// --------------------------------------------------
+
+//ハンバーガーの大きさはここで決める。
+//このアイコンセットを、buttonタグで囲む。下コピペでOK
+
+// <button type="button" id="js-drawerBtn" class="btn -drawer" aria-controls="drawer_nav" aria-expanded="false">
+// <span class="c-hamburger"><span class="c-hamburger_line"></span></span>
+// </button>
+
+//外側のbuttonにはrerativeが付いてる・普通に％で使用しようとするとiosでうまく表示されない。
+.c-hamburger {
+	// $boxSize: 30;
+	$lineWidth: 25;
+	$lineHeight: rem(2); //線の太さ
+	$lineRadius: 0; //角丸にしたい場合
+
+	//ハンバーガーの外枠のボックス
+	position: absolute; //ボタン要素の中で％指定するため
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: block;
+	width: 50%; //％を使うならbuttonを基準にabsoluteに
+	height: 50%;
+	margin: auto;
+	// color: $black;
+	vertical-align: middle; //button要素の中に入った時の下の空きを無くす
+	// background-color: green;
+
+	//ハンバーガー・中心ライン
+	&_line {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		display: block;
+		width: 100%; //親要素でほぼ決める感じ
+		height: $lineHeight;
+		margin: auto; //真ん中に
+		background-color: transparent; //2本線にしたい場合は透明に
+		border-radius: $lineRadius;
+		transition: 150ms; //トランジション
+		transform-origin: left; //トランスフォームオリジンはアニメーション前に
+
+		//ハンバーガー・上下ライン(中心ラインが親)
+		&::before,
+		&::after {
+			position: absolute;
+			display: block;
+			height: 100%;
+			content: '';
+			background-color: currentColor;
+			border-radius: $lineRadius;
+			// transition: 150ms; //トランジション
+			// transform-origin: left;
+		}
+
+		//ハンバーガー・上ライン
+		&::before {
+			top: 0;
+			width: 100%;
+			margin-top: -16%;
+		}
+
+		//ハンバーガー・下ライン
+		&::after {
+			bottom: 0;
+			width: 64%;
+			margin-bottom: -16%;
+		}
+
+		//ホバーアクション（.btn） ------------------------------
+
+		//（中心ライン）
+		.btn:hover & {
+			transform: scaleX(0.6);
+		}
+	}
+
+	//ハンバーガーアクション ------------------------------
+
+	// 	//hoverで間隔が開き、openで半回転
+	// 	&.-expandRotation {
+	// 		transition: 300ms; //回転のスピード
+
+	// 		.js-drawerActive & {
+	// 			color: #fff;
+	// 			transform: rotate(-90deg);
+	// 		}
+
+	// 		.c-hamburger_line {
+	// 			&::before,
+	// 			&::after {
+	// 				transition: transform 200ms; //lineが広がるスピード
+	// 			}
+	// 		}
+
+	// 		&:hover {
+	// 			.c-hamburger_line {
+	// 				&::before {
+	// 					transform: translate(0, rem(-2));
+	// 				}
+
+	// 				&::after {
+	// 					transform: translate(0, rem(2));
+	// 				}
+	// 			}
+	// 		}
+
+	// 		&:active {
+	// 			color: $cl-key;
+
+	// 			.js-drawerActive & {
+	// 				color: $cl-key;
+	// 			}
+	// 		}
+	// 	}
+}
+
+//矢印 プロジェクトによりボーダーの太さを変える。
+//spanの大きさが矢印の大きさ
+
+//シンプルな矢印(CSS) ------------------------------
+
+.c-arrow {
+	$borderWidth: 3;
+
+	display: block;
+	width: 100%;
+	height: 100%;
+	border-top: rem($borderWidth) solid currentColor;
+	border-right: rem($borderWidth) solid currentColor;
+	transform: rotate(45deg);
+
+	//左向き
+	&.-left {
+		transform: rotate(225deg);
+	}
+
+	//上向き
+	&.-top {
+		transform: rotate(-45deg);
+	}
+
+	//下向き
+	&.-bottom {
+		transform: rotate(135deg);
+	}
+}
+
+//角丸の矢印(CSS) ------------------------------
+
+.c-arrowRound {
+	$borderWidth: 8;
+	$ArrowTipRound: 4;
+
+	position: relative;
+	display: block;
+	width: 100%;
+	height: 100%;
+	border-top: rem($borderWidth) solid currentColor;
+	border-right: rem($borderWidth) solid currentColor;
+	border-top-right-radius: rem($ArrowTipRound); //矢印の先端部分の丸み
+	transform: rotate(45deg);
+
+	//線の端を角丸にするために円をくっつける。
+	&::before,
+	&::after {
+		position: absolute;
+		width: rem($borderWidth);
+		height: rem($borderWidth);
+		content: '';
+		background-color: currentColor;
+		border-radius: rem(100);
+	}
+
+	//上の丸（右向き矢印状態で）
+	&::before {
+		top: rem(-$borderWidth);
+		left: rem($borderWidth / -2);
+	}
+
+	//下の丸（右向き矢印状態で）
+	&::after {
+		right: rem(-$borderWidth);
+		bottom: rem($borderWidth / -2);
+	}
+
+	//-----------------
+
+	//左向き
+	&.-left {
+		transform: rotate(225deg);
+	}
+
+	//上向き
+	&.-top {
+		transform: rotate(-45deg);
+	}
+
+	//下向き
+	&.-bottom {
+		transform: rotate(135deg);
+	}
+}
+
+/* point01 */
+.c-pointIcon {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: rem(48);
+	height: rem(48);
+	color: #fff;
+	text-align: center;
+	background-color: #00b377;
+
+	@include mq() {
+		width: rem(64);
+		height: rem(64);
+	}
+
+	//point
+	&_subText {
+		display: block;
+		font-size: rem(9);
+		line-height: 1;
+		letter-spacing: 0.2;
+		@include mq() {
+			font-size: rem(10);
+		}
+	}
+
+	//01
+	&_mainText {
+		display: block;
+		font-size: rem(24);
+		line-height: 1;
+		@include mq() {
+			font-size: rem(28);
+		}
+	}
+
+	//細い装飾線
+	&::after {
+		position: absolute;
+		top: 50%;
+		right: rem(-5);
+		display: block;
+		width: rem(10);
+		height: rem(1);
+		content: '';
+		background-color: $black;
+		@include mq() {
+			right: rem(-16);
+			width: rem(24);
+		}
+	}
+}

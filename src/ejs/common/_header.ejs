@@ -1,0 +1,66 @@
+<%# ====================================== header ==================================== _%>
+<header class="l-header">
+	<!-- drawer -->
+	<nav class="drawer js-drawer">
+		<div class="drawer_flex">
+			<ul id="drawerNav" class="drawer_nav">
+				<li class="drawer_navItem">
+					<a href="<%= baseMeta.pathsRoot %>index.html">TOP</a>
+				</li>
+				<li class="drawer_navItem">
+					<a href="">MENU01</a>
+				</li>
+				<li class="drawer_navItem">
+					<a href="">MENU02</a>
+				</li>
+				<li class="drawer_navItem">
+					<a href="">MENU03</a>
+				</li>
+				<li class="drawer_navItem">
+					<a href="">MENU04</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<!-- /drawer -->
+
+	<!-- mainHeader -->
+	<div class="header">
+		<!-- drawerBtn-->
+		<div class="header_itemL">
+			<button type="button" id="js-drawerBtn" class="btn -drawer" aria-controls="drawer_nav" aria-expanded="false">
+				<span class="c-hamburger"><span class="c-hamburger_line"></span></span>
+			</button>
+		</div>
+
+		<!-- glovalNav -->
+		<nav class="header_itemC">
+			<div class="glovalNav">
+				<ul class="glovalNav_flex">
+					<li class="glovalNav_flexItem">
+						<a href="">MENU01</a>
+					</li>
+					<li class="glovalNav_flexItem">
+						<a href="">MENU02</a>
+					</li>
+					<li class="glovalNav_flexItem">
+						<a href="">MENU03</a>
+					</li>
+					<li class="glovalNav_flexItem">
+						<a href="">MENU04</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<!-- btn -->
+		<div class="header_itemR">
+			<div class="btn -headerTakeout">
+				<a href="<%= baseMeta.pathsRoot %>contactUs/index.html" class="fullLink"></a>
+				<span class="text">TAKEOUT</span>
+				<span class="subText">取り置きする</span>
+			</div>
+		</div>
+	</div>
+	<!-- /mainHeader -->
+</header>

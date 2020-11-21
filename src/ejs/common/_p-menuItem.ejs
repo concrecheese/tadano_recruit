@@ -1,0 +1,45 @@
+<%# ====================================== メニューアイテム ==================================== -%>
+<section class="takeoutMenu">
+	<!-- infoBox -->
+	<div class="takeoutMenu_infoBox">
+		<p class="takeoutMenu_title">
+			<a href=""><i class="fas fa-chevron-circle-right"></i><%= title %></a>
+		</p>
+
+		<div class="takeoutMenu_allergenBox">
+			<% tags.forEach((tag)=>{ _%>
+			<span><%= tag %></span>
+			<% }) _%>
+		</div>
+
+		<p class="takeoutMenu_text"><%= text %></p>
+
+		<!-- priceBox -->
+		<div class="takeoutMenu_priceBox">
+			<p class="takeoutMenu_price"><i class="fas fa-yen-sign"></i><%= price %></p>
+
+			<div class="takeoutMenu_orderCountBox">
+				<!-- orderCount -->
+				<div class="orderCount">
+					<button type="button" class="orderCount_button">
+						<span><i class="fas fa-minus"></i></span>
+					</button>
+					<input type="number" name="" class="orderCount_input" placeholder="0" min="0" max="30" />
+					<button type="button" class="orderCount_button">
+						<span><i class="fas fa-plus"></i></span>
+					</button>
+				</div>
+
+				<!-- cartBtn -->
+				<button type="button" class="takeoutMenu_cartButton" data-type="plus" data-field="quant[2]">
+					<span><i class="fas fa-cart-plus"></i></span>
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- mediaBox -->
+	<div class="takeoutMenu_mediaBox">
+		<figure class="takeoutMenu_img"><img src="<%= baseMeta.pathsImg %><%= img %>" alt="" decoding="async" /></figure>
+	</div>
+</section>

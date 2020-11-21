@@ -1,0 +1,156 @@
+/* button -------------------------------------------------- */
+
+/* button common */
+.btn {
+	margin-right: auto;
+	margin-left: auto;
+	cursor: pointer;
+
+	@include f-btn();
+}
+
+.btn_text {
+}
+
+.btn_link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+
+// .btn_icon {
+// 	display: inline-flex;
+// 	align-items: center;
+// 	justify-content: center;
+// 	width: 1.5em;
+// 	height: 1.5em;
+// 	margin-left: 0.2em;
+// 	// vertical-align: middle;
+// 	fill: currentColor;
+// }
+
+//オリジナルアイコンフォントの場合
+.btn_icon {
+	margin-left: 0.2em;
+	fill: currentColor;
+
+	//これがアイコン自体。すでにフレックスで中心揃えになる前提
+	span {
+		font-size: 1.4em;
+	}
+}
+
+/* button primary */
+.btn.-primary {
+	width: 100%;
+	max-width: rem(320);
+	font-size: 1.2em;
+	line-height: 1;
+	color: #fff;
+	text-align: center;
+	background-image: linear-gradient(to right, #00b36e, #00b2ab);
+	box-shadow: 0 rem(16) rem(40) 0 rgba(71, 163, 204, 0);
+	transition: 300ms;
+	transition-timing-function: cubic-bezier(0.84, -0.65, 0.45, 1.57);
+	transform: translateY(0);
+
+	.btn_link {
+		padding: 1.2em 0;
+		vertical-align: middle;
+	}
+
+	&.-full {
+		max-width: rem(600);
+	}
+
+	&:hover {
+		box-shadow: 0 rem(16) rem(40) 0 rgba(71, 163, 204, 0.4);
+		transform: translateY(-10%);
+	}
+}
+
+/* button secondary */
+.btn.-secondary {
+	width: 100%;
+	max-width: rem(240);
+	font-size: 1.2em;
+	line-height: 1;
+	color: #00b377;
+	text-align: center;
+	background-color: #fff;
+	border: solid rem(3) currentColor;
+	box-shadow: 0 rem(16) rem(40) 0 rgba(71, 163, 204, 0);
+	transition: 300ms;
+	transition-timing-function: cubic-bezier(0.84, -0.65, 0.45, 1.57);
+	transform: translateY(0);
+
+	.btn_link {
+		padding: 1.2em 0;
+		vertical-align: middle;
+	}
+
+	//hover
+	&:hover {
+		box-shadow: 0 rem(16) rem(40) 0 rgba(71, 163, 204, 0.3);
+		transform: translateY(-5%);
+	}
+}
+
+/* button scroll */
+.btn.-scroll {
+	max-width: rem(240);
+	font-size: 0.8em;
+	font-weight: 400;
+	line-height: 1;
+	color: #fff;
+	background-color: $black;
+	border-radius: 10em;
+	transition: 300ms; //hover
+	animation-name: pleaseScroll;
+	animation-duration: 2s; //かかる時間
+	animation-play-state: running; //再生・停止 runningは通常状態
+	animation-timing-function: ease-in-out;
+	animation-delay: 2s; //2秒遅れて発火
+	animation-iteration-count: infinite; //繰り返し回数。ループにしたいならinfiniteを。
+	// animation-direction: ; //再生方向。順方向と逆方向の繰り返しがalternate。
+	animation-fill-mode: both; //forwards:終了時をアニメ指定同じに backwards:開始時を同。bothは両方(便利)。
+
+	//キーフレーム
+	@keyframes pleaseScroll {
+		0% {
+			transform: translateY(-10%);
+		}
+		50% {
+			transform: translateY(10%);
+		}
+		100% {
+			transform: translateY(-10%);
+		}
+	}
+
+	@include mq() {
+		max-width: rem(320);
+	}
+
+	.btn_link {
+		display: flex;
+		flex-flow: row nowrap;
+		align-items: center;
+		justify-content: center;
+		height: 100%;
+		padding: 1.2em 2.2em;
+	}
+
+	.btn_text {
+		margin-right: auto;
+		white-space: nowrap;
+	}
+
+	.btn_icon {
+	}
+
+	&:hover {
+		background-color: $cl-key;
+	}
+}

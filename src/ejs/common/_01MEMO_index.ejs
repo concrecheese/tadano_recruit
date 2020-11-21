@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja" class="js-disabled">
+	<%#<!-- prettier-ignore -->_%>
+<%# ====================================== META ==================================== _%>
+<% const baseMeta = { 
+
+
+	pathsThisHtml:'index',
+	pageName:'index',
+
+
+	
+	pathsEjsCommon:'./',
+	pathsRoot:'./',
+	pathsAssets:'./assets/',
+	pathsImg:'./assets/img/',
+
+
+
+	title: '',
+	description:'',
+
+
+	}; %>
+	
+<%# ====================================== /META =================================== _%>
+
+<%- include( baseMeta.pathsEjsCommon + "common/_head", {baseMeta:baseMeta}); %>
+
+	<body class="<%= baseMeta.pageName %>">
+		<!-- loading -->
+		<%- include( baseMeta.pathsEjsCommon + "common/_loading", {baseMeta:baseMeta}); %>
+		<!-- /loading -->
+
+		<!-- header  -->
+		<%- include( baseMeta.pathsEjsCommon + "common/_header", {baseMeta:baseMeta}); %>
+		<!-- /header  -->
+
+		<!-- main  -->
+		<main>
+			<!-- section  -->
+			<section class="l-vertical">
+				<div class="l-horizontal -spS -pcM"></div>
+			</section>
+			<!-- /section  -->
+
+			<!-- section  -->
+			<section class="l-vertical"></section>
+			<!-- /section  -->
+
+			<!-- section  -->
+			<section class="l-vertical"></section>
+
+			<!-- /section  -->
+
+			<!-- section  -->
+			<section class="l-vertical"></section>
+
+			<!-- /section  -->
+
+			<!-- section  -->
+			<section class="l-vertical"></section>
+			<!-- /section  -->
+
+			<!-- section  -->
+			<section class="l-vertical"></section>
+			<!-- /section  -->
+		</main>
+		<!-- /main  -->
+
+		<!-- footer  -->
+		<%- include( baseMeta.pathsEjsCommon + "common/_footer", {baseMeta:baseMeta}); %>
+		<!-- /footer  -->
+	</body>
+</html>

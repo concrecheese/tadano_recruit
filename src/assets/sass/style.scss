@@ -1,0 +1,77 @@
+/******************************
+
+class="blockName_elementName -modifierName"
+class="classA -classAmodifier(1) -classAmodifier(2) classB -classBmodifier(1)"
+
+******************************/
+
+/* ==========================================================================
+
+    FOUNDATION
+
+========================================================================== */
+
+//VARIABLE
+
+@import 'foundation/variable/**';
+
+//FUNCTION
+
+@import 'foundation/function/**';
+
+//MIXIN
+
+@import 'foundation/mixin/**';
+
+//BASE
+//ここは順番が大切なのでsassglobを使わず読み込み
+
+@import 'foundation/base/_normalize';
+@import 'foundation/base/_reset';
+@import 'foundation/base/_base';
+@import 'foundation/base/_form';
+
+/* ==========================================================================
+
+    LAYOUT
+
+========================================================================== */
+
+@import 'layout/**';
+
+/* ==========================================================================
+
+		OBJECT
+
+========================================================================== */
+
+/* COMPONENT ========================================================= */
+
+@import 'object/component/**';
+
+/* PROJECT =========================================================== */
+
+@import 'object/project/**';
+
+/* THEMA ============================================================= */
+
+@import 'object/theme/**';
+
+/* SCOPE ============================================================= */
+
+@import 'object/scope/**';
+
+/* UTILITY =========================================================== */
+
+@import 'object/utility/**';
+
+/* VENDOR ============================================================= */
+
+//swiperのバージョンなど取捨選択するためにひとつひとつ書く
+
+// @import 'object/vendor/vendor/_swiper';
+@import 'object/vendor/vendor/_swiper5_4_5';
+
+/* VENDOR extension =================================================== */
+
+@import 'object/vendor/extension/**';

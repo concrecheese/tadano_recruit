@@ -1,0 +1,49 @@
+<%# ====================================== 繰り返し ==================================== _%>
+
+<!-- 呼び出し -->
+<%- include( baseMeta.pathsEjsCommon + "common/_p-menuItem", {baseMeta:baseMeta,tags:['鶏','小麦粉','アルコール']}); %>
+
+<!-- パーツ -->
+<!-- この例だと変数に代入されたものがなければcpanタグ自体が出力されない -->
+<% tags.forEach((tag)=>{ _%>
+<span><%= tag %></span>
+<% }) _%>
+<!--  -->
+
+<%# ====================================== if ==================================== _%>
+
+<!-- 特定のページにのみ何かを挿入 baseMetaを活用-->
+<% if (baseMeta.pathsThisHtml == 'index') { _%>
+<script src="<%= baseMeta.pathsAssets %>assets/js/top.js" defer></script>
+<% } else { _%>
+<script src="<%= baseMeta.pathsAssets %>assets/js/common.js" defer></script>
+<% } _%>
+<!--  -->
+
+<%# ====================================== CSSmemo ==================================== _%>
+
+<!--  -->
+
+<!--  -->
+
+<%# ====================================== JSmemo ==================================== _%>
+
+<!--  -->
+<%# JS先頭 _%>
+<!--  -->
+<% if (baseMeta.pathsThisHtml == 'index') { _%>
+<script src="<%= baseMeta.pathsAssets %>js/top.js" defer></script>
+<% } else { _%> <% } _%>
+
+<!--  -->
+<%# JS共通 _%>
+<!--  -->
+<script src="<%= baseMeta.pathsAssets %>js/main.js" defer></script>
+<script src="<%= baseMeta.pathsAssets %>js/vender-swiper.js" defer></script>
+
+<!--  -->
+<%# JS後ろ _%>
+<!--  -->
+<% if (baseMeta.pathsThisHtml == 'contactUs/index') { _%>
+<script src="<%= baseMeta.pathsAssets %>js/form.js" defer></script>
+<% } else { _%> <% } _%>

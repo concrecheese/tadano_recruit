@@ -1,0 +1,47 @@
+//汎用的なアイコンや記号など。あくまで小さなパーツ。
+//レイアウト関係、カードなど多数のパーツの集まったグループで構成されているものはここには置かない。
+//あくまで一番小さな最小単位の部品を置くことを心がけること。
+// × 他のプロジェクトでも使えるもの
+// ◯ このプロジェクト内の他のページなどでも何回も使うもの、とする。
+
+// <span class="c-decoText"><span class="c-decoText_text">SAMPLETEXT</span></span>
+
+/* decoration -------------------------------------------------- */
+
+.c-decoration {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: inline-block;
+	padding: rem(16);
+	font-size: rem(8);
+	line-height: 1;
+	opacity: 0.5;
+
+	&.-reverse {
+		right: 0;
+		left: auto;
+	}
+
+	@include mq() {
+		padding: rem(24);
+		// font-size: rem(10);
+	}
+
+	&_text {
+		position: relative;
+		padding-bottom: 5em;
+		writing-mode: vertical-lr;
+
+		&::after {
+			position: absolute;
+			bottom: 0;
+			left: 0.5em;
+			display: block;
+			width: rem(1);
+			height: 4em;
+			content: '';
+			background-color: #000;
+		}
+	}
+}

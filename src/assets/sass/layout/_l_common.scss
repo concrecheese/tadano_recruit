@@ -1,0 +1,101 @@
+// body --------------------------------------------------
+
+//今回のデザイン=PCのみ白枠 に対応するためのpadding。通常のデザインならほぼなにも要らない。無くても良いかも。
+.l-bodyWrap {
+	@include mq() {
+	}
+}
+
+// low margin __________________________________________
+
+//ほぼヨコ幅の担当
+
+// .l-inner {
+// 	width: 84%; //375pxに対し左右に30px
+// 	max-width: rem(800);
+// 	margin-right: auto;
+// 	margin-left: auto;
+
+// 	// &.-large {
+// 	// 	width: 94.66%; //375pxに対し左右に10px
+// 	// 	@include mq() {
+// 	// 		width: 100%;
+// 	// 		max-width: rem(1200);
+// 	// 	}
+// 	// }
+
+// 	&.-wide {
+// 		width: 84%;
+// 		max-width: rem(1100);
+// 	}
+// }
+
+.l-horizontal {
+	margin-right: auto;
+	margin-left: auto;
+
+	//SP
+	&.-spS {
+		width: 84%; //375pxに対し左右に30px
+	}
+	&.-spM {
+		width: 89.33%; //375pxに対し左右に20px
+	}
+	&.-spL {
+		width: 94.66%; //375pxに対し左右に10px
+	}
+	&.-spFull {
+		width: 100%;
+	}
+
+	//PC
+	&.-pcSs {
+		max-width: rem(600);
+	}
+	&.-pcS {
+		max-width: rem(800);
+	}
+	&.-pcSm {
+		max-width: rem(900);
+	}
+	&.-pcM {
+		max-width: rem(1000);
+	}
+	&.-pcLm {
+		max-width: rem(1100);
+	}
+	&.-pcL {
+		max-width: rem(1200);
+	}
+
+	//FULL 常に100％
+	&.-full {
+		width: 100%;
+	}
+}
+
+// col margin __________________________________________
+
+//ほぼタテ幅の担当
+//l-sectionとかl-outerの命名で基本のタテマージンを。ここはパディングで。
+
+.l-vertical {
+	padding-top: rem(64);
+	padding-bottom: rem(64);
+
+	@include mq() {
+		padding-top: rem(96);
+		padding-bottom: rem(96);
+	}
+}
+
+//タテヨコ必要
+.l-vertical.-container {
+	width: 100%;
+	max-width: rem(1100);
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #fff;
+}
+
+// 両方が必要なコンテナ __________________________________________

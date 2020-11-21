@@ -1,0 +1,218 @@
+/*! purgecss start ignore */
+
+/* body -------------------------------------------------- */
+
+body {
+	//スクロールバー
+	@include bodyScrollbar();
+
+	background-color: $cl-base;
+}
+
+/* focus (what-input) -------------------------------------------------- */
+
+[data-whatinput='keyboard'] :focus {
+	outline: none;
+	box-shadow: 0 0 0 4px $cl-body;
+}
+
+[data-whatinput='mouse'] :focus,
+[data-whatinput='touch'] :focus {
+	outline: none;
+}
+
+/* font-setting -------------------------------------------------- */
+
+/* ie */
+_:lang(x)::-ms-backdrop,
+body {
+	font-family: 'Segoe UI', 'メイリオ', Meiryo, sans-serif;
+}
+
+/* icomoon_fonts_min */
+//相対パスを間違えてないかチェック。サーバー直下想定
+@font-face {
+	font-family: 'material-min';
+	font-style: normal;
+	font-weight: normal;
+	src: url('../../fonts/material-min.eot?gllkww');
+	src: url('../../fonts/material-min.eot?gllkww#iefix')
+			format('embedded-opentype'),
+		url('../../fonts/material-min.ttf?gllkww') format('truetype'),
+		url('../../fonts/material-min.woff?gllkww') format('woff'),
+		url('../../fonts/material-min.svg?gllkww#material-min') format('svg');
+	font-display: block;
+}
+
+[class^='material-'],
+[class*=' material-'] {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: 'material-min' !important;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	line-height: 1;
+	text-transform: none;
+	speak: never;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.material-mail_outline::before {
+	content: '\e900';
+}
+.material-arrow_downward::before {
+	content: '\e901';
+}
+.material-launch::before {
+	content: '\e902';
+}
+
+/* icon_fonts_min 追加css */
+[class^='material-'],
+[class*=' material-'] {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	vertical-align: middle;
+}
+
+//遊ゴシック用 ----------
+
+/* 游ゴシック */
+@font-face {
+	font-family: 'Original Yu Gothic';
+	src: local('Yu Gothic Medium');
+	font-weight: 100;
+}
+
+@font-face {
+	font-family: 'Original Yu Gothic';
+	src: local('Yu Gothic Medium');
+	font-weight: 200;
+}
+
+@font-face {
+	font-family: 'Original Yu Gothic';
+	src: local('Yu Gothic Medium');
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: 'Original Yu Gothic';
+	src: local('Yu Gothic Medium');
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: 'Original Yu Gothic';
+	src: local('Yu Gothic Bold');
+	font-weight: bold;
+}
+
+/* 基本font */
+body {
+	font-size: rem(15); //15px
+	@include ff-base_yugo();
+	@include f-base(500, 1.8);
+
+	@include mq() {
+		font-size: rem(17); //17px
+	}
+}
+
+/* heading */
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+	font-style: normal;
+	font-weight: 700;
+	text-align: center;
+	text-indent: 0.1em; //letter-spacingの影響を調整
+	letter-spacing: 0.1em;
+	font-feature-settings: 'palt' 1;
+}
+
+/* font-size -------------------------------------------------- */
+
+/* sp */
+h1,
+.h1 {
+	font-size: rem(40);
+	line-height: 1.4;
+}
+
+h2,
+.h2 {
+	font-size: rem(24);
+	line-height: 1.6;
+}
+
+h3,
+.h3 {
+	font-size: rem(18);
+}
+
+h4,
+.h4 {
+	font-size: rem(15);
+}
+
+h5,
+.h5 {
+	font-size: rem(15);
+}
+
+h6,
+.h6 {
+	font-size: rem(15);
+}
+
+/* pc */
+@include mq() {
+	h1,
+	.h1 {
+		font-size: rem(56);
+		line-height: 1.4;
+	}
+
+	h2,
+	.h2 {
+		font-size: rem(32);
+		line-height: 1.6;
+	}
+
+	h3,
+	.h3 {
+		font-size: rem(24);
+		line-height: 1.6;
+	}
+
+	h4,
+	.h4 {
+		font-size: rem(20);
+	}
+
+	h5,
+	.h5 {
+		font-size: rem(17);
+	}
+
+	h6,
+	.h6 {
+		font-size: rem(17);
+	}
+}
+
+/*! purgecss end ignore */

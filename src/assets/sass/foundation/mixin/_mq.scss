@@ -1,0 +1,16 @@
+// 使用例
+// .foo {
+//   color: blue;
+//   @include mq() { // 引数を省略（初期値はmdの768px）
+//     color: yellow;
+//   }
+//   @include mq(lg) { // 引数を個別に指定
+//     color: red;
+//   }
+// }
+
+@mixin mq($breakpoint: md) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}

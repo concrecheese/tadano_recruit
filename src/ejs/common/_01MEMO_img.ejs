@@ -1,0 +1,18 @@
+<!-- img アスペクト比同じの複数サイズ ブラウザに任せる -->
+<figure class="hero_imgWrap">
+	<img
+		class="hero_img"
+		src="<%= baseMeta.pathsImg %>photo/hero-workplace-4F@1200.jpg"
+		alt="弊社コワーキングスペースの写真"
+		decoding="async"
+		srcset="
+		<%= baseMeta.pathsImg %>photo/<%= baseMeta.heroImgNameCommon %>-400.jpg 400w, 
+		<%= baseMeta.pathsImg %>photo/<%= baseMeta.heroImgNameCommon %>-600.jpg 600w, 
+		<%= baseMeta.pathsImg %>photo/<%= baseMeta.heroImgNameCommon %>-400@2x.jpg 800w, 
+		<%= baseMeta.pathsImg %>photo/<%= baseMeta.heroImgNameCommon %>-1000.jpg 1000w,  
+		<%= baseMeta.pathsImg %>photo/<%= baseMeta.heroImgNameCommon %>-600@2x.jpg 1200w, 
+		<%= baseMeta.pathsImg %>photo/<%= baseMeta.heroImgNameCommon %>-1400.jpg 1400w, 
+		<%= baseMeta.pathsImg %>photo/<%= baseMeta.heroImgNameCommon %>-1000@2x.jpg 2000w, 
+		<%= baseMeta.pathsImg %>photo/<%= baseMeta.heroImgNameCommon %>-1400@2x.jpg 2800w"
+	/>
+</figure>

@@ -1,0 +1,87 @@
+<%# ====================================== head ==================================== _%>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<meta http-equiv="x-ua-compatible" content="ie=edge" />
+	<%# noindex, nofollowで制作中は進めると良い index, followだと書いても意味なし noindex,follow は有用 _%> 
+	<meta name="robots" content="noindex,nofollow" />
+	<%# タイトル descriptionは全角120文字以上は省略される _%>
+	<title><%= baseMeta.title %></title>
+	<meta name="description" content="<%= baseMeta.description %>" />
+	<%# 数字自動リンク化OFF _%>
+	<meta name="format-detection" content="email=no,telephone=no,address=no" />
+	<%#
+
+	====================================== SNS ====================================
+	
+	-%>
+	<%#
+	<meta property="og:url" content="URL" />
+	<meta property="og:title" content="タイトル" />
+	<meta property="og:description" content="抜粋" />
+	<meta property="og:image" content="画像のURL" />
+	<meta property="og:type" content="タイプ" />
+	<meta property="og:site_name" content="サイト名" />
+	<meta property="og:locale" content="ja_JP(ページの言語)" />
+	<meta property="fb:app_id" content="appIDを入力" />
+	<meta name="twitter:card" content="Twitterに表示するカードの種類" />
+	<meta name="twitter:site" content="Twitterのユーザー名(@xxxx)" />
+	_%> 
+	<%#
+
+	====================================== プリロードCSS ====================================
+	
+	-%>
+	<%# クリティカルcss _%>
+	<!-- critical css -->
+	<style>
+		<?php echo(file_get_contents("<%= baseMeta.pathsAssets %>css/critical/<%= baseMeta.pathsThisHtml %>-critical.css"));?>
+	</style>
+	<!-- /critical css -->
+	<%# プリロード メインcssのみ （）_%>
+	<link rel="preload" href="<%= baseMeta.pathsAssets %>css/style.css" as="style" />
+	<%# プリロード非対応ブラウザのためのハック的な書き方 （ポリフィル・loadCSSのかわり） _%>
+	<link rel="stylesheet" href="<%= baseMeta.pathsAssets %>css/style.css" media="print" onload="this.media='all'" />
+	<%#
+
+	====================================== CSS ====================================
+	
+	-%>
+	<%# 普通にcssを読み込みたい場合haはここにnoscriptと同じものをコピペ _%>
+	<%#
+
+	====================================== その他link ====================================
+	
+	-%>
+	<%# WEBフォント _%>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
+	<%# 
+	
+	====================================== 基本script ==================================== 
+	
+	-%>
+	<%# js無効の場合はプリロードするメインcssを普通に読み込む_%>
+	<noscript><link rel="stylesheet" href="<%= baseMeta.pathsAssets %>css/style.css" /></noscript>
+	<script>document.documentElement.classList.remove('js-disabled');</script>
+	<script src="https://polyfill.io/v3/polyfill.min.js?features=es6" defer></script>
+	<%# 
+	
+	====================================== JS ==================================== 
+	
+	-%>
+	<%# JS共通 _%>
+	<script src="<%= baseMeta.pathsAssets %>js/main.js" defer></script>
+	<script src="<%= baseMeta.pathsAssets %>js/vender-swiper.js" defer></script>
+	<%# WEBフォント _%>
+	<%#<script src="https://kit.fontawesome.com/3d88df4780.js" crossorigin="anonymous" defer></script>_%>
+	<%# 
+	
+	====================================== IE対策 ==================================== 
+	
+	-%>
+	<!--[if lt IE 9]>
+		<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>

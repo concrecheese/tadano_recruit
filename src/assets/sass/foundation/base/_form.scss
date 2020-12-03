@@ -38,19 +38,19 @@
 // 	//placeholderの文字色指定
 // 	input::placeholder,
 // 	textarea::placeholder {
-// 		color: transparentize($black, 0.7);
+// 		color: transparentize($cl-black, 0.7);
 // 	}
 
 // 	//IE (疑似クラスで指定)
 // 	input:-ms-input-placeholder,
 // 	textarea:-ms-input-placeholder {
-// 		color: transparentize($black, 0.7);
+// 		color: transparentize($cl-black, 0.7);
 // 	}
 
 // 	//Edge (疑似要素で指定)
 // 	input::-ms-input-placeholder,
 // 	textarea::-ms-input-placeholder {
-// 		color: transparentize($black, 0.7);
+// 		color: transparentize($cl-black, 0.7);
 // 	}
 
 // 	//-------------------------------------------------------------------------------------------
@@ -100,7 +100,7 @@
 // 		font-size: 1.2em;
 // 		// font-weight: 700;
 // 		color: $g100;
-// 		background-color: $black;
+// 		background-color: $cl-black;
 // 		border: none;
 // 		transition: 150ms;
 // 	}

@@ -135,7 +135,7 @@
 			width: 104%;
 			height: rem(1);
 			content: '';
-			background-color: $black;
+			background-color: $cl-black;
 		}
 	}
 
@@ -162,7 +162,7 @@
 	flex-flow: row wrap;
 	padding-top: 2em;
 	padding-bottom: 2em;
-	border-bottom: rem(1) solid $black;
+	border-bottom: rem(1) solid $cl-black;
 
 	@include mq() {
 		flex-flow: row nowrap;
@@ -226,7 +226,7 @@
 			margin-right: 0.5em;
 			font-size: 0.8em;
 			background-color: $g70;
-			// border: rem(1) solid $black;
+			// border: rem(1) solid $cl-black;
 			border-radius: 3em;
 		}
 	}
@@ -269,7 +269,7 @@
 		margin-right: 0.2em; //scaleのため
 		margin-left: 1em; //左隣トノマージン
 		color: $g100;
-		background-color: $black;
+		background-color: $cl-black;
 		border-radius: 50%;
 
 		i {
@@ -299,7 +299,7 @@
 	width: 100%;
 	padding-top: 1.5em;
 	padding-bottom: 1.5em;
-	border-bottom: rem(1) solid $black;
+	border-bottom: rem(1) solid $cl-black;
 
 	//mediaBox ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 

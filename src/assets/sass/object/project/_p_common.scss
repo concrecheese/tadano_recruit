@@ -4,93 +4,76 @@
 
 /* base用 -------------------------------------------------- */
 
-.img {
-	display: block;
-	width: 100%;
-	height: 100%;
-	min-height: rem(150);
-	background-color: rgba($color: blue, $alpha: 0.2);
+// .img {
+// 	display: block;
+// 	width: 100%;
+// 	height: 100%;
+// 	min-height: rem(150);
 
-	img {
-		width: 100%;
-	}
-}
+// 	img {
+// 		width: 100%;
+// 	}
+// }
 
-.card01 {
-	width: 100%;
-	height: 100%;
-	background-color: rgba($color: #000, $alpha: 0.05);
+// .card01 {
+// 	width: 100%;
+// 	height: 100%;
+// 	background-color: rgba($color: #000, $alpha: 0.05);
 
-	&.-info {
-		padding: 10%;
-	}
+// 	&.-info {
+// 		padding: 10%;
+// 	}
 
-	&.-media {
-	}
-}
+// 	&.-media {
+// 	}
+// }
 
 /* base用 common -------------------------------------------------- */
 
-.bottom_btn {
-	margin-top: rem(32);
-	@include mq() {
-		margin-top: rem(64);
-	}
-}
+// .bottom_btn {
+// 	margin-top: rem(32);
+// 	@include mq() {
+// 		margin-top: rem(64);
+// 	}
+// }
 
-.markList {
-	// text-indent: 1em;
-	list-style: square;
-	list-style-position: inside; //マーカーを行の内側から始める
-}
+// .markList {
+// 	// text-indent: 1em;
+// 	list-style: square;
+// 	list-style-position: inside; //マーカーを行の内側から始める
+// }
 
 /* common -------------------------------------------------- */
 
-.title {
-	@include lineHeightCrop(1.8);
-}
+// .title {
+// 	@include lineHeightCrop(1.8);
+// }
 
-.text {
-	@include lineHeightCrop(1.8);
+// .text {
+// 	@include lineHeightCrop(1.8);
 
-	&.-color {
-		font-size: 1.2em;
-		color: $cl-key;
-	}
-}
+// 	&.-color {
+// 		font-size: 1.2em;
+// 		color: $cl-key;
+// 	}
+// }
 
-.sliderBox {
-	width: 100%;
-	padding: rem(32);
-}
+// .sliderBox {
+// 	width: 100%;
+// 	padding: rem(32);
+// }
 
-/* 上層のdllist */
-.dllist.-upper {
-	//上層のset
-	& > .box {
-		display: flex;
-		flex-flow: row wrap;
+//visibleのスワイパーを囲むもの
+.sliderContainer {
+	position: relative; //swipercontainer外のnavなどの配置のため
+	overflow: hidden;
 
-		.title {
-			flex: 0 0 6em;
-		}
-
-		.text {
-			flex: 1 1 rem(300);
-		}
-	}
-}
-
-/* 下層のdllist */
-.dllist.-under {
-	& > .box {
-		.title {
-		}
-
-		.text {
-			padding-left: 1em;
-		}
-	}
+	// & + & {
+	// 	margin-top: rem(40);
+	// 	@include mq() {
+	// 		margin-top: rem(64);
+	// 	}
+	// }
 }
 
 /* section -------------------------------------------------- */
@@ -154,12 +137,104 @@
 	}
 }
 
+/* PRODUCT -------------------------------------------------- */
+
+.product_img {
+	background-color: rgba($color: #000, $alpha: 0.2);
+}
+
+//インナーがわり
+.productThumbs {
+	width: 84%; //375pxに対し左右に30px
+	max-width: rem(600);
+	margin-top: rem(16);
+	margin-right: auto;
+	margin-left: auto;
+
+	@include mq() {
+		margin-top: rem(24);
+	}
+}
+
+//要素
+.productThumbs {
+	&_title {
+		@include lineHeightCrop(1.8);
+
+		position: relative;
+		padding-bottom: rem(16 + 2); //余白+装飾ラインの太さ
+		color: #fff;
+
+		//見出し下のライン
+		&::before {
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			display: block;
+			width: rem(40);
+			height: rem(2);
+			margin-left: rem(-20); //半分
+			content: '';
+			background-color: currentColor;
+		}
+	}
+
+	&_text {
+		@include lineHeightCrop(1.8);
+
+		margin-top: rem(16);
+		font-size: 0.6rem;
+		font-weight: 400;
+		color: #fff;
+	}
+}
+
+/* STAFF -------------------------------------------------- */
+
+.staff_card {
+}
+
+.staff_info {
+}
+
+.staff_media {
+}
+
+.staff {
+	&_text {
+		color: $cl-white;
+	}
+}
+
+/* COMPANY -------------------------------------------------- */
+
+.basic_card {
+}
+
+.company_info {
+}
+
+.company_media {
+}
+
+/* OFFICE -------------------------------------------------- */
+
+.office_info {
+}
+
+.office_media {
+	display: flex;
+}
+.office_img {
+	width: 100%;
+}
+
 /* section -------------------------------------------------- */
 
 .recruitCard {
 	display: flex;
 	flex-flow: column-reverse nowrap;
-	background-color: $cl-whiteBase;
+	background-color: $cl-white;
 }
 
 //=========================================================================

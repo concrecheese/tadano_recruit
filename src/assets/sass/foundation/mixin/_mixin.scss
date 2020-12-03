@@ -6,6 +6,36 @@
 //     'Noto Sans Emoji';
 // }
 
+// magine -------------------------------------------------------
+
+// $space-s: rem(16);
+// $space-s: rem(8);
+// $space-s: ;
+// $space-s: ;
+// $space-s: ;
+
+//上下にある余白
+@mixin space-tb($morp: padding) {
+	#{$morp}-top: rem(16);
+	#{$morp}-bottom: rem(16);
+}
+
+//margin-top
+
+@mixin mt-xs($morp: margin) {
+	#{$morp}-top: rem(8);
+	@include mq() {
+		#{$morp}-top: rem(16);
+	}
+}
+
+@mixin mt-s($morp: margin) {
+	#{$morp}-top: rem(16);
+	@include mq() {
+		#{$morp}-top: rem(24);
+	}
+}
+
 // scrollbar -------------------------------------------------------
 
 @mixin bodyScrollbar() {

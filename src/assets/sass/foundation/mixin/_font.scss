@@ -1,59 +1,6 @@
 //フォントファミリーなどクラス名増やさないためにsass上でまとめる。
 //呼び出し方 @include AAA();
 
-// フォント設定 --------------------------------------------------
-
-//base
-@mixin f-base($weight: 400, $lineHight: 1.8) {
-	font-style: normal;
-	font-weight: $weight;
-	line-height: $lineHight;
-	color: $black;
-	text-align: justify;
-	letter-spacing: 0.06em;
-	font-feature-settings: 'palt' 1;
-}
-
-//ボタン用
-@mixin f-btn($weight: 700, $lineHight: 1.8) {
-	font-style: normal;
-	font-weight: $weight;
-	line-height: $lineHight;
-	text-align: center;
-	text-indent: 0.1em; //letter-spacingの影響を調整
-	letter-spacing: 0.1em;
-	font-feature-settings: 'palt' 1;
-}
-
-// フォントファミリー --------------------------------------------------
-
-//遊ゴ基本
-@mixin ff-base_yugo() {
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-		'Original Yu Gothic', 'Yu Gothic', 'Hiragino Sans', 'Noto Sans CJK JP',
-		sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-		'Noto Sans Emoji';
-}
-
-//ヒラギノ基本
-@mixin ff-base_hira() {
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-		'Hiragino Sans', 'Noto Sans CJK JP', 'Original Yu Gothic', 'Yu Gothic',
-		sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-		'Noto Sans Emoji';
-}
-
-//ファミリー別
-
-//日本語
-@mixin ff-noto() {
-	font-family: 'Noto Sans JP', sans-serif;
-}
-
-//英語
-@mixin ff-() {
-}
-
 // line-height --------------------------------------------------
 
 // lineHeightCrop（line-heightの不要な余白を打ち消す）のmixinのコード例。
@@ -74,3 +21,170 @@
 		content: '';
 	}
 }
+
+// フォント設定 --------------------------------------------------
+
+//base
+@mixin fs-base($weight: 400, $lineHight: 1.8) {
+	font-style: normal;
+	font-weight: $weight;
+	line-height: $lineHight;
+	color: $cl-black;
+	text-align: justify;
+	letter-spacing: 0.1em;
+	font-feature-settings: 'palt' 1;
+}
+
+//title
+@mixin fs-title($letterSpacing: 0.15) {
+	font-style: normal;
+	font-weight: 700;
+	text-align: left;
+	letter-spacing: #{$letterSpacing}em;
+	font-feature-settings: 'palt' 1;
+}
+
+//ボタン用
+@mixin fs-btn($weight: 700, $lineHight: 1.8) {
+	font-style: normal;
+	font-weight: $weight;
+	line-height: $lineHight;
+	text-align: center;
+	text-indent: 0.1em; //letter-spacingの影響を調整
+	letter-spacing: 0.1em;
+	font-feature-settings: 'palt' 1;
+}
+
+// フォントファミリー --------------------------------------------------
+
+//遊ゴ基本
+$ff-base_yugo: -apple-system, blinkmacsystemfont, 'Segoe UI', roboto,
+	'Original Yu Gothic', 'Yu Gothic', 'Hiragino Sans', 'Noto Sans CJK JP',
+	sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+	'Noto Sans Emoji';
+
+//遊ゴ基本
+@mixin ff-base_yugo() {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		'Original Yu Gothic', 'Yu Gothic', 'Hiragino Sans', 'Noto Sans CJK JP',
+		sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+		'Noto Sans Emoji';
+}
+
+//ヒラギノ基本
+@mixin ff-base_hira() {
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+		'Hiragino Sans', 'Noto Sans CJK JP', 'Original Yu Gothic', 'Yu Gothic',
+		sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+		'Noto Sans Emoji';
+}
+
+//遊ゴ設定
+@mixin yugoInfo() {
+	@font-face {
+		font-family: 'Original Yu Gothic';
+		src: local('Yu Gothic Medium');
+		font-weight: 100;
+	}
+
+	@font-face {
+		font-family: 'Original Yu Gothic';
+		src: local('Yu Gothic Medium');
+		font-weight: 200;
+	}
+
+	@font-face {
+		font-family: 'Original Yu Gothic';
+		src: local('Yu Gothic Medium');
+		font-weight: 300;
+	}
+
+	@font-face {
+		font-family: 'Original Yu Gothic';
+		src: local('Yu Gothic Medium');
+		font-weight: 400;
+	}
+
+	@font-face {
+		font-family: 'Original Yu Gothic';
+		src: local('Yu Gothic Bold');
+		font-weight: bold;
+	}
+}
+
+//PROJECT FONTFAMILY --------------------------------------------------
+
+//日本語
+@mixin ff-jp() {
+	font-family: 'Noto Sans JP', sans-serif;
+}
+
+//英語
+@mixin ff-en() {
+	font-family: 'Oswald', 'Noto Sans JP', sans-serif;
+}
+
+//PROJECT FONT --------------------------------------------------
+
+// @mixin f-h1() {
+// 	@include ff-jp();
+
+// 	font-size: rem(32);
+// 	line-height: 1.8;
+
+// 	@include mq() {
+// 		font-size: rem(48);
+// 	}
+
+// 	@include mq(lg) {
+// 		font-size: rem(56);
+// 	}
+// }
+
+// @mixin f-h2() {
+// 	@include f-title(0.06);
+// 	@include ff-jp();
+
+// 	font-size: rem(32);
+// 	line-height: 1.6;
+// 	@include mq() {
+// 		font-size: rem(48);
+// 	}
+// }
+
+// @mixin f-h3() {
+// 	@include ff-jp();
+
+// 	font-size: rem(20);
+// 	line-height: 1.6;
+// 	@include mq() {
+// 		font-size: rem(24);
+// 	}
+// }
+
+// @mixin f-h4() {
+// 	@include ff-jp();
+
+// 	font-size: rem(18);
+// 	@include mq() {
+// 		font-size: rem(20);
+// 	}
+// }
+
+// @mixin f-h5() {
+// 	@include ff-jp();
+
+// 	font-size: rem(15);
+// 	@include mq() {
+// 		font-size: rem(17);
+// 	}
+// }
+
+// @mixin f-h6() {
+// 	@include ff-jp();
+
+// 	font-size: rem(15);
+// 	@include mq() {
+// 		font-size: rem(17);
+// 	}
+// }

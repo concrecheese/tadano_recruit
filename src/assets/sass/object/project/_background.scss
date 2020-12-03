@@ -20,7 +20,7 @@
 }
 
 /* 背景色 白 */
-.background.-primary {
+.background.-white {
 	position: relative;
 
 	&::before {
@@ -36,8 +36,25 @@
 	}
 }
 
-/* 背景色 青みのある白 */
-.background.-secondary {
+/* 背景色  */
+.background.-light {
+	position: relative;
+
+	&::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 100%;
+		content: '';
+		// background-image: linear-gradient(45deg, #dfe9f7, #dff7e9);
+		background-color: $cl-white;
+	}
+}
+
+/* 背景色  */
+.background.-middle {
 	position: relative;
 
 	&::before {
@@ -49,6 +66,25 @@
 		height: 100%;
 		content: '';
 		background-color: #f4f9f8;
+	}
+}
+
+/* グラデーション背景 濃い */
+.background.-deep {
+	position: relative;
+
+	&::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 100%;
+		content: '';
+
+		@include gr-key();
+
+		opacity: 0.2;
 	}
 }
 
@@ -86,6 +122,57 @@
 		background-color: #f4f9f8;
 		transform: rotate(-22.5deg);
 		transform-origin: bottom right;
+	}
+}
+
+/* centerTriangle */
+//下向きの中心にある二等辺三角形
+.background.-centerTriangle {
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		display: block;
+		width: 0;
+		height: 0;
+		content: '';
+		border-color: $cl-key transparent transparent transparent;
+		border-style: solid;
+		border-width: rem(240) rem(240) 0 rem(240); //最初のが高さに相当
+		opacity: 0.06;
+		transform: translateX(-50%);
+
+		@include mq() {
+			border-width: rem(320) rem(320) 0 rem(320); //最初のが高さに相当
+		}
+
+		@include mq(lg) {
+			border-width: rem(400) rem(400) 0 rem(400); //最初のが高さに相当
+		}
+	}
+}
+
+/* centerTriangle */
+//下向きの中心にある二等辺三角形
+.background.-centerTriangle01 {
+	position: relative;
+	overflow: hidden;
+
+	&::before {
+		position: absolute;
+		top: rem(-1050); //三角が見える範囲（サイズ）数値が
+		left: 50%; //支点
+		display: block;
+		width: rem(1000);
+		height: rem(1000); //三角のサイズここでは大きめに作って上で調整
+		content: '';
+		background-color: $cl-key;
+		opacity: 0.07;
+		transform: rotate(45deg);
+		transform-origin: top left;
 	}
 }
 
@@ -147,3 +234,48 @@
 		opacity: 0.1;
 	}
 }
+
+//--------------
+
+.background.-heroImg {
+	position: relative;
+
+	&::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 100%;
+		content: '';
+		border-radius: 0 0 0 rem(32);
+		@include gr-key();
+
+		opacity: 0.2;
+
+		@include mq(sm) {
+			border-radius: rem(32) 0 0 rem(32);
+		}
+
+		@include mq() {
+			border-radius: rem(104) 0 0 rem(104);
+		}
+	}
+}
+
+// .background.-project {
+// 	position: relative;
+
+// 	&::before {
+// 		position: absolute;
+// 		top: rem(16);
+// 		left: rem(16);
+// 		display: block;
+// 		width: 100%;
+// 		height: 100%;
+// 		content: '';
+// 		@include gr-key();
+
+// 		opacity: 0.5;
+// 	}
+// }

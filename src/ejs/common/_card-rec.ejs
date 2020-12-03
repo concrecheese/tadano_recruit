@@ -1,0 +1,32 @@
+<%# 使い方 include( baseMeta.pathsEjsCommon + "_card-rec", {title:'',jobCategory: '',money:'',location:'',period:'',outline:'',}); %>
+
+<div class="project_card">
+	<div class="project_cardWrap c-deco-arrow">
+		<h3 class="h5 project_title"><%= title %></h3>
+
+		<dl class="dlList -border">
+			<div class="box">
+				<dt class="title"><span class="icon iconmin business_center"></span>職種</dt>
+				<dd class="text"><%= jobCategory %></dd>
+			</div>
+			<div class="box">
+				<dt class="title">
+					<span class="icon"><span class="iconmin attach_money"></span></span>職種報酬金額<span class="u-text-xxs">（月額）</span>
+				</dt>
+				<dd class="text"><%= money %></dd>
+			</div>
+			<div class="box">
+				<dt class="title"><span class="icon iconmin location_on"></span>勤務地<span class="u-text-xxs">（都道府県）</span></dt>
+				<dd class="text"><%= location %></dd>
+			</div>
+			<div class="box">
+				<dt class="title"><span class="icon iconmin calendar_today"></span>稼働期間</dt>
+				<dd class="text"><%= period %></dd>
+			</div>
+			<div class="box">
+				<dt class="title"><span class="icon iconmin text_snippet"></span>業務内容</dt>
+				<dd class="text -long -noColor"><%= outline %></dd>
+			</div>
+		</dl>
+	</div>
+</div>

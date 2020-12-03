@@ -1,0 +1,185 @@
+//１行バッジ
+
+//ホバー時のボタンデザイン
+.badge.-row {
+	position: relative;
+	z-index: 2;
+	display: inline-flex;
+	align-content: center; //wrapの場合はこっち
+	align-items: center; //1列になったらこっちで中央に 両方書いておく。
+	justify-content: center;
+	width: 100%;
+	max-width: rem(160);
+	height: rem(48);
+	margin-bottom: rem(10); //下にボタンなどある前提のもの
+	text-align: center;
+	background-color: $cl-point-change;
+	border-radius: 10em 10em 10em 0;
+
+	//背景 通常状態
+	&::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		display: block;
+		width: 100%;
+		height: 100%;
+		content: '';
+		background-color: $cl-point;
+		border-radius: 10em 10em 10em 0;
+		opacity: 1;
+		transition: 200ms;
+
+		//btnBoxをhoverで透明に
+		.btnBox:hover & {
+			opacity: 0;
+		}
+	}
+
+	.text {
+		position: relative; //zindex
+		z-index: 1;
+		color: #fff;
+	}
+}
+
+//SPでは１行バッジ・PCでは丸いバッジ
+//hover後のカラー
+.badge.-shortTime {
+	position: relative;
+	z-index: 2;
+	display: inline-flex;
+	flex-flow: row wrap;
+	align-content: center; //wrapの場合はこっち
+	align-items: center; //1列になったらこっちで中央に 両方書いておく。
+	justify-content: center;
+	width: 100%;
+	max-width: rem(160);
+	height: rem(48);
+	color: #fff;
+	text-align: center;
+	background-color: $cl-point-change;
+	border-radius: 10em 10em 10em 0;
+
+	@include mq(lg) {
+		width: rem(96);
+		height: rem(96);
+		border-radius: 10em;
+	}
+
+	//背景 通常状態のカラー
+	&::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		// z-index: 1;
+		display: block;
+		width: 100%;
+		height: 100%;
+		content: '';
+		background-color: $cl-point;
+		border-radius: 10em 10em 10em 0;
+		opacity: 1;
+		transition: 200ms;
+
+		@include mq(lg) {
+			border-radius: 10em;
+		}
+
+		//btnBoxをhoverで透明に
+		.btnBox:hover & {
+			opacity: 0;
+		}
+	}
+
+	//標準サイズ文字が中心のbox
+	.box {
+		@include lineHeightCrop(1.8); //ここ
+
+		position: relative;
+		z-index: 1;
+		color: #fff;
+
+		@include mq(lg) {
+			flex: 0 0 100%;
+		}
+	}
+
+	.text {
+	}
+
+	//大きい文字が中心のbox
+	.text.-lg {
+		@include mq(lg) {
+			font-size: 1.8em;
+		}
+	}
+}
+
+//丸いバッジ
+//lineHeightCropを使いたいのでfontsizeは親の.boxで指定。
+//box内でsizeの違うフォントがあれば、.text.-small等で指定。
+.badge.-ciecle {
+	position: relative;
+	display: flex;
+	flex-flow: row wrap;
+	align-content: center; //wrapの場合はこっち
+	align-items: center; //1列になったらこっちで中央に 両方書いておく。
+	justify-content: center;
+	width: rem(100);
+	height: rem(100);
+	color: #fff;
+	text-align: center;
+
+	//標準サイズ文字が中心のbox
+	.box {
+		@include lineHeightCrop(1.8);
+	}
+
+	//大きい文字が中心のbox
+	.box.-textLarge {
+		font-size: 2em;
+	}
+
+	//小さい文字が中心のbox
+	.box.-textSmall {
+		font-size: 0.8em;
+	}
+
+	//背景 擬似要素
+	&::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		display: block;
+		width: 100%;
+		height: 100%;
+		content: '';
+		background-color: $cl-point;
+		border-radius: 10em;
+	}
+}
+
+//緑のポイントアイコン
+.badge.-num {
+	@include ff-en();
+
+	display: inline-block;
+	color: $cl-key;
+	text-align: center;
+
+	& > .text {
+		display: block;
+		line-height: 1;
+	}
+
+	& > .text.-sub {
+		font-size: 1em;
+	}
+
+	& > .text.-main {
+		font-size: 2.5em;
+	}
+}

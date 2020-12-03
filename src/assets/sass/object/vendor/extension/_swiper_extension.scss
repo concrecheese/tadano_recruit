@@ -1,13 +1,19 @@
-/* swiper external -------------------------------------------------- */
-
-//swaiper自体の幅は一番外側のswiper-containerで調整。
-//隠れてるカードを表示したい時もswiper-containerにoverflow: visibleを。
-
-//
-//
-//
-
 /*! purgecss start ignore */
+
+//MEMO
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* swiper external -------------------------------------------------- */
 
 /* common-------------------- */
 
@@ -25,17 +31,6 @@
 .swiper-slide {
 }
 
-/* navigation */
-//デフォルトの矢印はafter要素に付いてるので、消したい場合はそれを上書き・
-
-//進む
-.swiper-button-next {
-}
-
-//戻る
-.swiper-button-prev {
-}
-
 /* pagination */
 .swiper-pagination {
 	position: static;
@@ -45,21 +40,21 @@
 	// text-align: center;
 	// transition: 300ms opacity;
 	// transform: translate3d(0, 0, 0);
-	margin-top: rem(24); //マージン追加
+	margin-top: rem(32); //マージン追加 wrapperとの距離
 }
 
 /* bullets */
 .swiper-pagination-bullet {
 	// display: inline-block;
-	width: rem(16);
-	height: rem(8);
+	width: rem(12);
+	height: rem(12);
 	background: $cl-key; //new
-	border-radius: 10em;
-	// opacity: 0.2;
+	// border-radius: 100%;
+	opacity: 0.2;
 
 	@include mq() {
-		width: rem(32);
-		height: rem(8);
+		width: rem(16);
+		height: rem(16);
 	}
 
 	& + & {
@@ -67,10 +62,27 @@
 	}
 }
 
-/* bullet-active */
+//active
 .swiper-pagination-bullet-active {
 	background: $cl-key; //new
-	// opacity: 1;
+	opacity: 1;
+}
+
+/* progressbar */
+//透明度を変えたらactiveな部分も透明になってしまうので、色を個別指定
+.swiper-pagination-progressbar {
+	top: auto; //表示位置のデフォルトを変更
+	bottom: 0; // 表示位置を下に
+	height: rem(8);
+	background: $cl-base-blue();
+	border-radius: 10em;
+}
+
+//active
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+	overflow: hidden;
+	background: $cl-key();
+	border-radius: 10em;
 }
 
 /* swiper01-------------------- */
@@ -85,10 +97,6 @@
 
 /* swiper02-------------------- */
 
-.slider_img {
-	background-color: #000;
-}
-
 //メイン
 .swiper-container.-product {
 	$transition: 600ms;
@@ -97,8 +105,6 @@
 	.swiper-slide {
 		transition: $transition;
 		transform: scale(0.6);
-		.slider_img {
-		}
 	}
 
 	//見えているスライド

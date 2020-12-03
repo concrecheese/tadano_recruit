@@ -1,0 +1,127 @@
+/* 上層のdllist */
+.dllist.-upper {
+	& > .box {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: start;
+
+		& > .title {
+			flex: 0 0 9em; //最低
+			padding-top: 0.5em;
+			padding-bottom: 0.5em;
+			border-right: rem(1) solid $cl-black-l;
+		}
+
+		& > .text {
+			flex: 0 1 calc(100% - 9em); //title
+			padding-top: 0.5em;
+			padding-bottom: 0.5em;
+			margin-left: auto; //大事
+			// padding-left: 2em; //アイコンとアイコンの余白分
+
+			@include mq() {
+				flex: 0 1 calc(100% - 8em); //title
+			}
+		}
+	}
+}
+
+/* 下層のdllist */
+.dllist.-under {
+	& > .box {
+		display: flex;
+		flex-flow: row wrap;
+		align-content: center;
+		justify-content: start;
+
+		& > .title {
+			flex: 1 1 100%; //
+			padding-top: 0.5em;
+			padding-bottom: 0.5em;
+		}
+
+		& > .text {
+			flex: 1 1 100%; //
+			padding-top: 0.5em;
+			padding-bottom: 0.5em;
+			padding-left: 1em;
+		}
+	}
+}
+
+//主にdllist
+//ボーダーを付ける関係で改行はブレイクポイント依存で
+.dlList01 {
+	& > .box {
+		display: flex;
+		flex-flow: row wrap;
+		align-content: center;
+		justify-content: start;
+
+		//アイコン
+		.icon {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			width: 2em;
+			color: $cl-key;
+
+			//アイコンフォント自体
+			span {
+				font-size: 1.2em;
+			}
+		}
+
+		//dt
+		& > .title {
+			flex: 1 0 11em; //最低10em。borderのためにのばす
+			padding-top: 0.5em;
+			padding-bottom: 0.5em;
+
+			@include mq(lg) {
+				flex: 0 0 11em; //２列になり幅がないので最小幅で
+			}
+		}
+
+		//dd
+		//改行はこのdtを基準にする
+		& > .text {
+			flex: 1 1 100%; //１行
+			padding-top: 0.5em;
+			padding-bottom: 0.5em;
+			padding-left: 2em; //アイコンとアイコンの余白分
+
+			@include mq(lg) {
+				flex: 1 1 50%; //2行に
+			}
+		}
+
+		//dd 長い文章用
+		& > .text.-long {
+			flex: 1 1 100%;
+		}
+	}
+}
+
+//ボーダーはブレイクポイント依存
+.dlList01.-border {
+	& > .box {
+		& > .title {
+			background-color: #0001;
+
+			@include mq(lg) {
+				background-color: unset;
+			}
+		}
+	}
+
+	& > .box:nth-of-type(odd) {
+		@include mq(lg) {
+			background-color: #0001;
+		}
+
+		.-noColor {
+			background: #fff;
+		}
+	}
+}

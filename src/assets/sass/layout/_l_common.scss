@@ -72,6 +72,16 @@
 	&.-full {
 		width: 100%;
 	}
+
+	//project
+	&.-card {
+		width: 100%;
+		max-width: rem(1000);
+
+		@include mq() {
+			width: 94.66%;
+		}
+	}
 }
 
 // col margin __________________________________________

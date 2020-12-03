@@ -1,0 +1,15 @@
+<% const baseMeta = { pathsEjsCommon:'./', pathsAssets:'./assets/', pathsImg:'./assets/img/', }; %>
+
+<div class="staff_card">
+	<div class="flexWrap -wraoReverse">
+		<div class="staff_info">
+			<h3 class="heading <%= modifire %>"><span class="text -sub"><%= subText %></span><span class="text -main"><%= mainText %></span></h3>
+
+			<p class="staff_text"><%= text %></p>
+		</div>
+
+		<figure class="staff_media">
+			<img src="<%= baseMeta.pathsImg %><%= media %>" alt="<%= alt %>" width="300" height="200" decoding="async" />
+		</figure>
+	</div>
+</div>

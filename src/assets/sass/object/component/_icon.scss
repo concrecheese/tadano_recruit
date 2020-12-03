@@ -51,7 +51,7 @@
 	width: 50%; //％を使うならbuttonを基準にabsoluteに
 	height: 50%;
 	margin: auto;
-	// color: $black;
+	// color: $cl-black;
 	vertical-align: middle; //button要素の中に入った時の下の空きを無くす
 	// background-color: green;
 
@@ -280,7 +280,7 @@
 		width: rem(10);
 		height: rem(1);
 		content: '';
-		background-color: $black;
+		background-color: $cl-black;
 		@include mq() {
 			right: rem(-16);
 			width: rem(24);

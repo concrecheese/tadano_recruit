@@ -51,15 +51,10 @@ $g100: rgba(255, 255, 255, 1);
 
 //ブランドカラー
 
-$color-twitter: hsla(206, 64%, 63%, 1); //#55acee
-$color-facebook: hsla(221, 61%, 41%, 1); //#3b5998
-$color-youtube: hsla(0, 100%, 50%, 1); //#FF0000
-$color-youtubeBlack: hsla(0, 0%, 16%, 1); //#282828
-
-$color-twitter: #55acee;
-$color-facebook: #3b5998;
-$color-youtube: #3b5998;
-$color-youtubeBlack: #282828;
+$cl-twitter: #55acee;
+$cl-facebook: #3b5998;
+$cl-youtube: #f00;
+$cl-youtubeBlack: #282828;
 
 // PROJECT -------------------------------------------------------
 
@@ -67,43 +62,74 @@ $color-youtubeBlack: #282828;
 $cl-focus: #ff409f;
 
 //黒
-$black: #333; //
+$cl-black: #1a1a1a; //
+$cl-black-l: #4d4d4d; //
 
 //白
-$cl-whiteBase: #f2f5fa;
+$cl-white: #f2f5fa; //かぎりなく白に近い色
+$cl-white-l: #000; //
 
-//ベースカラー
+//ベースカラー 範囲の大きい色背景色中心
 $cl-base: #1d4c94;
 $cl-base-l: #1d4c94;
 $cl-base-d: #173c73;
 
-//キーカラー
+$cl-base-green: #000;
+$cl-base-blue: #000;
+
+//キーカラー メインカラー
 $cl-key: #4887ff;
-$cl-key-l: #00b377;
+$cl-key-l: #000;
 $cl-key-d: #337aff;
 
-//ポイントカラー
+//ポイントカラー 差し色
 $cl-point: #2fa3bd;
 $cl-point-l: #73d0e6;
 $cl-point-d: #000;
 
+$cl-point-change: #ff5de6;
+
 $ctaColor: #ff409f;
 
-// フォーム関係 -------------------------------------------------------
+// PROJECT グラデーション -------------------------------------------------------
 
-//必須
-$cl-required: #f09d89;
+@mixin gr-key($deg: 45) {
+	background-image: linear-gradient(#{$deg}deg, #00b36e 0%, #00b2ab 100%);
+}
 
-//任意
+@mixin gr-key-change($deg: 45) {
+	background-image: linear-gradient(#{$deg}deg, #27c488 0%, #50b9e8 100%);
+}
+
+@mixin gr-key-l($deg: 45) {
+	background-image: linear-gradient(#{$deg}deg, #dfe9f7 0%, #dff7e9 100%);
+}
+
+// PROJECT シャドウ -------------------------------------------------------
+
+@mixin shadow-key($x: 0, $y: rem(10), $size: rem(20), $opacity: 0.2) {
+	box-shadow: $x $y $size rgba(71, 163, 204, $opacity);
+}
 
 // 場所依存 -------------------------------------------------------
+
 //基本上記のものを使って指定。直接色を書かない
 
 //body要素に色をつける場合
 $cl-body: $cl-base;
+
+//button
+
+//ローディングの背景色
+$loading-back: $cl-key;
 
 //スクロールバー
 $cl-scrollbar-back: #0001;
 $cl-scrollbar-thumb: #000;
 $cl-scrollbar-thumbBorder: #0000; //thumbに上乗せされるから不透明だと色濁る
 $cl-scrollbar-hover: $cl-key;
+
+// フォーム関係 -------------
+
+//必須
+$cl-required: #f09d89;

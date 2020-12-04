@@ -108,7 +108,7 @@ $ctaColor: #ff409f;
 // PROJECT シャドウ -------------------------------------------------------
 
 @mixin shadow-key($x: 0, $y: rem(10), $size: rem(20), $opacity: 0.2) {
-	box-shadow: $x $y $size rgba(71, 163, 204, $opacity);
+	box-shadow: $x $y $size rgba(72, 135, 255, $opacity);
 }
 
 // 場所依存 -------------------------------------------------------

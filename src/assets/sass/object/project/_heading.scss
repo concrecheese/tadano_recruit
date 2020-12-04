@@ -21,13 +21,8 @@
 .heading2 {
 	position: relative;
 	padding-bottom: rem(24 + 5); //余白+装飾ラインの太さ
-	margin-bottom: rem(40); //共通のマージン
 	color: $cl-point;
 	text-align: center;
-
-	@include mq() {
-		margin-bottom: rem(64);
-	}
 
 	//見出し下のライン
 	&::before {
@@ -42,6 +37,23 @@
 		background-color: currentColor;
 	}
 
+	//全体を囲むラップ
+	&_wrap {
+		margin-bottom: rem(40); //共通のマージン
+
+		@include mq() {
+			margin-bottom: rem(64);
+		}
+	}
+
+	//リード
+	&_read {
+		margin-top: rem(24);
+		font-weight: 700;
+		color: $cl-base;
+		text-align: center;
+	}
+
 	//サブテキスト
 	&_text.-sub {
 		// @include ff-en();
@@ -51,9 +63,6 @@
 		font-weight: 400;
 		line-height: 1;
 		// color: rgba($color: #fff, $alpha: 0.6);
-
-		@include mq() {
-		}
 	}
 
 	//メインテキスト
@@ -66,10 +75,24 @@
 	}
 }
 
-//黒文字ver
+//ver
 .heading2 {
-	&.-deep &_text.-main {
-		color: $cl-black;
+	//黒文字・ポイントカラー
+	&.-black {
+		// color: $cl-key;
+
+		.heading2_text.-main {
+			color: $cl-black;
+		}
+	}
+
+	//青文字・キーカラー
+	&.-deep {
+		color: $cl-key;
+
+		.heading2_text.-main {
+			color: $cl-base;
+		}
 	}
 }
 
@@ -119,5 +142,12 @@
 		line-height: 1;
 		color: #fff;
 		// letter-spacing: 0;
+	}
+}
+
+//黒文字ver
+.heading3 {
+	&.-deep &_text.-main {
+		color: $cl-black;
 	}
 }

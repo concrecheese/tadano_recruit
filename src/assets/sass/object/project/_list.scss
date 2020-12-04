@@ -1,32 +1,34 @@
-/* 上層のdllist */
+//上層のdllist
+//wrapはddの中に別のlistなどが入るpaddingの無い中身を包むだけのもの
 .dllist.-upper {
 	& > .box {
 		display: flex;
 		flex-flow: row wrap;
+		align-items: flex-start;
 		justify-content: start;
 
 		& > .title {
-			flex: 0 0 9em; //最低
+			flex: 0 0 8em; //最低
 			padding-top: 0.5em;
 			padding-bottom: 0.5em;
-			border-right: rem(1) solid $cl-black-l;
+		}
+
+		& > .wrap,
+		& > .text {
+			flex: 0 1 calc(100% - 8em); //title
+			padding-left: 2em; //borderのための余白
+			margin-left: auto; //大事
+			border-left: rem(1) solid $cl-black-l;
 		}
 
 		& > .text {
-			flex: 0 1 calc(100% - 9em); //title
 			padding-top: 0.5em;
 			padding-bottom: 0.5em;
-			margin-left: auto; //大事
-			// padding-left: 2em; //アイコンとアイコンの余白分
-
-			@include mq() {
-				flex: 0 1 calc(100% - 8em); //title
-			}
 		}
 	}
 }
 
-/* 下層のdllist */
+//下層のdllist
 .dllist.-under {
 	& > .box {
 		display: flex;
@@ -40,11 +42,15 @@
 			padding-bottom: 0.5em;
 		}
 
+		& > .wrap,
 		& > .text {
 			flex: 1 1 100%; //
+			padding-left: 1em;
+		}
+
+		& > .text {
 			padding-top: 0.5em;
 			padding-bottom: 0.5em;
-			padding-left: 1em;
 		}
 	}
 }

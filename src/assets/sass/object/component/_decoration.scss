@@ -1,4 +1,93 @@
-// /* decoration -------------------------------------------------- */
+//  decoration --------------------------------------------------
+
+//左上と右下に「」を。
+.c-angle.-set {
+	position: relative;
+
+	&::before {
+		position: absolute;
+		top: 0.5em;
+		left: 0.5em;
+		display: block;
+		width: 2em;
+		height: 2em;
+		content: '';
+		border-top: rem(6) solid $cl-key;
+		border-left: rem(6) solid $cl-key;
+	}
+
+	&::after {
+		position: absolute;
+		right: 0.5em;
+		bottom: 0.5em;
+		display: block;
+		width: 2em;
+		height: 2em;
+		content: '';
+		border-right: rem(6) solid $cl-key;
+		border-bottom: rem(6) solid $cl-key;
+	}
+}
+
+.c-angle {
+	position: relative;
+
+	//左上
+	&.-tl {
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			width: 3.5em;
+			height: 3.5em;
+			content: '';
+			border-top: 1.5em solid $cl-key;
+			border-left: 1.5em solid $cl-key;
+		}
+	}
+
+	//右下
+	&.-br {
+		&::after {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			display: block;
+			width: 3.5em;
+			height: 3.5em;
+			content: '';
+			border-right: 1.5em solid $cl-key;
+			border-bottom: 1.5em solid $cl-key;
+		}
+	}
+}
+
+//両側に扇状の線の入ったテキスト/
+.balloonLine {
+	position: relative;
+
+	&::before,
+	&::after {
+		position: absolute;
+		top: 0;
+		display: block;
+		width: rem(4);
+		height: 2em;
+		content: '';
+		background-color: currentColor;
+	}
+
+	&::before {
+		left: 0;
+		transform: rotate(-30deg);
+	}
+
+	&::after {
+		right: 0;
+		transform: rotate(30deg);
+	}
+}
 
 // //装飾系 ________________________________________________
 

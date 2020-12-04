@@ -32,6 +32,21 @@
 	display: inline-block;
 }
 
+.u-newLineSp {
+	display: inline;
+
+	@include mq(sm) {
+		display: inline-block;
+	}
+}
+
+.u-newLinePc {
+	display: inline;
+	@include mq() {
+		display: inline-block;
+	}
+}
+
 // .u-br {
 // 	&.-spOnly {
 // 		display: inline-block;
@@ -53,39 +68,34 @@
 // レスポンシブではない、あくまで汎用的な固定フォントサイズ？
 
 .u-text-xxl {
-	font-size: rem(24);
-	line-height: 1.6;
+	font-size: 2rem;
 }
 
 .u-text-xl {
-	font-size: rem(22);
-	line-height: 1.6;
+	font-size: 1.5rem;
 }
 
 .u-text-l {
-	font-size: rem(18);
-	line-height: 1.6;
+	font-size: 1.2rem;
 }
 
 .u-text-m {
-	font-size: rem(16);
-	line-height: 1.6;
+	font-size: 1rem;
 }
 
 .u-text-s {
-	font-size: rem(14);
-	line-height: 1.4;
+	font-size: 1rem;
 }
 
 .u-text-xs {
-	font-size: rem(12);
-	line-height: 1.4;
+	font-size: 0.8rem;
 }
 
 .u-text-xxs {
-	font-size: rem(10);
-	line-height: 1.4;
+	font-size: 0.6rem;
 }
+
+//
 
 .u-textS {
 	font-size: 0.8em;

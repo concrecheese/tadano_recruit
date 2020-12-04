@@ -44,7 +44,7 @@
 	// position: relative;
 	width: 100%;
 	max-width: rem(400); //これがボタンのサイズ
-	margin-top: rem(24);
+	margin-top: rem(56); //今回のマージン
 	margin-right: auto;
 	margin-left: auto;
 	text-align: center;
@@ -57,7 +57,7 @@
 	}
 
 	@include mq() {
-		margin-top: rem(32);
+		margin-top: rem(72); //今回のマージン
 	}
 }
 
@@ -82,20 +82,18 @@
 
 //ホバー時のボタンデザイン
 .btn.-primary {
-	@include gr-key-change();
-
 	position: relative;
 	width: 100%; //基本フルサイズのボタンサイズはラップで
+	margin-top: rem(16); //今回の
 	color: #fff;
 	text-align: center;
+	background-color: $cl-point;
 	transition: 200ms;
 	transition-timing-function: ease; //特にこだわらないならeaseが一番気持ち良い
 	transform: translateY(0);
 
 	//通常のボタンデザイン(ホバーで透明にできる)
 	&::before {
-		@include gr-key();
-
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -103,6 +101,7 @@
 		width: 100%;
 		height: 100%;
 		content: '';
+		background-color: $cl-key;
 		opacity: 1;
 		transition: 200ms;
 		transition-timing-function: ease;

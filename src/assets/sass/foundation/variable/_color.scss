@@ -93,8 +93,8 @@ $ctaColor: #ff409f;
 
 // PROJECT グラデーション -------------------------------------------------------
 
-@mixin gr-key($deg: 45) {
-	background-image: linear-gradient(#{$deg}deg, #00b36e 0%, #00b2ab 100%);
+@mixin gr-key($deg: -135) {
+	background-image: linear-gradient(#{$deg}deg, #1d4c94 0%, #4887ff 100%);
 }
 
 @mixin gr-key-change($deg: 45) {
@@ -109,6 +109,10 @@ $ctaColor: #ff409f;
 
 @mixin shadow-key($x: 0, $y: rem(10), $size: rem(20), $opacity: 0.2) {
 	box-shadow: $x $y $size rgba(72, 135, 255, $opacity);
+}
+
+@mixin shadow-black($x: 0, $y: rem(10), $size: rem(20), $opacity: 0.1) {
+	box-shadow: $x $y $size rgba(0, 0, 0, $opacity);
 }
 
 // 場所依存 -------------------------------------------------------

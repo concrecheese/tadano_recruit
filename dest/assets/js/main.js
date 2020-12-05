@@ -261,5 +261,3 @@ window.addEventListener('DOMContentLoaded', function () {
 	}
 	var o, i;
 });
-
-//# sourceMappingURL=../../maps/js/main.js.map

@@ -100,15 +100,15 @@ h6,
 
 h1,
 .h1 {
-	font-size: rem(32);
+	font-size: rem(18);
 	line-height: 1.8;
 
-	@include mq() {
-		font-size: rem(48);
+	@include mq(sm) {
+		font-size: rem(20);
 	}
 
-	@include mq(lg) {
-		font-size: rem(56);
+	@include mq() {
+		font-size: rem(32);
 	}
 }
 

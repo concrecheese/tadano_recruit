@@ -62,17 +62,14 @@
 }
 
 //horoのボックス
-.btnBox.-hero {
+.btnBox.-full {
 	max-width: rem(800); //フルサイズ
-	margin-top: rem(24);
-	margin-left: 0;
+	margin-top: rem(32);
+	margin-right: auto;
+	margin-left: auto;
 
 	@include mq() {
-		margin-top: rem(40);
-	}
-
-	@include mq(lg) {
-		margin-top: rem(8);
+		margin-top: rem(64);
 	}
 }
 
@@ -121,6 +118,82 @@
 	.btn_link {
 		position: relative; //zindex
 		padding: 1.2em 1.6em;
+	}
+}
+
+//写真付きボタン
+.btn.-media {
+	position: relative;
+	width: 100%; //基本フルサイズのボタンサイズはラップで
+	margin-top: rem(16); //今回の
+	overflow: hidden;
+	color: #fff;
+	// text-align: center;
+	background-color: $cl-point;
+	border-radius: rem(24);
+	transition: 200ms;
+	transition-timing-function: ease; //特にこだわらないならeaseが一番気持ち良い
+	transform: translateY(0);
+
+	//通常のボタンデザイン(ホバーで透明にできる)
+	&::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 100%;
+		content: '';
+		background-color: $cl-key;
+		opacity: 1;
+		transition: 200ms;
+		transition-timing-function: ease;
+	}
+
+	//ホバー
+	.btnBox:hover & {
+		@include shadow-key($size: rem(30), $opacity: 0.5);
+
+		//通常のボタンデザイン
+		&::before {
+			opacity: 0;
+		}
+	}
+
+	//a
+	.btn_link {
+		position: relative; //zindex
+		display: flex;
+		flex-flow: row wrap-reverse;
+		align-items: center;
+		justify-content: center;
+		padding: 1em;
+	}
+
+	.btn_text {
+		flex: 1 1 100%;
+		padding: rem(16);
+		font-size: 1.1em;
+
+		@include mq() {
+			flex: 1 1 70%;
+			font-size: 1.2em;
+		}
+	}
+
+	.btn_img {
+		flex: 0 0 60%;
+
+		@include mq() {
+			flex: 0 0 30%;
+		}
+
+		img {
+			width: 100%;
+			max-width: rem(229);
+			overflow: hidden;
+			border-radius: rem(24);
+		}
 	}
 }
 

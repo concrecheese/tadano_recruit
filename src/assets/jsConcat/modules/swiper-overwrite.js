@@ -30,7 +30,7 @@ const craneSlide = new Swiper('.-crane', {
 	// },
 
 	pagination: {
-		el: '.swiper-pagination.-crane',
+		el: '.swiper-pagination',
 		type: 'bullets',
 		clickable: true // true クリック可能
 		// progressbarOpposite: true

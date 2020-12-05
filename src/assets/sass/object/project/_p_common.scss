@@ -76,7 +76,219 @@
 	// }
 }
 
-/* section -------------------------------------------------- */
+/* HERO -------------------------------------------------- */
+
+//heroの大きさ
+.hero_wrap {
+	position: relative;
+	width: 100%;
+	height: rem(440);
+	padding-top: rem(24); //文字の距離
+	overflow: hidden;
+
+	@include mq(sm) {
+		height: rem(500);
+	}
+	@include mq() {
+		height: rem(700);
+		padding-top: rem(72); //文字の距離
+	}
+	@include mq(lg) {
+	}
+}
+
+.hero_info {
+	position: relative;
+	z-index: 1;
+	width: 84%; //375pxに対し左右に30px
+	max-width: rem(800);
+
+	// padding: rem(32);
+	margin-right: auto;
+	margin-left: auto;
+}
+
+//
+.hero_media {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	z-index: -14;
+	width: 100%;
+
+	@include mq(xl) {
+		top: 50%;
+		bottom: auto;
+		transform: translateY(-50%);
+	}
+
+	img {
+		width: 100%;
+	}
+}
+
+.hero_read {
+	@include ff-jp();
+
+	margin-top: rem(24);
+
+	@include mq() {
+		font-size: 1.2rem;
+		line-height: 2;
+	}
+}
+
+//------
+
+.hero_product {
+	position: relative;
+	text-align: center;
+}
+
+//ブルーバッジ
+.hero_badge {
+	@include ff-jp();
+
+	position: absolute;
+	top: rem(14);
+	left: 50%;
+	display: block;
+	width: 84%;
+	max-width: rem(400);
+	margin-right: auto;
+	margin-left: auto;
+	font-size: 0.8rem;
+	color: #fff;
+	text-align: left;
+	transform: translateX(-50%);
+
+	@include mq() {
+		top: rem(24);
+		font-size: 1rem;
+	}
+
+	@include mq(lg) {
+		top: rem(16);
+		font-size: 1.2rem;
+	}
+}
+
+.hero_productWrap {
+	padding-top: rem(32); //
+}
+
+.hero_productImg {
+	width: 100%;
+	// overflow: hidden;
+	text-align: center;
+
+	img {
+		width: 84%;
+		max-width: rem(1000);
+	}
+}
+
+/* ABOUT -------------------------------------------------- */
+
+//タダノらしく
+.about_heading {
+	@include lineHeightCrop(1.5);
+
+	padding-top: rem(60); //上とのスペース
+	font-size: rem(40);
+	font-weight: 900;
+	line-height: 1.5;
+	color: #fff;
+	text-align: center;
+	letter-spacing: 0.05;
+
+	@include mq() {
+		padding-top: rem(80); //上とのスペース
+		font-size: rem(80);
+		font-size: rem(60);
+	}
+}
+
+.about_wrap {
+}
+
+//通常
+.about_card {
+	padding-top: rem(56);
+	padding-bottom: rem(56);
+
+	@include mq() {
+		padding-top: rem(80);
+		padding-bottom: rem(80);
+	}
+}
+
+//上の地図とかかるカード
+.about_card.-upper {
+	padding-top: rem(120);
+	@include mq() {
+		padding-top: rem(160);
+	}
+}
+
+.about {
+	&_map {
+		margin-bottom: rem(-100);
+		text-align: center;
+
+		@include mq() {
+			margin-bottom: rem(-150);
+		}
+
+		img {
+			width: 80%;
+			max-width: rem(800);
+		}
+	}
+
+	&_img {
+		text-align: center;
+	}
+
+	//logo
+	&_logo {
+		width: 50%;
+		max-width: rem(551);
+	}
+
+	//キャッチコピー
+	&_LYD {
+		width: 50%;
+		max-width: rem(321);
+	}
+}
+
+.about {
+	&_title {
+		margin-top: rem(32);
+		color: $cl-point;
+		@include mq() {
+			margin-top: rem(48);
+		}
+	}
+
+	&_text {
+		margin-top: rem(24);
+		@include mq() {
+			margin-top: rem(32);
+		}
+
+		//
+		&.-color {
+			@include ff-jp();
+
+			font-weight: 700;
+			color: $cl-key;
+		}
+	}
+}
+
+/* FEATURE -------------------------------------------------- */
 
 //ollist
 .feature {
@@ -85,18 +297,34 @@
 	//li
 	&_item {
 		position: relative;
+		padding-left: 3em;
 		counter-increment: featureItemCount; //カウントする要素 [カウンタ名,１単位]
 
+		& + & {
+			margin-top: rem(32);
+			@include mq() {
+				margin-top: rem(64);
+			}
+		}
+
 		//数字の部分 contentでcounterの値を使用,スタイルを設定可能 decimal が初期
+		//decimal-leading-zero
 		&::before {
 			position: absolute;
 			top: 0;
 			left: 0;
 			display: inline-block;
-			width: 10%;
-			height: 10%;
+			width: 5em; //boxの大きさは適当
+			height: 5em;
+			margin-top: -0.4em;
+			font-size: 2.5em;
 			color: $cl-point;
-			content: counter(featureItemCount, decimal-leading-zero);
+			pointer-events: none;
+			content: counter(featureItemCount, decimal) '.';
+
+			@include mq() {
+				font-size: 4em;
+			}
 		}
 
 		//２の倍数で互い違いに
@@ -106,6 +334,35 @@
 
 		@include mq() {
 			width: 80%;
+			padding-left: 5em;
+		}
+
+		//
+
+		& > .title {
+			color: #fff;
+
+			// &_text {
+			// 	flex: none;
+			// }
+
+			// &_line {
+			// 	display: block;
+			// 	flex: 1 1;
+			// 	background-color: #fff;
+			// 	border-top: 1px solid #000;
+			// }
+		}
+
+		& > .read {
+			margin-top: 1em;
+			color: $cl-point-l;
+		}
+		& > .text {
+			margin-top: 1em;
+			font-weight: 400;
+			line-height: 2;
+			color: $cl-white;
 		}
 	}
 }
@@ -192,12 +449,47 @@
 /* STAFF -------------------------------------------------- */
 
 .staff_card {
+	// position: relative;
+	display: flex;
+	flex-flow: row wrap-reverse;
+	justify-content: center;
+
+	// padding: rem(24);
+
+	// &::before {
+	// 	position: absolute;
+	// 	top: 0;
+	// 	left: 0;
+	// 	z-index: -1;
+	// 	display: block;
+	// 	width: 100%;
+	// 	height: 100%;
+	// 	content: '';
+	// 	background-color: $cl-key;
+	// 	opacity: 0.5;
+	// }
 }
 
 .staff_info {
+	height: 100%;
+	padding: rem(24);
+	// text-align: center;
+
+	@include mq() {
+		padding: rem(32);
+	}
 }
 
 .staff_media {
+	width: 100%;
+	text-align: center;
+
+	img {
+		@include shadow-black();
+
+		width: 100%;
+		max-width: rem(300);
+	}
 }
 
 .staff {
@@ -343,6 +635,55 @@
 	@include mq() {
 		margin-top: rem(72);
 		font-size: rem(20);
+	}
+}
+
+//スクロールアイコン heroCardがrerative
+.scrollBtn {
+	@include shadow-key();
+
+	position: relative;
+	bottom: rem(-16); //半分
+	left: 50%;
+	display: inline-block;
+	width: rem(32);
+	height: rem(32);
+	margin-top: rem(40);
+	margin-left: rem(-16); //半分
+	background-color: #fff;
+	border-radius: 50%;
+
+	&::after {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		display: inline-block;
+		width: 30%;
+		height: 30%;
+		margin: 30% auto 0 auto;
+		content: '';
+		border-right: rem(3) solid $cl-key;
+		border-bottom: rem(3) solid $cl-key;
+		transform: rotate(45deg);
+	}
+
+	@include mq(lg) {
+		transform: scale(1.4);
+	}
+}
+
+/* ENTRY -------------------------------------------------- */
+
+.entry {
+	&_text {
+		padding: rem(24);
+		border: rem(8) solid #fff;
+
+		@include mq() {
+			padding: rem(40);
+		}
 	}
 }
 

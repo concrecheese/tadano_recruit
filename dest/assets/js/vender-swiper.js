@@ -7065,7 +7065,7 @@ var craneSlide = new Swiper('.-crane', {
 		}
 	},
 	pagination: {
-		el: '.swiper-pagination.-crane',
+		el: '.swiper-pagination',
 		type: 'bullets',
 		clickable: true
 	},
@@ -7110,5 +7110,3 @@ var productThumbs = new Swiper('.-productThumbs', {
 });
 productSlide.controller.control = productThumbs;
 productThumbs.controller.control = productSlide;
-
-//# sourceMappingURL=../../maps/js/vender-swiper.js.map

@@ -33,55 +33,93 @@
 		<!-- main  -->
 		<main>
 			<!-- HERO -->
-			<div>
-				<h1>自動車、メカ、制御設計などに<br />興味ありますか？</h1>
-				<p>貴方にご紹介したい企業があります。 四国からグローバルのナンバー1へ、未来志向の会社です。</p>
+			<div class="hero_wrap background -sky">
+				<div class="hero_info">
+					<h1 class="heading1">
+						<span class="heading1_text"><span class="heading1_marker">自動車、メカ、制御設計などに</span></span
+						><span class="heading1_text"><span class="heading1_marker">興味ありますか？</span></span>
+					</h1>
+					<p class="hero_read">
+						貴方にご紹介したい企業があります。<br />
+						四国からグローバルのナンバー1へ、<br />未来志向の会社です。
+					</p>
+				</div>
 
-				<p>世界的に有名な「ラフテレーンクレーン」を作っている会社です</p>
+				<div class="hero_media">
+					<img
+						src="<%= baseMeta.pathsImg %>hero/hero_bridge@2000.jpg"
+						alt="ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー"
+						width="2000"
+						height="1600"
+						decoding="async"
+					/>
+				</div>
 			</div>
 
-			<!-- ABOUT----------------------------------------  -->
-			<section class="">
+			<!--  -->
+			<div class="hero_product">
+				<p class="hero_badge">
+					<span class="u-newLine">世界的に有名な</span><span class="u-newLine">「ラフテレーンクレーン」を</span><br />作っている会社です
+				</p>
+
 				<!-- photo -->
-				<div class="background -skew">
-					<figure>
+				<div class="hero_productWrap background -skew">
+					<figure class="hero_productImg">
 						<img
 							src="<%= baseMeta.pathsImg %>hero/GR1000N_00@1000.png"
 							alt="ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー"
 							width="1000"
-							height="1000"
+							height="500"
 							decoding="async"
 						/>
 					</figure>
 				</div>
+			</div>
 
-				<h2><span class="u-newLine">タダノらしく、</span><span class="u-newLine">世界のTADANOへ。</span></h2>
-
+			<!-- ABOUT -->
+			<section class="">
 				<div class="l-horizontal -spFull -pcLm">
-					<div class="l-vertical background -light">
-						<div class="l-horizontal -spS -pcSs">
-							<!-- text -->
-							<figure class="img">
-								<img
-									class=""
-									src="<%= baseMeta.pathsImg %>tadano_s_logo_l.png"
-									alt="ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー"
-									width="551"
-									height="142"
-									decoding="async"
-								/>
-							</figure>
-							<h3 class="title">2019年、タダノは創業100周年を迎えました。</h3>
-							<p class="text">
-								新たな歴史を刻む節目のタイミングにふさわしく、このところのタダノは未来志向のニュースに満ちあふれています。ドイツ、アメリカ、タイに続いてインドに、生産設備を備えたグループ会社を設立。
-								ドイツの老舗メーカー、 DEMAG
-								社をグループに迎え、ラフテレーンクレーンと並んでオールテレーンクレーンのシェアでも世界トップを狙える態勢が整いました。国内では香西工場が先端
-								IoT 技術を満載した次世代スマートファクトリーとして竣工したばかり。
-							</p>
-							<p class="text">
-								LE 世界 No.1 という不変の目標を見据えつつ、世界で勝負していく材料が揃ったことを伝えてくれています。そう遠くない将来、TADANO
-								の名が世界のトップブランドと称される時代になっても、長く受け継がれてきたタダノのよさ、タダノらしさは少しも変わらないでしょう。タダノらしく挑み、あなたらしく成長できる場所。この先もずっと、タダノはそんな会社であり続けたいと願っています。
-							</p>
+					<h2 class="about_heading"><span class="u-newLine">タダノらしく、</span><br /><span class="u-newLine">世界のTADANOへ。</span></h2>
+
+					<div class="about_map">
+						<img
+							class=""
+							src="<%= baseMeta.pathsImg %>about/worldMap.svg"
+							alt="ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー"
+							width="551"
+							height="142"
+							decoding="async"
+						/>
+					</div>
+
+					<div class="about_wrap background -light">
+						<div class="about_card -upper">
+							<div class="l-horizontal -spS -pcSs">
+								<figure class="about_img">
+									<img
+										class="about_logo"
+										src="<%= baseMeta.pathsImg %>tadano_s_logo_l.png"
+										alt="ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー"
+										width="551"
+										height="142"
+										decoding="async"
+									/>
+								</figure>
+
+								<h3 class="about_title">2019年、タダノは創業100周年を迎えました。</h3>
+
+								<p class="about_text">
+									新たな歴史を刻む節目のタイミングにふさわしく、このところのタダノは未来志向のニュースに満ちあふれています。ドイツ、アメリカ、タイに続いてインドに、生産設備を備えたグループ会社を設立。
+									ドイツの老舗メーカー、 DEMAG
+									社をグループに迎え、ラフテレーンクレーンと並んでオールテレーンクレーンのシェアでも世界トップを狙える態勢が整いました。国内では香西工場が先端
+									IoT 技術を満載した次世代スマートファクトリーとして竣工したばかり。
+								</p>
+
+								<p class="about_text">
+									LE 世界 No.1 という不変の目標を見据えつつ、世界で勝負していく材料が揃ったことを伝えてくれています。そう遠くない将来、TADANO
+									の名が世界のトップブランドと称される時代になっても、長く受け継がれてきたタダノのよさ、タダノらしさは少しも変わらないでしょう。タダノらしく挑み、あなたらしく成長できる場所。この先もずっと、タダノはそんな会社であり続けたいと願っています。
+								</p>
+							</div>
 						</div>
 
 						<!-- img*2 -->
@@ -190,32 +228,37 @@
 									</div>
 								</div>
 								<!-- swiper_pagination -->
-								<div class="swiper-pagination -crane"></div>
+								<div class="swiper-pagination"></div>
 							</div>
 						</div>
 						<!-- /slider -->
 
 						<!-- text -->
-						<div class="l-horizontal -spS -pcSs">
-							<figure class="img">
-								<img
-									class=""
-									src="<%= baseMeta.pathsImg %>LYD_Illust_Tate.png"
-									alt="ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー"
-									width="321"
-									height="226"
-									decoding="async"
-								/>
-							</figure>
-							<p class="text">
-								クレーンは働くマシンです。想像してみてください。私たちタダノの無数のクレーンが、日本国内はもとより、この地球上のあらゆる国や地域で、一心に働く姿を。働く舞台は、高層ビル、高速道路や橋梁、そして油田など巨大構造物の施工現場。タダノのクレーンがひと仕事を終えた時、それぞれの国や街が、それぞれの工事に込めた夢や想いがひとつずつ、形になります。社会に夢があるように、タダノにも夢があります。
-							</p>
-							<p class="text -color">それは、LE(Lifting Equipment=移動機能付抗重力・空間作業機械)世界一のメーカーになること。</p>
-							<p class="text">
-								Lifting your dreams.このブランドメッセージに込められた dreams
-								は、人や社会、タダノ自身の夢であると同時に、夢の実現を担う社員一人ひとりの想いを受け止め、夢を夢で終わらせない確かな力に変えていく決意でもあるのです。Lifting
-								your dreams,Lifting your life.あなたの夢を、タダノが叶えます。
-							</p>
+						<div class="about_card">
+							<div class="l-horizontal -spS -pcSs">
+								<figure class="about_img">
+									<img
+										class="about_LYD"
+										src="<%= baseMeta.pathsImg %>LYD_Illust_Tate.png"
+										alt="ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー"
+										width="321"
+										height="226"
+										decoding="async"
+									/>
+								</figure>
+
+								<p class="about_text">
+									クレーンは働くマシンです。想像してみてください。私たちタダノの無数のクレーンが、日本国内はもとより、この地球上のあらゆる国や地域で、一心に働く姿を。働く舞台は、高層ビル、高速道路や橋梁、そして油田など巨大構造物の施工現場。タダノのクレーンがひと仕事を終えた時、それぞれの国や街が、それぞれの工事に込めた夢や想いがひとつずつ、形になります。社会に夢があるように、タダノにも夢があります。
+								</p>
+
+								<p class="about_text -color">それは、LE(Lifting Equipment=移動機能付抗重力・空間作業機械)世界一のメーカーになること。</p>
+
+								<p class="about_text">
+									Lifting your dreams.このブランドメッセージに込められた dreams
+									は、人や社会、タダノ自身の夢であると同時に、夢の実現を担う社員一人ひとりの想いを受け止め、夢を夢で終わらせない確かな力に変えていく決意でもあるのです。Lifting
+									your dreams,Lifting your life.あなたの夢を、タダノが叶えます。
+								</p>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -223,7 +266,7 @@
 			<!-- /ABOUT----------------------------------------  -->
 
 			<!-- FEATURE----------------------------------------  -->
-			<section class="l-vertical">
+			<section class="l-vertical background -photo">
 				<div class="l-horizontal -spS -pcM">
 					<div class="heading2_wrap">
 						<%- include( baseMeta.pathsEjsCommon + "_heading", {tag:'h2',block:'heading2',modifire:'',subText:'feature',mainText:'特徴'}); %>
@@ -432,19 +475,19 @@
 
 			<!-- STAFF----------------------------------------  -->
 			<section class="l-vertical">
-				<div class="heading2_wrap">
-					<!-- prettier-ignore -->
-					<%- include( baseMeta.pathsEjsCommon + "_heading", {tag:'h2',block:'heading2', modifire:'',
-					subText:'staff introduction',mainText:'社員紹介'});
-					%>
-				</div>
+				<div class="l-horizontal -spS -pcM">
+					<div class="heading2_wrap">
+						<!-- prettier-ignore -->
+						<%- include( baseMeta.pathsEjsCommon + "_heading", {tag:'h2',block:'heading2', modifire:'',
+						subText:'staff introduction',mainText:'社員紹介'});
+						%>
+					</div>
 
-				<!-- card container -->
-				<div class="flexWrap">
-					<!-- 1 -->
-					<div class="flexItem -staff">
-						<div class="staff_card">
-							<div class="flexWrap -centerStart -wrapReverse">
+					<!-- card container -->
+					<div class="flexWrap -betweenStretch">
+						<!-- 1 -->
+						<div class="flexItem -staff">
+							<div class="staff_card">
 								<div class="staff_info">
 									<%- include( baseMeta.pathsEjsCommon + "_heading", {tag:'h3',block:'heading3',modifire:'',subText:'開発',mainText:'車両設計'}); %>
 									<p class="staff_text">クルマ開発の感動と、建機開発の達成感。「働く車」の設計は、手ごたえも2倍。</p>
@@ -461,12 +504,10 @@
 								</figure>
 							</div>
 						</div>
-					</div>
 
-					<!-- 2 -->
-					<div class="flexItem -staff">
-						<div class="staff_card">
-							<div class="flexWrap -centerStart -wrapReverse">
+						<!-- 2 -->
+						<div class="flexItem -staff">
+							<div class="staff_card">
 								<div class="staff_info">
 									<%- include( baseMeta.pathsEjsCommon + "_heading", {tag:'h3',block:'heading3',modifire:'',subText:'開発',mainText:'電子制御設計'});
 									%>
@@ -484,12 +525,10 @@
 								</figure>
 							</div>
 						</div>
-					</div>
 
-					<!-- 3 -->
-					<div class="flexItem -staff">
-						<div class="staff_card">
-							<div class="flexWrap -centerStart -wrapReverse">
+						<!-- 3 -->
+						<div class="flexItem -staff">
+							<div class="staff_card">
 								<div class="staff_info">
 									<%- include( baseMeta.pathsEjsCommon + "_heading", {tag:'h3',block:'heading3',modifire:'',subText:'開発',mainText:'研究' }); %>
 									<p class="staff_text">「クレーンの未来形」に世界が驚いた。タダノ史上初、VR 展示のインパクト。</p>
@@ -506,12 +545,10 @@
 								</figure>
 							</div>
 						</div>
-					</div>
 
-					<!-- 4 -->
-					<div class="flexItem -staff">
-						<div class="staff_card">
-							<div class="flexWrap -centerStart -wrapReverse">
+						<!-- 4 -->
+						<div class="flexItem -staff">
+							<div class="staff_card">
 								<div class="staff_info">
 									<%- include( baseMeta.pathsEjsCommon + "_heading", {tag:'h3',block:'heading3',modifire:'',subText:'',mainText:'生産技術' }); %>
 									<p class="staff_text">たとえば自動溶接ロボットの立ち上げ。新工場での達成を、次の挑戦に活かしたい。</p>
@@ -528,12 +565,10 @@
 								</figure>
 							</div>
 						</div>
-					</div>
 
-					<!-- 5 -->
-					<div class="flexItem -staff">
-						<div class="staff_card">
-							<div class="flexWrap -centerStart -wrapReverse">
+						<!-- 5 -->
+						<div class="flexItem -staff">
+							<div class="staff_card">
 								<div class="staff_info">
 									<%- include( baseMeta.pathsEjsCommon + "_heading", {tag:'h3',block:'heading3',modifire:'',subText:'',mainText:'生産管理' }); %>
 									<p class="staff_text">未来から発想して今日の答えを出す。そこが難しい。だからこそ、面白い。</p>
@@ -550,12 +585,10 @@
 								</figure>
 							</div>
 						</div>
-					</div>
 
-					<!-- 6 -->
-					<div class="flexItem -staff">
-						<div class="staff_card">
-							<div class="flexWrap -centerStart -wrapReverse">
+						<!-- 6 -->
+						<div class="flexItem -staff">
+							<div class="staff_card">
 								<div class="staff_info">
 									<%- include( baseMeta.pathsEjsCommon + "_heading", {tag:'h3',block:'heading3',modifire:'',subText:'',mainText:'品質安全' }); %>
 									<p class="staff_text">あらゆる角度から安全性を確保し、期待を超える“感動品質”を届けたい。</p>
@@ -861,6 +894,7 @@
 						><span class="u-newLineSp">たくさんあります。</span><br />
 						<span class="u-newLineSp">少しでも興味を持っていただけたなら、</span><span class="u-newLineSp">下記のフォームよりご連絡ください。</span>
 					</p>
+					<span class="scrollBtn"></span>
 				</div>
 			</section>
 			<!-- /RECRUIT  -->
@@ -873,26 +907,26 @@
 						%>
 					</div>
 
-					<div class="">
-						<p>
-							いきなり企業へ応募するのはハードルも高く、負担も重くなりがち。どの職種に応募したら良いのかを決めるのも難しいかもしれません。そこでまずは、我々アールエフキャリア（正規委託企業）が貴方の相談に乗ります。
-						</p>
-						<p>企業と付き合いが長く、地元密着の就職アドバイザーである我々にお気軽にご相談ください。</p>
-						<p>選考について 下記フォームよりご連絡ください。別途必要な書類や追加の質問がある場合、メールまたは電話にてご連絡いたします。</p>
-					</div>
+					<p class="entry_text">
+						いきなり企業へ応募するのはハードルも高く、負担も重くなりがち。どの職種に応募したら良いのかを決めるのも難しいかもしれません。そこでまずは、我々アールエフキャリア（正規委託企業）が貴方の相談に乗ります。<br />
+						企業と付き合いが長く、地元密着の就職アドバイザーである我々にお気軽にご相談ください。<br />
+						選考について 下記フォームよりご連絡ください。別途必要な書類や追加の質問がある場合、メールまたは電話にてご連絡いたします。
+					</p>
 
-					<div class="btn">
-						<a href=""
-							><p class="">選考について<br />就職アドバイザーに相談する</p>
-							<figure class="">
-								<img
-									src="<%= baseMeta.pathsImg %>recruit/adviser.jpg"
-									alt="ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー"
-									width="229"
-									height="180"
-									decoding="async"
-								/></figure
-						></a>
+					<div class="btnBox -full">
+						<div class="btn -media">
+							<a class="btn_link" href="" target="_blank"
+								><p class="btn_text">選考について<br />就職アドバイザーに相談する</p>
+								<figure class="btn_img">
+									<img
+										src="<%= baseMeta.pathsImg %>recruit/adviser.jpg"
+										alt="ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー"
+										width="229"
+										height="180"
+										decoding="async"
+									/></figure
+							></a>
+						</div>
 					</div>
 				</div>
 			</section>

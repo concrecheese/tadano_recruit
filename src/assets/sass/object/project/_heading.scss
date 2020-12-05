@@ -1,19 +1,20 @@
 /* heading -------------------------------------------------- */
 
-/* h1 */
 .heading1 {
-	@include lineHeightCrop(1.8);
-
 	color: $cl-key;
 
-	@include mq(lg) {
-		margin-right: -24%; //ブレイクポイントで親を広げることで中のinlinblockを横並びにさせ１行に。
+	&_text {
+		display: block;
+
+		& + & {
+			margin-top: rem(12);
+		}
 	}
 
-	//underline
-	&_underLine {
-		padding-bottom: 0.2em;
-		border-bottom: rem(3) solid $cl-key;
+	&_marker {
+		display: inline-block;
+		padding: 0.1em 0.5em;
+		background-color: #fff;
 	}
 }
 
@@ -100,12 +101,12 @@
 .heading3 {
 	position: relative;
 	padding-bottom: rem(24 + 5); //余白+装飾ラインの太さ
-	margin-bottom: rem(40); //共通のマージン
+	margin-bottom: rem(16); //共通のマージン
 	color: $cl-white;
 	text-align: center;
 
 	@include mq() {
-		margin-bottom: rem(64);
+		margin-bottom: rem(24);
 	}
 
 	//見出し下のライン

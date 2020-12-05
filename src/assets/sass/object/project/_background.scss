@@ -12,7 +12,7 @@
 /* common */
 .background {
 	&::before {
-		z-index: -11;
+		z-index: -15;
 	}
 	&::after {
 		z-index: -10;
@@ -96,12 +96,15 @@
 		position: absolute;
 		top: 0;
 		left: 0;
+		z-index: -5;
 		display: block;
 		width: 100%;
-		height: 100%;
+		height: 80%;
 		content: '';
 		background-color: $cl-key;
-		transform: skewY(-5deg);
+		transform: skewY(-4deg);
+		transform-origin: left bottom;
+		// transform: skewY(-4deg) translateY(-50%);
 	}
 }
 
@@ -237,7 +240,33 @@
 
 //--------------
 
-.background.-heroImg {
+// .background.-heroImg {
+// 	position: relative;
+
+// 	&::before {
+// 		position: absolute;
+// 		top: 0;
+// 		left: 0;
+// 		display: block;
+// 		width: 100%;
+// 		height: 100%;
+// 		content: '';
+// 		border-radius: 0 0 0 rem(32);
+// 		@include gr-key();
+
+// 		opacity: 0.2;
+
+// 		@include mq(sm) {
+// 			border-radius: rem(32) 0 0 rem(32);
+// 		}
+
+// 		@include mq() {
+// 			border-radius: rem(104) 0 0 rem(104);
+// 		}
+// 	}
+// }
+
+.background.-sky {
 	position: relative;
 
 	&::before {
@@ -248,17 +277,73 @@
 		width: 100%;
 		height: 100%;
 		content: '';
-		border-radius: 0 0 0 rem(32);
-		@include gr-key();
+		background-color: #95bcf5; //空の色
+	}
+}
 
-		opacity: 0.2;
+//橋の写真
+.background.-hero {
+	position: relative;
 
-		@include mq(sm) {
-			border-radius: rem(32) 0 0 rem(32);
+	//写真
+	&::after {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 100%;
+		content: '';
+		// background-image: url(../img/bg/bg-craneAndSky.jpg),
+		// 	url(../img/bg/bg-cranes.jpg), url(../img/bg/bg-craneAndHuman.jpg);
+		background-image: url(../img/hero/hero_bridge@2000.jpg);
+		background-repeat: no-repeat;
+		background-position: bottom right;
+		background-size: auto 100%;
+
+		@include mq(xl) {
+			background-size: 100% auto;
 		}
+	}
+}
 
-		@include mq() {
-			border-radius: rem(104) 0 0 rem(104);
+//クレーンの写真
+.background.-photo {
+	position: relative;
+	overflow: hidden;
+
+	//色
+	&::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 100%;
+		content: '';
+		background-color: #000;
+		opacity: 0.1;
+	}
+
+	//写真
+	&::after {
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 100%;
+		content: '';
+		// background-image: url(../img/bg/bg-craneAndSky.jpg),
+		// 	url(../img/bg/bg-cranes.jpg), url(../img/bg/bg-craneAndHuman.jpg);
+		background-image: url(../img/bg/bg-craneSet.jpg);
+		background-repeat: repeat-x;
+		background-position: top center;
+		background-size: auto 100%;
+		opacity: 0.1;
+
+		@include mq(xl) {
+			// background-size: 100% auto;
 		}
 	}
 }

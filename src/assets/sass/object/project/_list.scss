@@ -1,6 +1,13 @@
 //上層のdllist
 //wrapはddの中に別のlistなどが入るpaddingの無い中身を包むだけのもの
 .dllist.-upper {
+	font-size: 0.9em;
+	text-align: left;
+
+	@include mq() {
+		font-size: 1em;
+	}
+
 	& > .box {
 		display: flex;
 		flex-flow: row wrap;
@@ -15,7 +22,9 @@
 
 		& > .wrap,
 		& > .text {
-			flex: 0 1 calc(100% - 8em); //title
+			// flex: 0 1 calc(100% - 8em); //title
+			flex: 1 1 auto; //title IE対策-1
+			width: calc(100% - 8em); //IE対策-2
 			padding-left: 2em; //borderのための余白
 			margin-left: auto; //大事
 			border-left: rem(1) solid $cl-black-l;
@@ -30,6 +39,13 @@
 
 //下層のdllist
 .dllist.-under {
+	font-size: 0.9em;
+	text-align: left;
+
+	@include mq() {
+		font-size: 1em;
+	}
+
 	& > .box {
 		display: flex;
 		flex-flow: row wrap;
@@ -105,29 +121,6 @@
 		//dd 長い文章用
 		& > .text.-long {
 			flex: 1 1 100%;
-		}
-	}
-}
-
-//ボーダーはブレイクポイント依存
-.dlList01.-border {
-	& > .box {
-		& > .title {
-			background-color: #0001;
-
-			@include mq(lg) {
-				background-color: unset;
-			}
-		}
-	}
-
-	& > .box:nth-of-type(odd) {
-		@include mq(lg) {
-			background-color: #0001;
-		}
-
-		.-noColor {
-			background: #fff;
 		}
 	}
 }

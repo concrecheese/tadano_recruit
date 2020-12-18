@@ -15,40 +15,48 @@
 	pathsAssets:'./assets/',
 	pathsImg:'./assets/img/',
 
-	heroImgNameCommon:'hero-workplace-4F',
+	heroImgNameCommon:'',
 
 
 
-	title: '',
-	description:'',
+	title: '自動車、メカ、制御設計などに興味ありますか？',
+	description:'貴方にご紹介したい企業があります。四国からグローバルのナンバー1へ、未来志向の会社です。',
 
 
 	}; %>
 	
 <%# ====================================== /META =================================== _%>
 
+
+
 <%- include( baseMeta.pathsEjsCommon + "_head", {baseMeta:baseMeta}); %>
 
 	<body class="<%= baseMeta.pageName %>">
-		<!-- main  -->
+		<!-- loading -->
+		<%- include( baseMeta.pathsEjsCommon + "_loading", {baseMeta:baseMeta}); %>
+		<!-- /loading -->
+
 		<main>
 			<!-- HERO -->
 			<div class="hero_wrap background -sky">
+				<!-- info -->
 				<div class="hero_info">
 					<h1 class="heading1">
 						<span class="heading1_text"><span class="heading1_marker">自動車、メカ、制御設計などに</span></span
 						><span class="heading1_text"><span class="heading1_marker">興味ありますか？</span></span>
 					</h1>
+
 					<p class="hero_read">
 						貴方にご紹介したい企業があります。<br />
 						四国からグローバルのナンバー1へ、<br />未来志向の会社です。
 					</p>
 				</div>
 
+				<!-- img -->
 				<div class="hero_media">
 					<img
 						src="<%= baseMeta.pathsImg %>hero/hero_bridge@2000.jpg"
-						alt="ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー"
+						alt="青空の下瀬戸大橋が遠くまで伸びている写真"
 						width="2000"
 						height="1600"
 						decoding="async"
@@ -56,327 +64,322 @@
 				</div>
 			</div>
 
-			<!--  -->
-			<div class="hero_product">
-				<p class="hero_badge">
+			<!-- HEROPRODUCT -->
+			<div class="heroProduct background -skew">
+				<!-- text -->
+				<p class="heroProduct_text">
 					<span class="u-newLine">世界的に有名な</span><span class="u-newLine">「ラフテレーンクレーン」を</span><br />作っている会社です
 				</p>
 
 				<!-- photo -->
-				<div class="hero_productWrap background -skew">
-					<figure class="hero_productImg">
-						<img
-							src="<%= baseMeta.pathsImg %>hero/GR1000N_00@1000.png"
-							alt="ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー"
-							width="1000"
-							height="500"
-							decoding="async"
-						/>
-					</figure>
-				</div>
+				<figure class="heroProduct_img">
+					<img
+						src="<%= baseMeta.pathsImg %>hero/GR1000N_00@1000.png"
+						alt="ラフテレーンクレーンGR1000N_00の写真"
+						width="1000"
+						height="500"
+						decoding="async"
+					/>
+				</figure>
 			</div>
 
 			<!-- ABOUT -->
 			<section class="">
 				<div class="l-horizontal -spFull -pcLm">
-					<h2 class="about_heading"><span class="u-newLine">タダノらしく、</span><br /><span class="u-newLine">世界のTADANOへ。</span></h2>
+					<h2 class="headingAbout"><span class="u-newLine">タダノらしく、</span><br /><span class="u-newLine">世界のTADANOへ。</span></h2>
 
+					<!-- map -->
 					<div class="about_map">
-						<img
-							class=""
-							src="<%= baseMeta.pathsImg %>about/worldMap.svg"
-							alt="ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー"
-							width="551"
-							height="142"
-							decoding="async"
-						/>
+						<img src="<%= baseMeta.pathsImg %>about/worldMap.svg" alt="世界地図のイラスト" width="1000" height="653" decoding="async" />
 					</div>
 
-					<div class="about_wrap background -light">
-						<div class="about_card -upper">
+					<div class="about_wrap background -light -shadow">
+						<!-- info -->
+						<div class="about_card -underMap">
 							<div class="l-horizontal -spS -pcSs">
 								<figure class="about_img">
 									<img
 										class="about_logo"
 										src="<%= baseMeta.pathsImg %>tadano_s_logo_l.png"
-										alt="ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー"
+										alt="タダノのロゴ"
 										width="551"
 										height="142"
-										decoding="async"
+										loading="lazy"
 									/>
 								</figure>
 
 								<h3 class="about_title">2019年、タダノは創業100周年を迎えました。</h3>
 
 								<p class="about_text">
-									新たな歴史を刻む節目のタイミングにふさわしく、このところのタダノは未来志向のニュースに満ちあふれています。ドイツ、アメリカ、タイに続いてインドに、生産設備を備えたグループ会社を設立。
-									ドイツの老舗メーカー、 DEMAG
-									社をグループに迎え、ラフテレーンクレーンと並んでオールテレーンクレーンのシェアでも世界トップを狙える態勢が整いました。国内では香西工場が先端
-									IoT 技術を満載した次世代スマートファクトリーとして竣工したばかり。
+									新たな歴史を刻む節目のタイミングにふさわしく、このところのタダノは未来志向のニュースに満ちあふれています。<br />
+									ドイツ、アメリカ、タイに続いてインドに、生産設備を備えたグループ会社を設立。
+									ドイツの老舗メーカー、DEMAG社をグループに迎え、ラフテレーンクレーンと並んでオールテレーンクレーンのシェアでも世界トップを狙える態勢が整いました。国内では香西工場が先端IoT技術を満載した次世代スマートファクトリーとして竣工したばかり。
 								</p>
 
 								<p class="about_text">
-									LE 世界 No.1 という不変の目標を見据えつつ、世界で勝負していく材料が揃ったことを伝えてくれています。そう遠くない将来、TADANO
-									の名が世界のトップブランドと称される時代になっても、長く受け継がれてきたタダノのよさ、タダノらしさは少しも変わらないでしょう。タダノらしく挑み、あなたらしく成長できる場所。この先もずっと、タダノはそんな会社であり続けたいと願っています。
+									LE世界No.1という不変の目標を見据えつつ、世界で勝負していく材料が揃ったことを伝えてくれています。そう遠くない将来、TADANOの名が世界のトップブランドと称される時代になっても、長く受け継がれてきたタダノのよさ、タダノらしさは少しも変わらないでしょう。タダノらしく挑み、あなたらしく成長できる場所。この先もずっと、タダノはそんな会社であり続けたいと願っています。
 								</p>
 							</div>
 						</div>
 
 						<!-- img*2 -->
-						<div class="flex">
-							<figure class="img">
+						<div class="about_twoPhoto">
+							<figure class="">
 								<img
 									src="<%= baseMeta.pathsImg %>about/crane-large01.jpg"
-									alt="ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー"
+									alt="TADANOと地面に書かれた敷地内のクレーンの写真"
 									width="600"
 									height="550"
-									decoding="async"
+									loading="lazy"
 								/>
 							</figure>
 
-							<figure class="img">
+							<figure class="">
 								<img
 									src="<%= baseMeta.pathsImg %>about/crane-large02.jpg"
-									alt="ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー"
+									alt="クレーンの前で腕を組む４人のスタッフの写真"
 									width="600"
 									height="550"
-									decoding="async"
+									loading="lazy"
 								/>
 							</figure>
 						</div>
 
-						<!-- slider -->
-						<div class="sliderBox">
-							<div class="swiper-container -crane">
-								<div class="swiper-wrapper">
-									<!-- 1 -->
-									<div class="swiper-slide">
-										<figure>
-											<img
-												src="<%= baseMeta.pathsImg %>about/crane-white01.jpg"
-												alt="ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー"
-												width="400"
-												height="266"
-												decoding="async"
-											/>
-										</figure>
-									</div>
-
-									<!-- 2 -->
-									<div class="swiper-slide">
-										<figure>
-											<img
-												src="<%= baseMeta.pathsImg %>about/crane-white02.jpg"
-												alt="ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー"
-												width="400"
-												height="266"
-												decoding="async"
-											/>
-										</figure>
-									</div>
-
-									<!-- 3 -->
-									<div class="swiper-slide">
-										<figure>
-											<img
-												src="<%= baseMeta.pathsImg %>about/crane-white03.jpg"
-												alt="ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー"
-												width="400"
-												height="266"
-												decoding="async"
-											/>
-										</figure>
-									</div>
-
-									<!-- 4 -->
-									<div class="swiper-slide">
-										<figure>
-											<img
-												src="<%= baseMeta.pathsImg %>about/crane-color01.jpg"
-												alt="ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー"
-												width="400"
-												height="266"
-												decoding="async"
-											/>
-										</figure>
-									</div>
-
-									<!-- 5 -->
-									<div class="swiper-slide">
-										<figure>
-											<img
-												src="<%= baseMeta.pathsImg %>about/crane-color02.jpg"
-												alt="ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー"
-												width="400"
-												height="266"
-												decoding="async"
-											/>
-										</figure>
-									</div>
-
-									<!-- 6 -->
-									<div class="swiper-slide">
-										<figure>
-											<img
-												src="<%= baseMeta.pathsImg %>about/crane-color03.jpg"
-												alt="ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー"
-												width="400"
-												height="266"
-												decoding="async"
-											/>
-										</figure>
-									</div>
+						<!-- media slider -->
+						<div class="swiper-container crane_swiper">
+							<div class="swiper-wrapper">
+								<!-- 1 -->
+								<div class="swiper-slide">
+									<figure class="about_slideImg">
+										<img
+											src="<%= baseMeta.pathsImg %>about/crane-white01.jpg"
+											alt="ずらりと並ぶクレーンの写真"
+											width="400"
+											height="266"
+											loading="lazy"
+										/>
+									</figure>
 								</div>
-								<!-- swiper_pagination -->
-								<div class="swiper-pagination"></div>
+
+								<!-- 2 -->
+								<div class="swiper-slide">
+									<figure class="about_slideImg">
+										<img
+											src="<%= baseMeta.pathsImg %>about/crane-white02.jpg"
+											alt="青空を背景にしたクレーン先端の写真"
+											width="400"
+											height="266"
+											loading="lazy"
+										/>
+									</figure>
+								</div>
+
+								<!-- 3 -->
+								<div class="swiper-slide">
+									<figure class="about_slideImg">
+										<img
+											src="<%= baseMeta.pathsImg %>about/crane-white03.jpg"
+											alt="クレーンに描かれたタダノのロゴをアップにした写真"
+											width="400"
+											height="266"
+											loading="lazy"
+										/>
+									</figure>
+								</div>
+
+								<!-- 4 -->
+								<div class="swiper-slide">
+									<figure class="about_slideImg">
+										<img
+											src="<%= baseMeta.pathsImg %>about/crane-color01.jpg"
+											alt="ブルーやオレンジなど色あざやかなクレーンの写真"
+											width="400"
+											height="266"
+											loading="lazy"
+										/>
+									</figure>
+								</div>
+
+								<!-- 5 -->
+								<div class="swiper-slide">
+									<figure class="about_slideImg">
+										<img
+											src="<%= baseMeta.pathsImg %>about/crane-color02.jpg"
+											alt="敷地内を走行するクレーンの写真"
+											width="400"
+											height="266"
+											loading="lazy"
+										/>
+									</figure>
+								</div>
+
+								<!-- 6 -->
+								<div class="swiper-slide">
+									<figure class="about_slideImg">
+										<img
+											src="<%= baseMeta.pathsImg %>about/crane-color03.jpg"
+											alt="クレーンに描かれたタダノのロゴの写真"
+											width="400"
+											height="266"
+											loading="lazy"
+										/>
+									</figure>
+								</div>
 							</div>
+							<!-- swiper_pagination -->
+							<div class="swiper-pagination"></div>
 						</div>
 						<!-- /slider -->
 
 						<!-- text -->
-						<div class="about_card">
+						<div class="about_card c-angle -br">
 							<div class="l-horizontal -spS -pcSs">
+								<!-- LYD -->
 								<figure class="about_img">
 									<img
 										class="about_LYD"
 										src="<%= baseMeta.pathsImg %>LYD_Illust_Tate.png"
-										alt="ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー"
+										alt="ブランドメッセージ「Lifting your dreams」のイラスト"
 										width="321"
 										height="226"
-										decoding="async"
+										loading="lazy"
 									/>
 								</figure>
 
 								<p class="about_text">
-									クレーンは働くマシンです。想像してみてください。私たちタダノの無数のクレーンが、日本国内はもとより、この地球上のあらゆる国や地域で、一心に働く姿を。働く舞台は、高層ビル、高速道路や橋梁、そして油田など巨大構造物の施工現場。タダノのクレーンがひと仕事を終えた時、それぞれの国や街が、それぞれの工事に込めた夢や想いがひとつずつ、形になります。社会に夢があるように、タダノにも夢があります。
+									クレーンは働くマシンです。想像してみてください。私たちタダノの無数のクレーンが、日本国内はもとより、この地球上のあらゆる国や地域で、一心に働く姿を。<br />
+									働く舞台は、高層ビル、高速道路や橋梁、そして油田など巨大構造物の施工現場。タダノのクレーンがひと仕事を終えた時、それぞれの国や街が、それぞれの工事に込めた夢や想いがひとつずつ、形になります。社会に夢があるように、タダノにも夢があります。
 								</p>
 
 								<p class="about_text -color">それは、LE(Lifting Equipment=移動機能付抗重力・空間作業機械)世界一のメーカーになること。</p>
 
 								<p class="about_text">
-									Lifting your dreams.このブランドメッセージに込められた dreams
-									は、人や社会、タダノ自身の夢であると同時に、夢の実現を担う社員一人ひとりの想いを受け止め、夢を夢で終わらせない確かな力に変えていく決意でもあるのです。Lifting
-									your dreams,Lifting your life.あなたの夢を、タダノが叶えます。
+									Lifting your
+									dreams.このブランドメッセージに込められたdreamsは、人や社会、タダノ自身の夢であると同時に、夢の実現を担う社員一人ひとりの想いを受け止め、夢を夢で終わらせない確かな力に変えていく決意でもあるのです。<br />
+									<span class="u-newLine">Lifting your dreams,</span><span class="u-newLine">Lifting your life.</span
+									><span class="u-newLine">あなたの夢を、タダノが叶えます。</span>
 								</p>
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
-			<!-- /ABOUT----------------------------------------  -->
+			<!-- /ABOUT  -->
 
-			<!-- FEATURE----------------------------------------  -->
+			<!-- FEATURE  -->
 			<section class="l-vertical background -photo">
 				<div class="l-horizontal -spS -pcM">
 					<div class="heading2_wrap">
-						<%- include( baseMeta.pathsEjsCommon + "_heading", {tag:'h2',block:'heading2',modifire:'',subText:'feature',mainText:'特徴'}); %>
+						<%- include( baseMeta.pathsEjsCommon + "_heading", {tag:'h2',block:'heading2',modifire:'',subText:'features',mainText:'特徴'}); %>
 					</div>
+
 					<ol class="feature">
 						<!-- 1 -->
 						<li class="feature_item">
 							<h3 class="title">ビジョン</h3>
-							<h4 class="read">「LE 世界 No.1」に挑むタダノは「世界に、そして未来に誇れる企業」というビジョンを掲げています。</h4>
+							<p class="read">「LE世界No.1」に挑むタダノは「世界に、そして未来に誇れる企業」というビジョンを掲げています。</p>
 							<p class="text">
-								そして、ビジョンを具現化するための到達目標に設定しているのが「LE 世界
-								No.1」という明確な事業戦略。タダノは、商品力・品質・サービス・中古車価値の 4
-								拍子揃った稀有なメーカーとして、総合力に磨きをかけ、よりいっそうの高みを目指します。
+								そして、ビジョンを具現化するための到達目標に設定しているのが「LE世界No.1」という明確な事業戦略。<br />
+								タダノは、商品力・品質・サービス・中古車価値の4拍子揃った稀有なメーカーとして、総合力に磨きをかけ、よりいっそうの高みを目指します。
 							</p>
 						</li>
 
 						<!-- 2 -->
 						<li class="feature_item">
 							<h3 class="title">製品ラインナップ</h3>
-							<h4 class="read">インフラ開発の最前線で活躍するマシンたち</h4>
+							<p class="read">インフラ開発の最前線で活躍するマシンたち</p>
 							<p class="text">
-								1955
-								年、日本初の油圧式クレーンを開発して以来、タダノはクレーン業界のトップランナーであり続けています。現在では、国内はもちろん世界市場でもトップシェアを握るラフテレーンクレーンをはじめ、オールテレーンクレーン、トラッククレーン、車両搭載型クレーンなど、多彩なラインナップと充実のサービス体制で、世界中のユーザーから厚い信頼を得ています。
+								1955年、日本初の油圧式クレーンを開発して以来、タダノはクレーン業界のトップランナーであり続けています。<br />
+								現在では、国内はもちろん世界市場でもトップシェアを握るラフテレーンクレーンをはじめ、オールテレーンクレーン、トラッククレーン、車両搭載型クレーンなど、多彩なラインナップと充実のサービス体制で、世界中のユーザーから厚い信頼を得ています。
 							</p>
 						</li>
 
 						<!-- 3 -->
 						<li class="feature_item">
 							<h3 class="title">海外展開</h3>
-							<h4 class="read">名実ともに「世界の TADANO」へ</h4>
+							<p class="read">名実ともに「世界のTADANO」へ</p>
 							<p class="text">
-								日本市場での存在感をキープしつつ、海外市場での売上を伸ばす。これがタダノの成長戦略。現在の売上比率は国内と海外でほぼ半々。今後は、国内の売上を下げることなく、海外比率を大きく伸ばしていきます。海外出張や海外赴任のチャンスは開発や営業、SV
-								を中心に、全職種に広がっています。
+								日本市場での存在感をキープしつつ、海外市場での売上を伸ばす。これがタダノの成長戦略。<br />
+								現在の売上比率は国内と海外でほぼ半々。今後は、国内の売上を下げることなく、海外比率を大きく伸ばしていきます。海外出張や海外赴任のチャンスは開発や営業、SVを中心に、全職種に広がっています。
 							</p>
 						</li>
 
 						<!-- 4 -->
 						<li class="feature_item">
 							<h3 class="title">技術力</h3>
-							<h4 class="read">技術力特許数561件</h4>
+							<p class="read">技術力特許数561件</p>
 							<p class="text">
-								クレーン開発の主な要素技術は、構造体や走行体を開発・設計する技術全般と、幅広い制御技術。特に見逃せないのが、タダノ独自開発による高張力鋼板の加工・溶接、各種製造設備開発技術といった生産技術の存在感です。今後も中央技術研究所と開発・生産現場との切磋琢磨を通じて「世界初」「業界初」の技術を送り出していきます。
+								クレーン開発の主な要素技術は、構造体や走行体を開発・設計する技術全般と、幅広い制御技術。特に見逃せないのが、タダノ独自開発による高張力鋼板の加工・溶接、各種製造設備開発技術といった生産技術の存在感です。<br />
+								今後も中央技術研究所と開発・生産現場との切磋琢磨を通じて「世界初」「業界初」の技術を送り出していきます。
 							</p>
 						</li>
 
 						<!-- 5 -->
 						<li class="feature_item">
 							<h3 class="title">働き方改革</h3>
-							<h4 class="read">
-								年間休日 125 日タダノの働き方改革は、職場環境と勤務形態の 2 方向から「働きやすさ」の実現に向けて重層的に進められています。
-							</h4>
+							<p class="read">
+								年間休日125日タダノの働き方改革は、職場環境と勤務形態の2方向から「働きやすさ」の実現に向けて重層的に進められています。
+							</p>
 							<p class="text">
-								たとえば定型事務作業を自動化する RPA やファイリングシステムの導入。年間休日数も、働き方改革が話題になる以前から 125 日。
-								GW、夏季、年末年始などの長期休暇も充実。産休・育休後の時短勤務期間についても着実に充実を図っています。
+								たとえば定型事務作業を自動化するRPAやファイリングシステムの導入。<br />
+								年間休日数も、働き方改革が話題になる以前から125日。GW、夏季、年末年始などの長期休暇も充実。産休・育休後の時短勤務期間についても着実に充実を図っています。
 							</p>
 						</li>
 
 						<!-- 6 -->
 						<li class="feature_item">
 							<h3 class="title">キャリア形成支援</h3>
-							<h4 class="read">「広く深く」が基本方針経験の幅を広げて成長につなげるのが、タダノの人事方針。</h4>
+							<p class="read">「広く深く」が基本方針経験の幅を広げて成長につなげるのが、タダノの人事方針。</p>
 							<p class="text">
-								上司との面談を通じて仕事を通じた成長プランを明確に。一方、一般的な教育研修制度とは別に、MBA
-								取得を目指す国内留学や、ゼネコンなど共同開発先への長期出張をはじめ、通信教育講座、英会話講座など、社内公募による成長機会を豊富に用意。自ら手を挙げる積極的な成長意欲に、手厚く応えています。
+								上司との面談を通じて仕事を通じた成長プランを明確に。<br />
+								一方、一般的な教育研修制度とは別に、MBA取得を目指す国内留学や、ゼネコンなど共同開発先への長期出張をはじめ、通信教育講座、英会話講座など、社内公募による成長機会を豊富に用意。自ら手を挙げる積極的な成長意欲に、手厚く応えています。
 							</p>
 						</li>
 
 						<!-- 7 -->
 						<li class="feature_item">
 							<h3 class="title">福利厚生</h3>
-							<h4 class="read">最良のコミュニケーションツール</h4>
+							<p class="read">最良のコミュニケーションツール</p>
 							<p class="text">
-								タダノの福利厚生制度の考え方は、社員別の年間予算を決めるカフェテリア型ではなく、職場のコミュニケーション活性化に主眼を置いた「企画型」。ある部門では、去年は全員参加の旅行、今年は気の合うどうしのミニトリップ、来年は課単位の食事会というように、組織単位・グループ単位で楽しみながらコミュニケーションを深めるスタイルです。社会人リーグの強豪として知られるバドミントンをはじめ、テニス、よさこい連、写真、書道など、クラブ活動も盛ん。また社員の家族も利用できる本社体育館も、常に盛況です。
+								タダノの福利厚生制度の考え方は、社員別の年間予算を決めるカフェテリア型ではなく、職場のコミュニケーション活性化に主眼を置いた「企画型」。<br />
+								ある部門では、去年は全員参加の旅行、今年は気の合うどうしのミニトリップ、来年は課単位の食事会というように、組織単位・グループ単位で楽しみながらコミュニケーションを深めるスタイルです。社会人リーグの強豪として知られるバドミントンをはじめ、テニス、よさこい連、写真、書道など、クラブ活動も盛ん。また社員の家族も利用できる本社体育館も、常に盛況です。
 							</p>
 						</li>
 
 						<!-- 8 -->
 						<li class="feature_item">
 							<h3 class="title">寮・社宅</h3>
-							<h4 class="read">住まいのサポートも充実</h4>
+							<p class="read">住まいのサポートも充実</p>
 							<p class="text">
-								本社のある香川県、および東京勤務の31歳未満の独身者に向けて、社員寮を用意。各個室はキッチン・バス・エアコン完備で、香川県の社員寮には食堂も。新人歓迎会など、寮生主催の各種イベントも盛り上がります。なお香川・東京以外の事業所勤務者には、独身寮がないかわりに借上げ社宅を用意。希望者は何年でも住めますが、早い段階で(多くは
-								30 代のうちに)マイホームを手に入れて社宅を“卒業”する社員が目立ちます。海外駐在社員の住まいも含めて、費用面のサポートも充実しています。
+								本社のある香川県、および東京勤務の31歳未満の独身者に向けて、社員寮を用意。各個室はキッチン・バス・エアコン完備で、香川県の社員寮には食堂も。新人歓迎会など、寮生主催の各種イベントも盛り上がります。<br />
+								なお香川・東京以外の事業所勤務者には、独身寮がないかわりに借上げ社宅を用意。希望者は何年でも住めますが、早い段階で(多くは30代のうちに)マイホームを手に入れて社宅を“卒業”する社員が目立ちます。海外駐在社員の住まいも含めて、費用面のサポートも充実しています。
 							</p>
 						</li>
 					</ol>
 				</div>
 			</section>
-			<!-- /FEATURE----------------------------------------  -->
+			<!-- /FEATURE  -->
 
-			<!-- PRODUCT----------------------------------------  -->
+			<!-- PRODUCT  -->
 			<section class="l-vertical">
 				<div class="heading2_wrap">
 					<!-- prettier-ignore -->
 					<%- include( baseMeta.pathsEjsCommon + "_heading", {tag:'h2',block:'heading2',modifire:'', 
-					subText:'main product',mainText:'主力製品'}); %>
+					subText:'main products',mainText:'主力製品'}); %>
 				</div>
+
 				<!-- slider -->
-				<!-- swiper main -->
-				<div class="swiper-container -product">
+				<div class="swiper-container product_mediaSwiper">
 					<div class="swiper-wrapper">
 						<!-- 1 -->
 						<div class="swiper-slide">
 							<figure class="product_img">
 								<img
-									src="<%= baseMeta.pathsImg %>product/AR5500M_01.png"
-									alt="ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー"
+									src="<%= baseMeta.pathsImg %>product/GR1000N_00.png"
+									alt="ラフテレーンクレーン GR1000N_00"
 									width="400"
 									height="400"
-									decoding="async"
+									loading="lazy"
 								/>
 							</figure>
 						</div>
@@ -385,11 +388,11 @@
 						<div class="swiper-slide">
 							<figure class="product_img">
 								<img
-									src="<%= baseMeta.pathsImg %>product/AT147CE4_01.png"
-									alt="ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー"
+									src="<%= baseMeta.pathsImg %>product/ATF400G_01.png"
+									alt="オールテレーンクレーン ATF400G_01"
 									width="400"
 									height="400"
-									decoding="async"
+									loading="lazy"
 								/>
 							</figure>
 						</div>
@@ -397,83 +400,97 @@
 						<!-- 3 -->
 						<div class="swiper-slide">
 							<figure class="product_img">
-								<img src="<%= baseMeta.pathsImg %>product/AT400CG_01.png" alt="ハイパーデッキ" width="400" height="400" decoding="async" />
+								<img
+									src="<%= baseMeta.pathsImg %>product/AR5500M_01.png"
+									alt="オールテレーンクレーン AR-5500M"
+									width="400"
+									height="400"
+									loading="lazy"
+								/>
 							</figure>
 						</div>
 
 						<!-- 4 -->
 						<div class="swiper-slide">
 							<figure class="product_img">
-								<img src="<%= baseMeta.pathsImg %>product/ATF400G_01.png" alt="オールテレーンクレーン" width="400" height="400" decoding="async" />
+								<img src="<%= baseMeta.pathsImg %>product/AT147CE4_01.png" alt="スカイボーイ AT147CE4_01" width="400" height="400" loading="lazy" />
 							</figure>
 						</div>
 
 						<!-- 5 -->
 						<div class="swiper-slide">
 							<figure class="product_img">
-								<img src="<%= baseMeta.pathsImg %>product/GR1000N_00.png" alt="ラフテレーンクレーン" width="400" height="400" decoding="async" />
+								<img src="<%= baseMeta.pathsImg %>product/AT400CG_01.png" alt="ハイパーデッキ AT400CG_01" width="400" height="400" loading="lazy" />
 							</figure>
 						</div>
 					</div>
 
-					<!-- Add Arrows -->
-					<div class="swiper-button-next"></div>
-					<div class="swiper-button-prev"></div>
+					<!-- Add Pagination -->
+					<div class="swiper-pagination product_bullets"></div>
 				</div>
 
-				<!-- swiper thumd -->
-				<div class="productThumbs">
-					<div class="swiper-container -productThumbs">
+				<!-- productInfo_swiper -->
+				<div class="productInfo">
+					<div class="swiper-container product_infoSwiper">
 						<div class="swiper-wrapper">
 							<!-- 1 -->
-							<div class="swiper-slide">
-								<p class="productThumbs_title"></p>
-								<p class="productThumbs_text">
-									11111文章てきすとテキストTEXTtext文章てきすとテキストTEXTtext文章てきすとテキストTEXTtext文章てきすとテキストTEXTtext文章てきすとテキストTEXTtext
-								</p>
-							</div>
+							<section class="swiper-slide">
+								<div class="productInfo_wrap">
+									<h3 class="productInfo_title">ラフテレーンクレーン<br />GR1000N_00</h3>
+									<p class="productInfo_text">
+										ひとつの運転席で走行とクレーン操作が行える自走式クレーンです。
+										不整地や比較的軟弱な地盤でも走行ができるほか、狭隘地での機動性にも優れています。
+										近年ではその小回り性を生かし、主に市街地などの狭い現場で活躍しています。
+									</p>
+								</div>
+							</section>
 
 							<!-- 2 -->
-							<div class="swiper-slide">
-								<p class="productThumbs_title">スカイボーイ</p>
-								<p class="productThumbs_text">
-									高所作業車は、高所における工事、点検、補修等の作業に使用される機械です。作業床及び昇降装置その他の装置により構成され、走行装置は3種に分類されます。トラック式は優れた機動性により、電気・通信工事、建設工事、道路やトンネルの点検や補修等に活躍しています。ホイール、クローラ式は作業姿勢のまま走行可能で造船、建設現場等の長期の構内作業に適しています。
-								</p>
-							</div>
+							<section class="swiper-slide">
+								<div class="productInfo_wrap">
+									<h3 class="productInfo_title">オールテレーンクレーン<br />ATF400G_01</h3>
+									<p class="productInfo_text">
+										あらゆる路面に適応したクレーン、つまり舗装道路から不整地までオールマイティに走行できるクレーンです。大きなクレーン能力を持ちながら小回り性に優れているので狭い現場で大きい吊上げ能力を必要とする作業に使用されます。
+									</p>
+								</div>
+							</section>
 
 							<!-- 3 -->
-							<div class="swiper-slide">
-								<p class="productThumbs_title">ハイパーデッキ</p>
-								<p class="productThumbs_text">
-									高所作業車は、高所における工事、点検、補修等の作業に使用される機械です。作業床及び昇降装置その他の装置により構成され、走行装置は3種に分類されます。トラック式は優れた機動性により、電気・通信工事、建設工事、道路やトンネルの点検や補修等に活躍しています。ホイール、クローラ式は作業姿勢のまま走行可能で造船、建設現場等の長期の構内作業に適しています。
-								</p>
-							</div>
+							<section class="swiper-slide">
+								<div class="productInfo_wrap">
+									<h3 class="productInfo_title">オールテレーンクレーン<br />AR-5500M</h3>
+									<p class="productInfo_text">
+										あらゆる路面に適応したクレーン、つまり舗装道路から不整地までオールマイティに走行できるクレーンです。大きなクレーン能力を持ちながら小回り性に優れているので狭い現場で大きい吊上げ能力を必要とする作業に使用されます。
+									</p>
+								</div>
+							</section>
 
 							<!-- 4 -->
-							<div class="swiper-slide">
-								<p class="productThumbs_title">オールテレーンクレーン</p>
-								<p class="productThumbs_text">
-									あらゆる路面に適応したクレーン、つまり舗装道路から不整地までオールマイティに走行できるクレーンです。大きなクレーン能力を持ちながら小回り性に優れているので狭い現場で大きい吊上げ能力を必要とする作業に使用されます。
-								</p>
-							</div>
+							<section class="swiper-slide">
+								<div class="productInfo_wrap">
+									<h3 class="productInfo_title">スカイボーイ<br />AT147CE4_01</h3>
+									<p class="productInfo_text">
+										高所作業車は、高所における工事、点検、補修等の作業に使用される機械です。作業床及び昇降装置その他の装置により構成され、走行装置は3種に分類されます。トラック式は優れた機動性により、電気・通信工事、建設工事、道路やトンネルの点検や補修等に活躍しています。ホイール、クローラ式は作業姿勢のまま走行可能で造船、建設現場等の長期の構内作業に適しています。
+									</p>
+								</div>
+							</section>
 
 							<!-- 5 -->
-							<div class="swiper-slide">
-								<p class="productThumbs_title">ラフテレーンクレーン</p>
-								<p class="productThumbs_text">
-									ひとつの運転席で走行とクレーン操作が行える自走式クレーンです。
-									不整地や比較的軟弱な地盤でも走行ができるほか、狭隘地での機動性にも優れています。
-									近年ではその小回り性を生かし、主に市街地などの狭い現場で活躍しています。
-								</p>
-							</div>
+							<section class="swiper-slide">
+								<div class="productInfo_wrap">
+									<h3 class="productInfo_title">ハイパーデッキ<br />AT400CG_01</h3>
+									<p class="productInfo_text">
+										高所作業車は、高所における工事、点検、補修等の作業に使用される機械です。作業床及び昇降装置その他の装置により構成され、走行装置は3種に分類されます。トラック式は優れた機動性により、電気・通信工事、建設工事、道路やトンネルの点検や補修等に活躍しています。ホイール、クローラ式は作業姿勢のまま走行可能で造船、建設現場等の長期の構内作業に適しています。
+									</p>
+								</div>
+							</section>
 						</div>
 					</div>
 				</div>
-				<!-- /slider -->
 			</section>
-			<!-- /PRODUCT----------------------------------------  -->
+			<!-- /PRODUCT  -->
 
-			<!-- STAFF----------------------------------------  -->
+			<!-- STAFF  -->
 			<section class="l-vertical">
 				<div class="l-horizontal -spS -pcM">
 					<div class="heading2_wrap">
@@ -486,136 +503,136 @@
 					<!-- card container -->
 					<div class="flexWrap -betweenStretch">
 						<!-- 1 -->
-						<div class="flexItem -staff">
+						<section class="flexItem -staff">
 							<div class="staff_card">
 								<div class="staff_info">
-									<%- include( baseMeta.pathsEjsCommon + "_heading", {tag:'h3',block:'heading3',modifire:'',subText:'開発',mainText:'車両設計'}); %>
+									<%- include( baseMeta.pathsEjsCommon + "_heading", {tag:'h3',block:'heading3',modifire:'h4',subText:'開発',mainText:'車両設計'}); %>
 									<p class="staff_text">クルマ開発の感動と、建機開発の達成感。「働く車」の設計は、手ごたえも2倍。</p>
 								</div>
 
 								<figure class="staff_media">
 									<img
 										src="<%= baseMeta.pathsImg %>staff/tadano-03-0001.jpg"
-										alt="ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー"
+										alt="倉庫前に立つスタッフの写真"
 										width="300"
 										height="200"
-										decoding="async"
+										loading="lazy"
 									/>
 								</figure>
 							</div>
-						</div>
+						</section>
 
 						<!-- 2 -->
-						<div class="flexItem -staff">
+						<section class="flexItem -staff">
 							<div class="staff_card">
 								<div class="staff_info">
-									<%- include( baseMeta.pathsEjsCommon + "_heading", {tag:'h3',block:'heading3',modifire:'',subText:'開発',mainText:'電子制御設計'});
-									%>
+									<%- include( baseMeta.pathsEjsCommon + "_heading",
+									{tag:'h3',block:'heading3',modifire:'h4',subText:'開発',mainText:'電子制御設計'}); %>
 									<p class="staff_text">ハードウェアの仕様や操作性にも目を配り、「使い勝手のよさ」を支える制御設計を。</p>
 								</div>
 
 								<figure class="staff_media">
 									<img
 										src="<%= baseMeta.pathsImg %>staff/tadano-03-0002.jpg"
-										alt="ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー"
+										alt="クレーンの前に立つスタッフの写真"
 										width="300"
 										height="200"
-										decoding="async"
+										loading="lazy"
 									/>
 								</figure>
 							</div>
-						</div>
+						</section>
 
 						<!-- 3 -->
-						<div class="flexItem -staff">
+						<section class="flexItem -staff">
 							<div class="staff_card">
 								<div class="staff_info">
-									<%- include( baseMeta.pathsEjsCommon + "_heading", {tag:'h3',block:'heading3',modifire:'',subText:'開発',mainText:'研究' }); %>
+									<%- include( baseMeta.pathsEjsCommon + "_heading", {tag:'h3',block:'heading3',modifire:'h4',subText:'開発',mainText:'研究' }); %>
 									<p class="staff_text">「クレーンの未来形」に世界が驚いた。タダノ史上初、VR 展示のインパクト。</p>
 								</div>
 
 								<figure class="staff_media">
 									<img
 										src="<%= baseMeta.pathsImg %>staff/tadano-03-0003.jpg"
-										alt="ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー"
+										alt="施設玄関前に立つスタッフの写真"
 										width="300"
 										height="200"
-										decoding="async"
+										loading="lazy"
 									/>
 								</figure>
 							</div>
-						</div>
+						</section>
 
 						<!-- 4 -->
-						<div class="flexItem -staff">
+						<section class="flexItem -staff">
 							<div class="staff_card">
 								<div class="staff_info">
-									<%- include( baseMeta.pathsEjsCommon + "_heading", {tag:'h3',block:'heading3',modifire:'',subText:'',mainText:'生産技術' }); %>
+									<%- include( baseMeta.pathsEjsCommon + "_heading", {tag:'h3',block:'heading3',modifire:'h4',subText:'',mainText:'生産技術' }); %>
 									<p class="staff_text">たとえば自動溶接ロボットの立ち上げ。新工場での達成を、次の挑戦に活かしたい。</p>
 								</div>
 
 								<figure class="staff_media">
 									<img
 										src="<%= baseMeta.pathsImg %>staff/tadano-03-0004.jpg"
-										alt="ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー"
+										alt="タダノのロゴの入った施設の駐車場に立つスタッフの写真"
 										width="300"
 										height="200"
-										decoding="async"
+										loading="lazy"
 									/>
 								</figure>
 							</div>
-						</div>
+						</section>
 
 						<!-- 5 -->
-						<div class="flexItem -staff">
+						<section class="flexItem -staff">
 							<div class="staff_card">
 								<div class="staff_info">
-									<%- include( baseMeta.pathsEjsCommon + "_heading", {tag:'h3',block:'heading3',modifire:'',subText:'',mainText:'生産管理' }); %>
+									<%- include( baseMeta.pathsEjsCommon + "_heading", {tag:'h3',block:'heading3',modifire:'h4',subText:'',mainText:'生産管理' }); %>
 									<p class="staff_text">未来から発想して今日の答えを出す。そこが難しい。だからこそ、面白い。</p>
 								</div>
 
 								<figure class="staff_media">
 									<img
 										src="<%= baseMeta.pathsImg %>staff/tadano-03-0005.jpg"
-										alt="ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー"
+										alt="工場内に立つスタッフの写真"
 										width="300"
 										height="200"
-										decoding="async"
+										loading="lazy"
 									/>
 								</figure>
 							</div>
-						</div>
+						</section>
 
 						<!-- 6 -->
-						<div class="flexItem -staff">
+						<section class="flexItem -staff">
 							<div class="staff_card">
 								<div class="staff_info">
-									<%- include( baseMeta.pathsEjsCommon + "_heading", {tag:'h3',block:'heading3',modifire:'',subText:'',mainText:'品質安全' }); %>
+									<%- include( baseMeta.pathsEjsCommon + "_heading", {tag:'h3',block:'heading3',modifire:'h4',subText:'',mainText:'品質安全' }); %>
 									<p class="staff_text">あらゆる角度から安全性を確保し、期待を超える“感動品質”を届けたい。</p>
 								</div>
 
 								<figure class="staff_media">
 									<img
 										src="<%= baseMeta.pathsImg %>staff/tadano-03-0006.jpg"
-										alt="ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー"
+										alt="倉庫前に立つスタッフの写真"
 										width="300"
 										height="200"
-										decoding="async"
+										loading="lazy"
 									/>
 								</figure>
 							</div>
-						</div>
+						</section>
 					</div>
 				</div>
 			</section>
-			<!-- /STAFF----------------------------------------  -->
+			<!-- /STAFF  -->
 
-			<!--  -->
+			<!-- COMPANY/OFFICE -->
 			<section class="l-vertical">
 				<div class="l-horizontal -spFull -pcLm">
 					<!-- COMPANY -->
-					<section class="company_card background -light">
-						<div class="flexCol -reverse">
+					<section class="company_card background -light -shadow">
+						<div class="flexWrap -wrapReverse">
 							<!-- info -->
 							<div class="company_info c-angle -tl">
 								<div class="l-horizontal -text">
@@ -624,10 +641,11 @@
 										{tag:'h2',block:'heading2',modifire:'-black',subText:'company',mainText:'会社概要' }); %>
 									</div>
 
+									<!-- list -->
 									<dl class="dllist -upper">
 										<div class="box">
 											<dt class="title">事業内容</dt>
-											<dd class="text">建設用クレーン、車両搭載型クレーン、高所作業車の研究・開発、製造、販売、アフターサービス</dd>
+											<dd class="text">建設用クレーン、車両搭載型クレーン、高所作業車の研究・開発、製造、販売、アフターサービス</dd>
 										</div>
 
 										<div class="box">
@@ -666,10 +684,10 @@
 							<figure class="company_media">
 								<img
 									src="<%= baseMeta.pathsImg %>company/AdobeStock_375040252.jpg"
-									alt="ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー"
+									alt="夏の五色台と瀬戸内海のパノラマ写真"
 									width="1200"
 									height="368"
-									decoding="async"
+									loading="lazy"
 								/>
 							</figure>
 						</div>
@@ -677,8 +695,8 @@
 					<!-- /COMPANY  -->
 
 					<!-- OFFICE  -->
-					<section class="company_card background -light">
-						<div class="flexCol -reverse">
+					<section class="company_card background -light -shadow">
+						<div class="flexWrap -wrapReverse">
 							<!-- info -->
 							<div class="company_info c-angle -tl">
 								<div class="l-horizontal -text">
@@ -687,6 +705,7 @@
 										{tag:'h2',block:'heading2',modifire:'-black',subText:'office',mainText:'事業所'}); %>
 									</div>
 
+									<!-- list -->
 									<dl class="dllist -upper">
 										<div class="box">
 											<dt class="title">本社</dt>
@@ -710,7 +729,7 @@
 
 													<div class="box">
 														<dt class="title">海外(4ヵ国6拠点)</dt>
-														<dd class="text">ドイツ、アメリカ、タイ、インド</dd>
+														<dd class="text">ドイツ、アメリカ、タイ、インド</dd>
 													</div>
 												</dl>
 											</dd>
@@ -732,7 +751,7 @@
 										</div>
 
 										<div class="box">
-											<dt class="title">主要な<br />グループ会社</dt>
+											<dt class="title">主要な<br />グループ会社</dt>
 											<dd class="wrap">
 												<dl class="dllist -under">
 													<div class="box">
@@ -742,24 +761,24 @@
 															<dl class="dllist -under">
 																<div class="box">
 																	<dt class="title">日本(計11社)</dt>
-																	<dd class="text">(株)タダノアイメス、(株)タダノアイレック、(株)タダノエステック 他8社</dd>
+																	<dd class="text">(株)タダノアイメス、(株)タダノアイレック、(株)タダノエステック 他8社</dd>
 																</div>
 
 																<div class="box">
 																	<dt class="title">欧州(計11社)</dt>
-																	<dd class="text">タダノ・ファウンGmbH、タダノ・デマーグGmbH[独] 他11社</dd>
+																	<dd class="text">タダノ・ファウンGmbH、タダノ・デマーグGmbH[独] 他11社</dd>
 																</div>
 
 																<div class="box">
 																	<dt class="title">北米(計3社)</dt>
-																	<dd class="text">タダノ・アメリカCorp.、タダノ・マンティスCorp[米] 他1社</dd>
+																	<dd class="text">タダノ・アメリカCorp.、タダノ・マンティスCorp[米] 他1社</dd>
 																</div>
 
 																<div class="box">
 																	<dt class="title">その他(計12社)</dt>
 																	<dd class="text">
-																		タダノ・アジアPte.Ltd.[シンガポール]、タダノ・オセアニア[オーストラリア]
-																		タダノ・エスコーツ・インディアPvt.Ltd.[インド]、タダノ・タイランドCo.,Ltd.[タイ] 他8社
+																		タダノ・アジアPte.Ltd.[シンガポール]、タダノ・オセアニア[オーストラリア]
+																		タダノ・エスコーツ・インディアPvt.Ltd.[インド]、タダノ・タイランドCo.,Ltd.[タイ] 他8社
 																	</dd>
 																</div>
 															</dl>
@@ -773,48 +792,48 @@
 							</div>
 
 							<!-- media -->
-							<div class="flex">
-								<figure class="flexItem -office">
-									<img
-										class="office_img"
-										src="<%= baseMeta.pathsImg %>company/tadano-02-0015.jpg"
-										alt="ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー"
-										width="400"
-										height="266"
-										decoding="async"
-									/>
-								</figure>
+							<div class="company_media">
+								<div class="flex">
+									<figure class="flexItem -office">
+										<img
+											src="<%= baseMeta.pathsImg %>company/tadano-02-0015.jpg"
+											alt="タダノのロビーの写真"
+											width="400"
+											height="266"
+											loading="lazy"
+										/>
+									</figure>
 
-								<figure class="flexItem -office">
-									<img
-										class="office_img"
-										src="<%= baseMeta.pathsImg %>company/tadano-02-0011.jpg"
-										alt="ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー"
-										width="400"
-										height="266"
-										decoding="async"
-									/>
-								</figure>
+									<figure class="flexItem -office">
+										<img
+											src="<%= baseMeta.pathsImg %>company/tadano-02-0011.jpg"
+											alt="タダノの展示場の写真"
+											width="400"
+											height="266"
+											loading="lazy"
+										/>
+									</figure>
 
-								<figure class="flexItem -office">
-									<img
-										class="office_img"
-										src="<%= baseMeta.pathsImg %>company/tadano-02-0007.jpg"
-										alt="ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー"
-										width="400"
-										height="266"
-										decoding="async"
-									/>
-								</figure>
+									<figure class="flexItem -office">
+										<img
+											src="<%= baseMeta.pathsImg %>company/tadano-02-0007.jpg"
+											alt="タダノの展示場の写真"
+											width="400"
+											height="266"
+											loading="lazy"
+										/>
+									</figure>
+								</div>
 							</div>
 						</div>
 					</section>
 					<!-- /OFFICE  -->
 				</div>
 			</section>
+			<!-- /COMPANY/OFFICE -->
 
 			<!-- RECRUIT  -->
-			<section class="l-vertical background -light">
+			<section class="l-vertical background -light -shadow">
 				<div class="l-horizontal -spS -pcLm">
 					<div class="heading2_wrap">
 						<%- include( baseMeta.pathsEjsCommon + "_heading",
@@ -825,7 +844,7 @@
 
 					<div class="recruit_flex">
 						<!-- 1 -->
-						<div class="recruit_flexItem">
+						<section class="recruit_flexItem">
 							<div class="recruit_card c-angle -br">
 								<div class="flexWrap -wrapReverse">
 									<div class="recruit_info">
@@ -841,18 +860,18 @@
 									<figure class="recruit_media">
 										<img
 											src="<%= baseMeta.pathsImg %>recruit/production.jpg"
-											alt="ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー"
+											alt="電子基盤をチェックするスタッフの手元の写真"
 											width="500"
 											height="300"
-											decoding="async"
+											loading="lazy"
 										/>
 									</figure>
 								</div>
 							</div>
-						</div>
+						</section>
 
 						<!-- 2 -->
-						<div class="recruit_flexItem">
+						<section class="recruit_flexItem">
 							<div class="recruit_card c-angle -br">
 								<div class="flexWrap -wrapReverse">
 									<div class="recruit_info">
@@ -866,15 +885,15 @@
 									<figure class="recruit_media">
 										<img
 											src="<%= baseMeta.pathsImg %>recruit/service.jpg"
-											alt="ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー"
+											alt="工場内で製品を前に複数人に指示をするスタッフの写真"
 											width="500"
 											height="300"
-											decoding="async"
+											loading="lazy"
 										/>
 									</figure>
 								</div>
 							</div>
-						</div>
+						</section>
 					</div>
 				</div>
 
@@ -883,7 +902,7 @@
 					<div class="btnBox">
 						<p class="cta_btnUpper balloonLine">現在募集している職種を確認</p>
 						<p class="btn -primary">
-							<a class="btn_link" href="" target="_blank"
+							<a class="btn_link" href="" target="_blank" rel="noopener noreferrer"
 								><span class="btn_text">募集要項を確認する</span><span class="btn_icon"><span class="iconmin launch"></span></span
 							></a>
 						</p>
@@ -900,32 +919,47 @@
 			<!-- /RECRUIT  -->
 
 			<!-- ENTRY  -->
-			<section class="l-vertical background -light">
+			<section class="background -light">
 				<div class="l-horizontal -spS -pcM">
 					<div class="heading2_wrap">
 						<%- include( baseMeta.pathsEjsCommon + "_heading", {tag:'h2',block:'heading2', modifire:'-deep',subText:'entry',mainText:'応募について'});
 						%>
 					</div>
 
-					<p class="entry_text">
-						いきなり企業へ応募するのはハードルも高く、負担も重くなりがち。どの職種に応募したら良いのかを決めるのも難しいかもしれません。そこでまずは、我々アールエフキャリア（正規委託企業）が貴方の相談に乗ります。<br />
-						企業と付き合いが長く、地元密着の就職アドバイザーである我々にお気軽にご相談ください。<br />
-						選考について 下記フォームよりご連絡ください。別途必要な書類や追加の質問がある場合、メールまたは電話にてご連絡いたします。
-					</p>
+					<!-- info -->
+					<div class="entry_info">
+						<div class="entry_infoWrap">
+							<p class="entry_text">
+								いきなり企業へ応募するのはハードルも高く、負担も重くなりがち。<br />どの職種に応募したら良いのかを決めるのも難しいかもしれません。
+							</p>
 
+							<p class="entry_text">
+								そこでまずは、我々アールエフキャリア（正規委託企業）が貴方の相談に乗ります。<br />
+								企業と付き合いが長く、地元密着の就職アドバイザーである我々にお気軽にご相談ください。
+							</p>
+
+							<p class="entry_text">
+								選考について下記フォームよりご連絡ください。別途必要な書類や追加の質問がある場合、メールまたは電話にてご連絡いたします。
+							</p>
+						</div>
+					</div>
+
+					<!-- btn -->
 					<div class="btnBox -full">
 						<div class="btn -media">
-							<a class="btn_link" href="" target="_blank"
-								><p class="btn_text">選考について<br />就職アドバイザーに相談する</p>
+							<a class="btn_link" href="" target="_blank" rel="noopener noreferrer"
+								><span class="btn_text">選考について<br />就職アドバイザーに相談する</span>
+
 								<figure class="btn_img">
 									<img
 										src="<%= baseMeta.pathsImg %>recruit/adviser.jpg"
-										alt="ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー"
-										width="229"
-										height="180"
-										decoding="async"
-									/></figure
-							></a>
+										alt="アドバイザー二人が相談に乗る写真"
+										width="400"
+										height="300"
+										loading="lazy"
+									/>
+								</figure>
+							</a>
 						</div>
 					</div>
 				</div>
@@ -935,10 +969,10 @@
 		<!-- /main  -->
 
 		<!-- FOOTER  -->
-		<footer class="l-vertical background -secondary">
+		<footer class="footer background -light">
 			<div class="l-horizontal -spS -pcS">
 				<!-- copyright -->
-				<p class="footer_copyright"><small>Copyright &copy; 株式会社ダミー All Rights Reserved</small></p>
+				<p class="footer_copyright"><small>Copyright &copy; アールエフキャリア株式会社 All Rights Reserved</small></p>
 			</div>
 		</footer>
 		<!-- /FOOTER  -->

@@ -11,6 +11,8 @@
 .c-angle.-set {}
 .c-angle.-set::before {}
 .c-angle.-set::after {}
+.c-quote {}
+.c-quote.-tr::before {}
 .c-icon {}
 .c-hamburger {}
 .c-hamburger_line {}
@@ -41,8 +43,6 @@
 .c-scrollbar::-webkit-scrollbar-thumb {}
 .background.-white {}
 .background.-white::before {}
-.background.-middle {}
-.background.-middle::before {}
 .background.-triangle {}
 .background.-triangle::before {}
 .background.-centerTriangle {}
@@ -51,8 +51,6 @@
 .background.-centerTriangle01::before {}
 .background.-square {}
 .background.-square::before {}
-.background.-pcWork::after {}
-.background.-calculation::after {}
 .background.-hero {}
 .background.-hero::after {}
 .badge.-row {}
@@ -376,95 +374,12 @@
 .orderM1 {}
 .flexItem.-heroInfo {}
 .flexItem.-heroMedia {}
-fieldset {}
-legend {}
-
-input[type='month']::-webkit-outer-spin-button {}
-
-input[type='month']::-webkit-inner-spin-button {}
-
-input[type='datetime-local']::-webkit-outer-spin-button {}
-
-input[type='datetime-local']::-webkit-inner-spin-button {}
-
-input[type='week']::-webkit-outer-spin-button {}
-
-input[type='week']::-webkit-inner-spin-button {}
-
-input[type='date']::-webkit-outer-spin-button {}
-
-input[type='date']::-webkit-inner-spin-button {}
-
-input[type='month'] {}
-
-input[type='datetime-local'] {}
-
-input[type='week'] {}
-
-input[type='date'] {}
-input[type='date']::-webkit-clear-button {}
-
-input[type='month']::-webkit-clear-button {}
-
-input[type='datetime-local']::-webkit-clear-button {}
-
-input[type='week']::-webkit-clear-button {}
-.form input[type='submit'] {}
-.form input[type='submit']:hover {}
-.form input[type='radio'] {}
-.form input[type='radio']::before {}
-.form input[type='radio']::after {}
-.form input[type='radio']:checked::after {}
-.form input[type='radio']:disabled {}
-.form input[type='radio']:focus {}
-.form input[type='checkbox'] {}
-.form input[type='checkbox']::before {}
-.form input[type='checkbox']::after {}
-.form input[type='checkbox']:checked::after {}
-.form input[type='checkbox']:disabled {}
-.form input[type='checkbox']:focus {}
-.form input[type='checkbox']:focus::after {}
-.form .selectBox {}
-.form .selectBox::after {}
-input[type='radio'] + label {}
-
-input[type='checkbox'] + label {}
-
-label + input[type='radio'] {}
-
-label + input[type='checkbox'] {}
-.form .box.-indent {}
-.form .item + .item {}
-.form .closed {}
-.form .closed:disabled {}
-.cl-requiredItem {}
-.cl-requiredItem.-cl-required {}
-.cl-requiredItem.-optional {}
-.orderCount {}
-.orderCount_button {}
-.orderCount_button:hover {}
-.orderCount_button:active {}
-.orderCount_input {}
 .dlList01 > .box {}
 .dlList01 > .box .icon {}
 .dlList01 > .box .icon span {}
 .dlList01 > .box > .title {}
 .dlList01 > .box > .text {}
 .dlList01 > .box > .text.-long {}
-.dlList01.-border > .box > .title {}
-.dlList01.-border > .box:nth-of-type(odd) {}
-.dlList01.-border > .box:nth-of-type(odd) .-noColor {}
-.loading {}
-.loading.-loaded {}
-.sk-folding-cube {}
-.sk-folding-cube .sk-cube {}
-.sk-folding-cube .sk-cube::before {}
-.sk-folding-cube .sk-cube2 {}
-.sk-folding-cube .sk-cube2::before {}
-.sk-folding-cube .sk-cube3 {}
-.sk-folding-cube .sk-cube3::before {}
-.sk-folding-cube .sk-cube4 {}
-.sk-folding-cube .sk-cube4::before {}
 0% {}
 
 	10% {}
@@ -476,57 +391,6 @@ label + input[type='checkbox'] {}
 	100% {}
 .sliderContainer {}
 .recruit_img img {}
-.contactCategory {}
-.contactCategory_wrap {}
-.contactCategory_flex {}
-.contactCategory_item {}
-.contactCategory_item .box {}
-.contactCategory_item .text {}
-.contactCategory_item::after {}
-.contactCategory_item:hover .box {}
-.contactCategory_item:hover .text {}
-.contactCategory .-active {}
-.contactCategory .-active .box {}
-.contactCategory .-active .text {}
-.contactCategory .-active::after {}
-.takeout_container {}
-.takeout_tabWrap {}
-.takeout_tabWrap::after {}
-.takeout_contentsWrap {}
-.takeout_cartWrap {}
-.takeoutMenu {}
-.takeoutMenu_mediaBox {}
-.takeoutMenu_img {}
-.takeoutMenu_infoBox {}
-.takeoutMenu_title {}
-.takeoutMenu_title a:hover {}
-.takeoutMenu_allergenBox {}
-.takeoutMenu_allergenBox span {}
-.takeoutMenu_text {}
-.takeoutMenu_priceBox {}
-.takeoutMenu_price {}
-.takeoutMenu_price i {}
-.takeoutMenu_orderCountBox {}
-.takeoutMenu_cartButton {}
-.takeoutMenu_cartButton i {}
-.takeoutMenu_cartButton:hover {}
-.takeoutMenu_cartButton:active {}
-.takeoutForm {}
-.cartItem {}
-.cartItem_mediaBox {}
-.cartItem_img {}
-.cartItem_infoBox {}
-.cartItem_title {}
-.cartItem_priceBox {}
-.cartItem_price {}
-.cartItem_price i {}
-.cartItem_deleteBox {}
-.cartItem_deleteButton {}
-.cartItem_deleteButton:hover {}
-.cartItem_deleteButton:active {}
-.cart_total {}
-.cart_total span {}
-.other_wrap {}
 .u-fullLink {}
 .u-fullLink > a::before {}
 .u-mt20 {}

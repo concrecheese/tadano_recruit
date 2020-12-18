@@ -17,6 +17,12 @@
 		pointer-events: none;
 		opacity: 0;
 	}
+
+	//JS無効時
+	.js-disabled & {
+		pointer-events: none;
+		opacity: 0;
+	}
 }
 
 .sk-folding-cube {

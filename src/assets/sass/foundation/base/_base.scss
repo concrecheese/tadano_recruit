@@ -3,8 +3,8 @@
 /* focus (what-input) -------------------------------------------------- */
 
 [data-whatinput='keyboard'] :focus {
-	outline: none;
-	box-shadow: 0 0 0 4px $cl-body;
+	outline: rem(6) solid $cl-focus;
+	outline-offset: rem(4);
 }
 
 [data-whatinput='mouse'] :focus,
@@ -40,7 +40,7 @@ body {
 body {
 	@include fs-base(500, 1.8);
 
-	font-family: materia-icon-min, $ff-base_yugo;
+	font-family: $ff-base_yugo;
 	font-size: rem(15); //15px
 	color: $cl-black-l;
 
@@ -90,11 +90,6 @@ h6,
 .h6 {
 	@include ff-jp();
 }
-
-// h2,
-// .h2 {
-// 	@include ff-en();
-// }
 
 /* heading fontsize -------------------------------------------------- */
 

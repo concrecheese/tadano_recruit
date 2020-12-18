@@ -1,6 +1,6 @@
 /* loading */
 
-// loadは画像も全部読み込み終わったら実行。
+// loadは画像も全部読み込み終わったら実行。DOMContentLoadedはDOMのみ。
 
 window.addEventListener('DOMContentLoaded', function () {
 	const jsLoading = document.getElementById('js-loading');

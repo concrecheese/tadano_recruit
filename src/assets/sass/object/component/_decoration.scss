@@ -6,26 +6,26 @@
 
 	&::before {
 		position: absolute;
-		top: 0.5em;
-		left: 0.5em;
+		top: 0;
+		left: 0;
 		display: block;
-		width: 2em;
-		height: 2em;
+		width: 3.5em;
+		height: 3.5em;
 		content: '';
-		border-top: rem(6) solid $cl-key;
-		border-left: rem(6) solid $cl-key;
+		border-top: 1.5em solid $cl-black;
+		border-left: 1.5em solid $cl-black;
 	}
 
 	&::after {
 		position: absolute;
-		right: 0.5em;
-		bottom: 0.5em;
+		right: 0;
+		bottom: 0;
 		display: block;
-		width: 2em;
-		height: 2em;
+		width: 3.5em;
+		height: 3.5em;
 		content: '';
-		border-right: rem(6) solid $cl-key;
-		border-bottom: rem(6) solid $cl-key;
+		border-right: 1.5em solid $cl-black;
+		border-bottom: 1.5em solid $cl-black;
 	}
 }
 
@@ -38,6 +38,7 @@
 			position: absolute;
 			top: 0;
 			left: 0;
+			z-index: 5;
 			display: block;
 			width: 3.5em;
 			height: 3.5em;
@@ -53,6 +54,7 @@
 			position: absolute;
 			right: 0;
 			bottom: 0;
+			z-index: 5;
 			display: block;
 			width: 3.5em;
 			height: 3.5em;
@@ -60,6 +62,16 @@
 			border-right: 1.5em solid $cl-key;
 			border-bottom: 1.5em solid $cl-key;
 		}
+
+		// &.-pc {
+		// 	&::after {
+		// 		display: none;
+
+		// 		@include mq() {
+		// 			display: block;
+		// 		}
+		// 	}
+		// }
 	}
 }
 
@@ -86,6 +98,36 @@
 	&::after {
 		right: 0;
 		transform: rotate(30deg);
+	}
+}
+
+//引用マーク
+.c-quote {
+	position: relative;
+	// overflow: hidden;
+
+	//右上
+	&.-tr {
+		&::before {
+			@include ff-jp();
+
+			position: absolute;
+			top: -20%;
+			right: 5%;
+			z-index: 5;
+			display: block;
+			width: rem(100);
+			height: rem(100);
+			font-size: rem(160);
+			line-height: 1;
+			color: $cl-key;
+			text-align: right;
+			content: '”';
+
+			@include mq() {
+				// font-size: rem(80);
+			}
+		}
 	}
 }
 

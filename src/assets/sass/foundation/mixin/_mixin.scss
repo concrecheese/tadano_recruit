@@ -55,8 +55,8 @@
 	//バー
 	&::-webkit-scrollbar-thumb {
 		background-color: $cl-scrollbar-thumb;
-		border: 1px solid $cl-scrollbar-thumbBorder;
-		border-radius: 0;
+		border: 3px solid $cl-scrollbar-thumbBorder;
+		border-radius: 100px;
 
 		//ホバーした時のバー
 		&:hover {

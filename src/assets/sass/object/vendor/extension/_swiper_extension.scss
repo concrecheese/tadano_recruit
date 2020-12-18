@@ -36,6 +36,7 @@
 	position: static;
 	display: flex; //ブレットの高さになる
 	justify-content: center;
+	padding-bottom: rem(16); //アウトライン表示のために余白を
 	// z-index: 10;
 	// text-align: center;
 	// transition: 300ms opacity;
@@ -46,19 +47,19 @@
 /* bullets */
 .swiper-pagination-bullet {
 	// display: inline-block;
-	width: rem(12);
-	height: rem(12);
+	width: rem(24);
+	height: rem(8);
 	background: $cl-key; //new
-	// border-radius: 100%;
+	border-radius: 10em;
 	opacity: 0.2;
 
 	@include mq() {
-		width: rem(16);
-		height: rem(16);
+		// width: rem(16);
+		// height: rem(16);
 	}
 
 	& + & {
-		margin-left: rem(20);
+		margin-left: rem(12);
 	}
 }
 
@@ -85,8 +86,15 @@
 	border-radius: 10em;
 }
 
-/* swiper01-------------------- */
-.swiper-container.-crane {
+/* crane_swiper-------------------- */
+
+.crane_swiper {
+	margin: rem(24) rem(24) 0 rem(24);
+
+	@include mq() {
+		margin: rem(32) rem(32) 0 rem(32);
+	}
+
 	// width: 84%; //375pxに対し左右に30px
 	// max-width: rem(1200);
 	// overflow: visible; //これではみ出した部分の表示
@@ -95,79 +103,82 @@
 	}
 }
 
-/* swiper02-------------------- */
+/* product_mediaSwiper-------------------- */
 
 //メイン
-.swiper-container.-product {
+.product_mediaSwiper {
 	$transition: 600ms;
+
+	.swiper-wrapper {
+		align-items: center; //slideの並べ方
+	}
 
 	//通常スライド
 	.swiper-slide {
 		transition: $transition;
-		transform: scale(0.6);
+
+		img {
+			width: 50%;
+		}
+
+		//アクティブな１つのスライド
+		&.swiper-slide-active {
+			width: 100%;
+			transition: $transition;
+
+			img {
+				width: 90%;
+			}
+		}
+
+		//前の１つのスライド
+		&.swiper-slide-prev {
+			transition: $transition;
+
+			img {
+				width: 70%;
+			}
+		}
+
+		//次の１つのスライド
+		&.swiper-slide-next {
+			transition: $transition;
+
+			img {
+				width: 70%;
+			}
+		}
 	}
 
 	//見えているスライド
 	.swiper-slide-visible {
 	}
-
-	//アクティブな１つのスライド
-	.swiper-slide-active {
-		transition: $transition;
-		transform: scale(1);
-
-		.slider_img {
-		}
-	}
-
 	//アクティブな複数のスライド
 	.swiper-slide-duplicate-active {
 	}
-
-	//前の１つのスライド
-	.swiper-slide-prev {
-		transition: $transition;
-		transform: scale(0.8);
-		// transform-origin: left;
-
-		.slider_img {
-		}
-	}
-
 	//前の複数のスライド
 	.swiper-slide-duplicate-prev {
 	}
-
-	//次の１つのスライド
-	.swiper-slide-next {
-		transition: $transition;
-		transform: scale(0.8);
-		// transform-origin: right;
-
-		.slider_img {
-		}
-	}
-
 	//次の複数のスライド
 	.swiper-slide-duplicate-next {
 	}
 }
 
-//サブ
-.swiper-container.-productThumbs {
+/* product_infoSwiper-------------------- */
+
+.product_infoSwiper {
 	$transition: 600ms;
 
 	//通常スライド
 	.swiper-slide {
-		p {
-			text-align: center;
+		.productInfo_wrap {
 			opacity: 0;
 		}
 	}
 
 	//アクティブな１つのスライド
-	.swiper-slide-active {
-		p {
+	.swiper-slide.swiper-slide-active {
+		.productInfo_wrap {
 			opacity: 1;
 		}
 	}

@@ -59,7 +59,7 @@ $cl-youtubeBlack: #282828;
 // PROJECT -------------------------------------------------------
 
 //focus
-$cl-focus: #ff409f;
+$cl-focus: #e3961c;
 
 //黒
 $cl-black: #1a1a1a; //
@@ -83,8 +83,8 @@ $cl-key-l: #000;
 $cl-key-d: #337aff;
 
 //ポイントカラー 差し色
-$cl-point: #2fa3bd;
-$cl-point-l: #73d0e6;
+$cl-point: #50b0c6;
+$cl-point-l: #aae4f2;
 $cl-point-d: #000;
 
 $cl-point-change: #ff5de6;
@@ -111,7 +111,7 @@ $ctaColor: #ff409f;
 	box-shadow: $x $y $size rgba(72, 135, 255, $opacity);
 }
 
-@mixin shadow-black($x: 0, $y: rem(10), $size: rem(20), $opacity: 0.1) {
+@mixin shadow-black($x: 0, $y: 0, $size: rem(40), $opacity: 0.2) {
 	box-shadow: $x $y $size rgba(0, 0, 0, $opacity);
 }
 
@@ -127,10 +127,11 @@ $cl-body: $cl-base;
 //ローディングの背景色
 $loading-back: $cl-key;
 
-//スクロールバー
+// スクロールバー -------------
+
 $cl-scrollbar-back: #0001;
-$cl-scrollbar-thumb: #000;
-$cl-scrollbar-thumbBorder: #0000; //thumbに上乗せされるから不透明だと色濁る
+$cl-scrollbar-thumb: #fff;
+$cl-scrollbar-thumbBorder: $cl-base; //thumbに上乗せされるから不透明だと色濁る
 $cl-scrollbar-hover: $cl-key;
 
 // フォーム関係 -------------

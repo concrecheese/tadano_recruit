@@ -3,10 +3,10 @@
 // ページネーションもpaginationのところのelで個別クラスの付いたページネーションを指定しなければならない。注意。
 //
 
-/* swiper01 */
-const craneSlide = new Swiper('.-crane', {
+/* crane_swiper */
+const craneSlide = new Swiper('.crane_swiper', {
 	speed: 2000,
-	loop: false,
+	loop: true,
 	effect: 'slide',
 
 	spaceBetween: 0,
@@ -16,7 +16,7 @@ const craneSlide = new Swiper('.-crane', {
 
 	// 900以上
 	breakpoints: {
-		1000: {
+		600: {
 			// slidesPerGroup: 2,
 			slidesPerView: 3,
 			// spaceBetween: 0,
@@ -45,15 +45,14 @@ const craneSlide = new Swiper('.-crane', {
 	}
 });
 
-/* swiper02 */
+/* product_swiper */
 
-// メイン
-const productSlide = new Swiper('.-product', {
+// media
+const productSlide = new Swiper('.product_mediaSwiper', {
 	speed: 600,
 	loop: false,
 	effect: 'slide',
-
-	spaceBetween: 0,
+	spaceBetween: 24,
 
 	slidesPerView: 2,
 	centeredSlides: true, // false 左寄せ true 中央寄せ
@@ -61,14 +60,15 @@ const productSlide = new Swiper('.-product', {
 	// 900以上
 	breakpoints: {
 		1000: {
-			slidesPerView: 4
+			slidesPerView: 4,
+			spaceBetween: 32
 		}
 	},
 
-	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev'
-	},
+	// navigation: {
+	// 	nextEl: '.swiper-button-next',
+	// 	prevEl: '.swiper-button-prev'
+	// },
 
 	pagination: {
 		swiper: productThumbs
@@ -77,8 +77,16 @@ const productSlide = new Swiper('.-product', {
 		// progressbarOpposite: true
 	},
 
+	// product_bullets
+	pagination: {
+		el: '.product_bullets',
+		type: 'bullets',
+		clickable: true // true クリック可能
+		// progressbarOpposite: true
+	},
+
 	autoplay: {
-		delay: 4000,
+		delay: 6000,
 		// stopOnLastSlide: true,
 		disableOnInteraction: false
 		// reverseDirection: false,
@@ -86,8 +94,8 @@ const productSlide = new Swiper('.-product', {
 	}
 });
 
-// サブ
-const productThumbs = new Swiper('.-productThumbs', {
+// info
+const productThumbs = new Swiper('.product_infoSwiper', {
 	speed: 600,
 	loop: false,
 	effect: 'fade',
@@ -95,14 +103,13 @@ const productThumbs = new Swiper('.-productThumbs', {
 	// spaceBetween: 20,
 
 	slidesPerView: 1,
-	centeredSlides: true, // false 左寄せ true 中央寄せ
+	centeredSlides: true // false 左寄せ true 中央寄せ
 
-	// 900以上
-	breakpoints: {
-		1000: {
-			// slidesPerView: 4
-		}
-	}
+	// pagination: {
+	// 	type: 'bullets',
+	// 	clickable: true // true クリック可能
+	// 	// progressbarOpposite: true
+	// }
 });
 
 // 連動させる設定

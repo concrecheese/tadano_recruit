@@ -22,6 +22,10 @@
 	align-items: center;
 	justify-content: center;
 	width: 100%;
+
+	// &:focus {
+	// 	background-color: red;
+	// }
 }
 
 //アイコンの位置
@@ -61,15 +65,13 @@
 	}
 }
 
-//horoのボックス
+//fullのボックス
 .btnBox.-full {
 	max-width: rem(800); //フルサイズ
 	margin-top: rem(32);
-	margin-right: auto;
-	margin-left: auto;
 
 	@include mq() {
-		margin-top: rem(64);
+		margin-top: rem(56);
 	}
 }
 
@@ -126,11 +128,9 @@
 	position: relative;
 	width: 100%; //基本フルサイズのボタンサイズはラップで
 	margin-top: rem(16); //今回の
-	overflow: hidden;
 	color: #fff;
-	// text-align: center;
 	background-color: $cl-point;
-	border-radius: rem(24);
+	border-radius: rem(24); //
 	transition: 200ms;
 	transition-timing-function: ease; //特にこだわらないならeaseが一番気持ち良い
 	transform: translateY(0);
@@ -145,6 +145,7 @@
 		height: 100%;
 		content: '';
 		background-color: $cl-key;
+		border-radius: rem(24); //
 		opacity: 1;
 		transition: 200ms;
 		transition-timing-function: ease;
@@ -168,12 +169,14 @@
 		align-items: center;
 		justify-content: center;
 		padding: 1em;
+		border-radius: rem(24); //foucusのため
 	}
 
 	.btn_text {
 		flex: 1 1 100%;
 		padding: rem(16);
 		font-size: 1.1em;
+		// pointer-events: none; //
 
 		@include mq() {
 			flex: 1 1 70%;
@@ -183,6 +186,7 @@
 
 	.btn_img {
 		flex: 0 0 60%;
+		// pointer-events: none; //
 
 		@include mq() {
 			flex: 0 0 30%;

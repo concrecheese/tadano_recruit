@@ -1,5 +1,30 @@
 /* heading -------------------------------------------------- */
 
+//タダノらしく
+.headingAbout {
+	@include lineHeightCrop(1.5);
+
+	padding-top: rem(16); //上とのスペース
+	padding-right: rem(10);
+	padding-left: rem(10);
+	font-size: rem(32);
+	font-weight: 900;
+	line-height: 1.5;
+	color: #fff;
+	text-align: center;
+	letter-spacing: 0.05;
+
+	@include mq() {
+		font-size: rem(56);
+	}
+
+	@include mq(xl) {
+		padding-top: rem(40); //上とのスペース
+		font-size: rem(80);
+	}
+}
+
+/* h1 */
 .heading1 {
 	color: $cl-key;
 
@@ -76,7 +101,7 @@
 	}
 }
 
-//ver
+//h2ver
 .heading2 {
 	//黒文字・ポイントカラー
 	&.-black {
@@ -146,7 +171,7 @@
 	}
 }
 
-//黒文字ver
+//h3ver
 .heading3 {
 	&.-deep &_text.-main {
 		color: $cl-black;
